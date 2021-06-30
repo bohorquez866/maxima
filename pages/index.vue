@@ -1,5 +1,5 @@
 <template>
-  <navbar :nav="$store.state.menu" />
+  <navbar :nav="menuDos" />
 </template>
 
 <script>
@@ -11,18 +11,23 @@ export default {
       menu: null,
     }
   },
-
+  computed: {
+    menuDos() {
+      return this.$store.getters.menu
+    },
+  },
   mounted() {
     this.getMenu()
   },
+
   methods: {
     getMenu() {
       axios
-        .get(`http://localhost/maxima-limpieza/${this.url}`)
+        .get(`${this.$store.state.urlPath}maxima-limpieza/${this.url}`)
         .then((response) => {
           const slicedResponse = response.data.slice(12)
           const finalData = JSON.parse(slicedResponse)
-          this.$store.state.menu = finalData.items
+          this.$store.commit('SET_MENU_ITEMS', finalData.items)
         })
         .catch((error) => error)
     },
