@@ -1,9 +1,14 @@
 <template>
   <div>
     <Navbar :nav="menuDos" :social="optionsData.social_media_icons" />
-    <Perks :perks="optionsData.perk_item" />
-    <Comments :comments="optionsData.comment_content" />
-    <Contact-component :contact="optionsData" />
+    <Perks />
+    <Comments />
+    <Contact-component />
+    <HomeAbout />
+
+    {{ urlPath + url }}
+    <br />
+    {{ urlPath + urlPerks }}
   </div>
 </template>
 
@@ -14,6 +19,7 @@ export default {
     return {
       url: 'wp-json/menus/v1/menus/Navbar',
       urlPerks: 'wp-json/acf/v3/options/options',
+      urlHome: 'wp-json/acf/v3/pages',
       menu: null,
     }
   },
@@ -24,30 +30,45 @@ export default {
     optionsData() {
       return this.$store.getters.perks
     },
+    homePageData() {
+      return this.$store.getters.home
+    },
+    urlPath() {
+      return this.$store.getters.urlPath
+    },
   },
   mounted() {
     this.getMenu()
     this.getPerks()
+    this.getHomePage()
   },
 
   methods: {
     getMenu() {
       axios
-        .get(`${this.$store.state.urlPath}maxima-limpieza/${this.url}`)
+        .get(`${this.urlPath}${this.url}`)
         .then((response) => {
-          const slicedResponse = response.data.slice(12)
-          const finalData = JSON.parse(slicedResponse)
+          console.log(response.data)
+          const finalData = response.data
           this.$store.commit('SET_MENU_ITEMS', finalData.items)
         })
         .catch((error) => error)
     },
     getPerks() {
       axios
-        .get(`${this.$store.state.urlPath}maxima-limpieza/${this.urlPerks}`)
+        .get(`${this.urlPath}${this.urlPerks}`)
         .then((response) => {
-          const slicedResponse = response.data.slice(12)
-          const finalData = JSON.parse(slicedResponse)
+          const finalData = response.data
           this.$store.commit('SET_PERKS_ITEMS', finalData.acf)
+        })
+        .catch((error) => error)
+    },
+    getHomePage() {
+      axios
+        .get(`${this.urlPath}${this.urlHome}`)
+        .then((response) => {
+          const finalData = response.data
+          this.$store.commit('SET_HOME_ITEMS', finalData[3])
         })
         .catch((error) => error)
     },

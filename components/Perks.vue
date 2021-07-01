@@ -1,7 +1,7 @@
 <template>
   <section>
     <ul class="perks">
-      <li v-for="perk in perks" :key="perk.id">
+      <li v-for="perk in perks.perk_item" :key="perk.id">
         <img :src="perk.perk_item_img" alt="" />
         <img :src="perk.perk_item_img_color" alt="" />
 
@@ -9,11 +9,17 @@
         <p>{{ perk.perk_item_text }}</p>
       </li>
     </ul>
+
+    {{ perks }}
   </section>
 </template>
 
 <script>
 export default {
-  props: ['perks'],
+  computed: {
+    perks() {
+      return this.$store.getters.perks
+    },
+  },
 }
 </script>

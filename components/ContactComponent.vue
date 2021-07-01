@@ -21,6 +21,10 @@
 
 <script>
 export default {
-  props: ['contact'],
+  computed: {
+    contact() {
+      return this.$store.getters.perks
+    },
+  },
 }
 </script>

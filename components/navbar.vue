@@ -8,7 +8,7 @@
     </ul>
 
     <ul class="fixed-social">
-      <li v-for="icon in social" :key="icon.ID">
+      <li v-for="icon in social.social_media_icons" :key="icon.ID">
         <a :href="icon.url">{{ icon.type }}</a>
       </li>
     </ul>
@@ -17,9 +17,13 @@
 
 <script>
 export default {
-  props: ['nav', 'social'],
-  data() {
-    return {}
+  computed: {
+    nav() {
+      return this.$store.getters.menu
+    },
+    social() {
+      return this.$store.getters.perks
+    },
   },
 }
 </script>

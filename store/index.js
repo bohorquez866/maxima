@@ -1,7 +1,8 @@
 export const state = () => ({
     menu: [],
     perks: [],
-    urlPath: 'http://localhost/',
+    home: {},
+    urlPath: 'http://localhost/maxima/backend/',
 })
 
 export const mutations = {
@@ -11,6 +12,9 @@ export const mutations = {
     SET_PERKS_ITEMS(state, payload) {
         state.perks = payload
     },
+    SET_HOME_ITEMS(state, payload) {
+        state.home = payload
+    },
 }
 export const getters = {
     menu(state) {
@@ -19,6 +23,12 @@ export const getters = {
     perks(state) {
         return state.perks
     },
+    home(state) {
+        return state.home
+    },
+    urlPath(state) {
+        return state.urlPath
+    },
 }
 export const actions = {
     setMenuItems({ commit }, payload) {
@@ -26,5 +36,8 @@ export const actions = {
     },
     setPerksItems({ commit }, payload) {
         commit('SET_PERKS_ITEMS', payload)
+    },
+    setHomeItems({ commit }, payload) {
+        commit('SET_HOME_ITEMS', payload)
     },
 }
