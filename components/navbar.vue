@@ -1,7 +1,11 @@
 <!-- Please remove this file from your project -->
 <template>
   <nav class="navbar">
-    <ul class="navbar__List">
+    <nuxt-link to="/" class="logo"
+      ><img :src="optionsData.logo" alt=""
+    /></nuxt-link>
+
+    <ul class="navbar__list">
       <li v-for="item in nav" :key="item.ID">
         <NuxtLink :to="item.title">{{ item.title }}</NuxtLink>
       </li>
@@ -22,6 +26,9 @@ export default {
       return this.$store.getters.menu
     },
     social() {
+      return this.$store.getters.perks
+    },
+    optionsData() {
       return this.$store.getters.perks
     },
   },

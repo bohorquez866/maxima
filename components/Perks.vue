@@ -9,8 +9,6 @@
         <p>{{ perk.perk_item_text }}</p>
       </li>
     </ul>
-
-    {{ perks }}
   </section>
 </template>
 

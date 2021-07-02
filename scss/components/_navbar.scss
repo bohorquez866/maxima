@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    padding: 0 3.91%;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    //
+    &,
+    &__list,
+    & .fixed-social {
+        display: flex;
+        align-items: center;
+    }
+    //
+    .logo {
+        margin-right: 5rem;
+        display: block;
+    }
+    &__list {
+        column-gap: 2rem;
+        & * {
+            font-family: $font_01;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 29px;
+            /* or 181% */
+            letter-spacing: 0.05em;
+        }
+    }
+    & .fixed-social {
+        margin-left: auto;
+    }
+}

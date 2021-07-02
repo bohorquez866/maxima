@@ -1,14 +1,10 @@
 <template>
   <div>
-    <Navbar :nav="menuDos" :social="optionsData.social_media_icons" />
+    <Navbar />
     <Perks />
+    <HomeAbout />
     <Comments />
     <Contact-component />
-    <HomeAbout />
-
-    {{ urlPath + url }}
-    <br />
-    {{ urlPath + urlPerks }}
   </div>
 </template>
 
@@ -30,9 +26,7 @@ export default {
     optionsData() {
       return this.$store.getters.perks
     },
-    homePageData() {
-      return this.$store.getters.home
-    },
+
     urlPath() {
       return this.$store.getters.urlPath
     },
@@ -48,7 +42,6 @@ export default {
       axios
         .get(`${this.urlPath}${this.url}`)
         .then((response) => {
-          console.log(response.data)
           const finalData = response.data
           this.$store.commit('SET_MENU_ITEMS', finalData.items)
         })
@@ -68,7 +61,7 @@ export default {
         .get(`${this.urlPath}${this.urlHome}`)
         .then((response) => {
           const finalData = response.data
-          this.$store.commit('SET_HOME_ITEMS', finalData[3])
+          this.$store.commit('SET_HOME_ITEMS', finalData)
         })
         .catch((error) => error)
     },

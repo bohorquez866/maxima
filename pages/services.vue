@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navbar :nav="$store.state.menu" />
+    <navbar />
 
     <h1>SERVICEEEE</h1>
   </div>
