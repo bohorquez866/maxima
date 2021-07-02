@@ -1,0 +1,35 @@
+.page-info {
+    display: flex;
+    justify-content: center;
+    column-gap: 8rem;
+    & figure {
+        width: 42rem;
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    & .home-about-info {
+        width: 40rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & h4 {
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        & .title {
+            margin-bottom: 3.5rem;
+        }
+        & p:not(:last-of-type) {
+            margin-bottom: 1.5rem;
+        }
+        & a {
+            margin-top: 4rem;
+            @include btn-creator(5px, $orange, 15.5rem, 45px);
+            background-color: $orange;
+            color: $white;
+            text-transform: capitalize;
+        }
+    }
+}

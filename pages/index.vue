@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <main>
     <Navbar />
     <Perks />
     <HomeAbout />
     <Comments />
     <Contact-component />
-  </div>
+  </main>
 </template>
 
 <script>

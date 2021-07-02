@@ -54,7 +54,7 @@
 .text {
     font-size: 16px;
     line-height: 1.6;
-    letter-spacing: 0.023em;
+    letter-spacing: 0.05em;
     font-family: $font_02;
     color: $black;
     font-weight: 300;
@@ -84,8 +84,26 @@
     display: block;
 }
 
+h4 {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 13px;
+    /* or 90% */
+    letter-spacing: 0.25em;
+}
+
+.title {
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 40px;
+    /* or 133% */
+    letter-spacing: 0.01em;
+    color: #412903;
+}
+
 
 /*
 *Navbar har letter-spacing av 0.05em i Desktop og line-height av 11px;
-*
+*H4 har letter-spacing av  0.025
+*title har letter-spacing av  0.01
 */

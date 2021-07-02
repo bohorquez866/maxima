@@ -2,11 +2,14 @@
 <template>
   <nav class="navbar">
     <nuxt-link to="/" class="logo"
-      ><img :src="optionsData.logo" alt=""
+      ><img :src="optionsData.logo" alt="Logo"
     /></nuxt-link>
 
     <ul class="navbar__list">
-      <li v-for="item in nav" :key="item.ID">
+      <li>
+        <NuxtLink to="/">Home</NuxtLink>
+      </li>
+      <li v-for="item in nav" :key="item.ID" ref="identifier">
         <NuxtLink :to="item.title">{{ item.title }}</NuxtLink>
       </li>
     </ul>
@@ -22,6 +25,9 @@
 <script>
 export default {
   computed: {
+    currentRouteName() {
+      return this.$route.name
+    },
     nav() {
       return this.$store.getters.menu
     },
@@ -30,6 +36,14 @@ export default {
     },
     optionsData() {
       return this.$store.getters.perks
+    },
+  },
+  mounted() {
+    this.compareMenuItem()
+  },
+  methods: {
+    compareMenuItem() {
+      console.log(this.$refs.identifier)
     },
   },
 }

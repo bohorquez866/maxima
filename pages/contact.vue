@@ -1,6 +1,6 @@
 <template>
-  <div>
+  <main id="4">
     <navbar />
     <ContactComponent />
-  </div>
+  </main>
 </template>

@@ -25,6 +25,17 @@
             line-height: 29px;
             /* or 181% */
             letter-spacing: 0.05em;
+            text-transform: capitalize;
+            @include transition;
+        }
+        & li {
+            border-bottom: 2px solid transparent;
+            &:hover {
+                border-bottom: 2px solid $orange;
+                & a {
+                    color: $orange;
+                }
+            }
         }
     }
     & .fixed-social {

@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <main id="3">
     <navbar />
     <about-banner />
     <Perks />
     <AboutAbout />
     <Comments />
-  </div>
+  </main>
 </template>
 
 <script>
