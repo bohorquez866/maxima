@@ -5,6 +5,7 @@
     <HomeAbout />
     <Comments />
     <Contact-component />
+    <Footer />
   </main>
 </template>
 

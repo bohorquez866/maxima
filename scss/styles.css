@@ -151,6 +151,8 @@ h4 {
   line-height: 13px;
   /* or 90% */
   letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -378,10 +380,6 @@ i.icon-arrow-black {
   display: block;
 }
 
-.navbar__list {
-  column-gap: 2rem;
-}
-
 .navbar__list * {
   font-family: "Source Serif Pro", serif;
   font-style: normal;
@@ -396,6 +394,15 @@ i.icon-arrow-black {
 
 .navbar__list li {
   border-bottom: 2px solid transparent;
+  margin-right: 2rem;
+}
+
+.navbar__list li:nth-child(2) {
+  display: none;
+}
+
+.navbar__list li a[href*="home"] {
+  display: none;
 }
 
 .navbar__list li:hover {
@@ -606,5 +613,112 @@ i.icon-arrow-black {
   position: relative;
   margin-left: auto;
   margin-right: auto;
+}
+
+.contact {
+  padding: 11rem 0;
+  display: grid;
+  grid-template-columns: 40rem 57rem;
+  column-gap: 14rem;
+  justify-content: center;
+}
+
+.contact_info h2 {
+  margin-bottom: 4rem;
+}
+
+.contact_info .social-contact {
+  margin-top: 4rem;
+}
+
+.contact_info .social-contact p {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.contact_info .social-contact p i::before {
+  color: #F57F2F;
+}
+
+.contact_info .social-contact a {
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}
+
+.contact_info .social-contact i.icon-phone::before {
+  font-size: 18px;
+}
+
+.footer {
+  background-color: #003127;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  padding: 11rem 0 17rem 0;
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  height: 66px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #00231C;
+}
+
+.footer *,
+.footer *::before {
+  color: #fff;
+}
+
+.footer .footer_logo {
+  width: fit-content;
+  margin-bottom: 2rem;
+}
+
+.footer .footer-menu,
+.footer .footer-social {
+  display: flex;
+  column-gap: 3rem;
+  text-transform: capitalize;
+}
+
+.footer p {
+  margin-bottom: 3rem;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  /* or 150% */
+  text-align: center;
+  letter-spacing: 0.03em;
+  max-width: 40rem;
+}
+
+.footer .footer-social {
+  width: fit-content;
+  margin-bottom: 4rem;
+}
+
+.footer .footer-social a::before {
+  font-size: 2.2rem;
+}
+
+.footer .footer-menu li:not(:last-of-type) {
+  padding-right: 2.5rem;
+  position: relative;
+}
+
+.footer .footer-menu li:not(:last-of-type)::after {
+  content: '';
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
 }
 /*# sourceMappingURL=styles.css.map */

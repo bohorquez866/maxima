@@ -1,10 +1,11 @@
 <template>
   <section class="comments">
     <h4>Comments</h4>
-    <h2>{{ comments.comments_title }}</h2>
+    <h2 class="title">{{ comments.comments_title }}</h2>
 
     <section
       v-swiper="swiperOption"
+      ref="mySwiperRef"
       class="swiper-comment swiper w-5/6 ml-auto relative"
     >
       <ul class="swiper-wrapper">
@@ -25,6 +26,7 @@
           slot="button-prev"
         >
         </span>
+
         <span
           class="comment-arrow-next comment-arrow icon-arrow2"
           slot="button-next"
@@ -36,7 +38,7 @@
 
 <script>
 import { directive } from 'vue-awesome-swiper'
-
+import 'swiper/css/swiper.css'
 export default {
   name: 'Slider',
   directives: {
@@ -64,5 +66,6 @@ export default {
       return this.$store.getters.perks
     },
   },
+  methods: {},
 }
 </script>

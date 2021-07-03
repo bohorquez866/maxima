@@ -16,7 +16,6 @@
         display: block;
     }
     &__list {
-        column-gap: 2rem;
         & * {
             font-family: $font_01;
             font-style: normal;
@@ -30,6 +29,13 @@
         }
         & li {
             border-bottom: 2px solid transparent;
+            margin-right: 2rem;
+            &:nth-child(2) {
+                display: none;
+            }
+            & a[href*="home"] {
+                display: none;
+            }
             &:hover {
                 border-bottom: 2px solid $orange;
                 & a {

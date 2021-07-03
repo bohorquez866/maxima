@@ -38,13 +38,7 @@ export default {
       return this.$store.getters.perks
     },
   },
-  mounted() {
-    this.compareMenuItem()
-  },
-  methods: {
-    compareMenuItem() {
-      console.log(this.$refs.identifier)
-    },
-  },
+  mounted() {},
+  methods: {},
 }
 </script>

@@ -1,0 +1,33 @@
+.contact {
+    padding: 11rem 0;
+    display: grid;
+    grid-template-columns: 40rem 57rem;
+    column-gap: 14rem;
+    justify-content: center;
+    &_info {
+        & h2 {
+            margin-bottom: 4rem;
+        }
+        & .social-contact {
+            margin-top: 4rem;
+            & p {
+                display: flex;
+                align-items: center;
+                column-gap: 1rem;
+                & i::before {
+                    color: $orange;
+                }
+            }
+            & a {
+                font-size: 16px;
+                letter-spacing: 0.05em;
+                font-weight: 300;
+            }
+            & i.icon-phone {
+                &::before {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
