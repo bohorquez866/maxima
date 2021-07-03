@@ -1,13 +1,13 @@
 <template>
   <section>
     <ul class="perks">
-      <li v-for="perk in perks.perk_item" :key="perk.id" class="perk">
-        <figure>
+      <li v-for="(perk, index) in perks.perk_item" :key="perk.id" class="perk">
+        <figure :class="`perk-figure-${index + 1}`">
           <img :src="perk.perk_item_img" alt="" />
         </figure>
         <!-- <img :src="perk.perk_item_img_color" alt="" /> -->
         <div class="perk_info">
-          <h2>{{ perk.perk_item_title }}</h2>
+          <h3>{{ perk.perk_item_title }}</h3>
           <p>{{ perk.perk_item_text }}</p>
         </div>
       </li>

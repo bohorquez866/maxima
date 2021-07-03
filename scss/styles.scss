@@ -1,7 +1,11 @@
 @import './rules/variables';
 @import './rules/base';
 @import './rules/_fonts';
+@import './rules/constructor-mixins';
+@import './rules/utilities';
+@import './rules/_iconmoon';
 //* Components
 @import './components/navbar';
 @import './components/perks';
 @import './components/page-info';
+@import './components/comments';

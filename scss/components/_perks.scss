@@ -7,18 +7,37 @@
     & .perk {
         display: grid;
         grid-template-columns: 12rem 26rem;
+        column-gap: 2.5rem;
         & figure {
             display: flex;
             justify-content: center;
             align-items: center;
             grid-column: 1/2;
-            grid-row: 1/span 2;
             height: 12rem;
+            border-radius: 5px;
+            overflow: hidden;
+            &.perk-figure-1 {
+                background-color: #E8EEE2;
+            }
+            &.perk-figure-2 {
+                background-color: #FFE9E2;
+            }
+            &.perk-figure-3 {
+                background-color: $cream;
+            }
         }
         & .perk_info {
             display: flex;
             justify-content: center;
             flex-direction: column;
+            & h3 {
+                font-weight: 600;
+                font-size: 17px;
+                line-height: 22px;
+                width: 50%;
+                /* or 129% */
+                letter-spacing: 0.05em;
+            }
         }
     }
 }
