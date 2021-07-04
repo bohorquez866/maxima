@@ -5,6 +5,7 @@
     <Perks />
     <AboutAbout />
     <Comments />
+    <Footer />
   </main>
 </template>
 
