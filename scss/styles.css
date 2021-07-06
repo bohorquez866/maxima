@@ -474,6 +474,31 @@ i.icon-arrow-black {
   justify-content: center;
   column-gap: 8rem;
   margin-bottom: 11rem;
+  position: relative;
+}
+
+.page-info::before, .page-info::after {
+  position: absolute;
+  color: rgba(65, 41, 3, 0.07);
+  font-family: "Source Serif Pro", serif;
+}
+
+.page-info::after {
+  content: 'ABOUT';
+  right: 0;
+  font-size: 16rem;
+  top: -3.5rem;
+  letter-spacing: 0.25em;
+}
+
+.page-info::before {
+  content: 'ABOUT US';
+  left: 5%;
+  top: 37%;
+  font-size: 10rem;
+  bottom: auto;
+  transform: rotate(270deg);
+  letter-spacing: 0.15em;
 }
 
 .page-info figure {
@@ -526,9 +551,33 @@ i.icon-arrow-black {
   text-transform: capitalize;
 }
 
+.page-info.about_info::after {
+  top: 0.5rem;
+}
+
 .comments {
   background-color: #FFF6E7;
   padding: 8rem 0 10rem 0;
+  position: relative;
+}
+
+.comments::before, .comments::after {
+  position: absolute;
+  font-size: 15rem;
+  color: rgba(65, 41, 3, 0.07);
+  font-family: "Source Serif Pro", serif;
+}
+
+.comments::after {
+  content: 'MENTS';
+  left: -10rem;
+  top: 4.5rem;
+}
+
+.comments::before {
+  content: 'COMM';
+  right: -4rem;
+  bottom: 4.5rem;
 }
 
 .comments h2,
@@ -670,7 +719,7 @@ i.icon-arrow-black {
 
 .banner .banner_item::before {
   content: '';
-  background: url(../assets/img/bg.jpg);
+  background: url(../assets/img/bg.png);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -684,6 +733,26 @@ i.icon-arrow-black {
   position: relative;
   z-index: 10;
   max-width: 43rem;
+}
+
+.contact-page .contact {
+  grid-template-columns: 80rem 1fr;
+  grid-template-rows: 60rem;
+  padding: 0 3.91%;
+  padding-bottom: 8rem;
+}
+
+.contact-page .contact_info {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background: url(../assets/img/bg.png);
+}
+
+.contact-page .contact_info > div {
+  width: 40rem;
+  margin-left: auto;
+  margin-right: 11rem;
 }
 
 .footer {

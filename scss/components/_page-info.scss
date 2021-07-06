@@ -3,6 +3,29 @@
     justify-content: center;
     column-gap: 8rem;
     margin-bottom: 11rem;
+    position: relative;
+    &::before,
+    &::after {
+        position: absolute;
+        color: rgba(65, 41, 3, 0.07);
+        font-family: $font_01;
+    }
+    &::after {
+        content: 'ABOUT';
+        right: 0;
+        font-size: 16rem;
+        top: -3.5rem;
+        letter-spacing: 0.25em;
+    }
+    &::before {
+        content: 'ABOUT US';
+        left: 5%;
+        top: 37%;
+        font-size: 10rem;
+        bottom: auto;
+        transform: rotate( 270deg);
+        letter-spacing: 0.15em;
+    }
     & figure {
         width: 42rem;
         & img {
@@ -32,5 +55,11 @@
             color: $white;
             text-transform: capitalize;
         }
+    }
+}
+
+.page-info.about_info {
+    &::after {
+        top: 0.5rem;
     }
 }

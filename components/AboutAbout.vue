@@ -1,6 +1,6 @@
 /* eslint-disable vue/no-v-html */
 <template>
-  <section class="home-about page-info">
+  <section class="home-about page-info about_info">
     <template v-if="about[2]">
       <figure>
         <img :src="about[2].acf.about_info_img" alt="" />

@@ -52,11 +52,12 @@ export default {
         //   el: '.swiper-pagination',
         //   clickable: true,
         // },
+        loop: true,
         effect: 'fade',
         fadeEffect: { crossFade: true },
         navigation: {
-          nextEl: '.comment-arrow-prev',
-          prevEl: '.comment-arrow-next',
+          nextEl: '.comment-arrow-next',
+          prevEl: '.comment-arrow-prev',
         },
       },
     }

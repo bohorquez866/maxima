@@ -1,9 +1,11 @@
 <template>
   <section class="contact">
     <div class="contact_info">
-      <h4>Contact Us</h4>
-      <h2 class="title">{{ contact.contact_title }}</h2>
-      <p>{{ contact.contact_text }}</p>
+      <div>
+        <h4>Contact Us</h4>
+        <h2 class="title">{{ contact.contact_title }}</h2>
+        <p>{{ contact.contact_text }}</p>
+      </div>
 
       <div class="social-contact">
         <p>

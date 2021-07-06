@@ -1,6 +1,24 @@
 .comments {
     background-color: $cream;
     padding: 8rem 0 10rem 0;
+    position: relative;
+    &::before,
+    &::after {
+        position: absolute;
+        font-size: 15rem;
+        color: rgba(65, 41, 3, 0.07);
+        font-family: $font_01;
+    }
+    &::after {
+        content: 'MENTS';
+        left: -10rem;
+        top: 4.5rem;
+    }
+    &::before {
+        content: 'COMM';
+        right: -4rem;
+        bottom: 4.5rem;
+    }
     & h2,
     & h4 {
         text-align: center;
