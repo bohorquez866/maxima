@@ -12,13 +12,15 @@
         class="home_service_item swiper-slide"
       >
         <div :style="`background-image: url(${data.acf.service_list_img_bg})`">
-          <h4>SERVICES</h4>
-          <h2 class="title">{{ data.service_banner_title }}</h2>
-          <ul>
-            <li v-for="data2 in data.acf.service_list_items" :key="data2.ID">
-              {{ data2.service_list_item }}
-            </li>
-          </ul>
+          <article>
+            <h4>SERVICES</h4>
+            <h2 class="title">{{ data.service_banner_title }}</h2>
+            <ul>
+              <li v-for="data2 in data.acf.service_list_items" :key="data2.ID">
+                {{ data2.service_list_item }}
+              </li>
+            </ul>
+          </article>
         </div>
 
         <figure>
@@ -47,10 +49,10 @@ export default {
         loop: true,
         effect: 'fade',
         fadeEffect: { crossFade: true },
-        navigation: {
-          nextEl: '.comment-arrow-next',
-          prevEl: '.comment-arrow-prev',
-        },
+        // navigation: {
+        //   nextEl: '.comment-arrow-next',
+        //   prevEl: '.comment-arrow-prev',
+        // },
       },
     }
   },
