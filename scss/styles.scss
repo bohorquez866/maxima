@@ -5,6 +5,7 @@
 @import './rules/utilities';
 @import './rules/_iconmoon';
 //* Components
+@import './components/swiper';
 @import './components/navbar';
 @import './components/perks';
 @import './components/page-info';
@@ -12,4 +13,5 @@
 @import './components/contact-home';
 @import './components/banner';
 @import './components/contact-page';
+@import './components/_home-service';
 @import './components/footer';

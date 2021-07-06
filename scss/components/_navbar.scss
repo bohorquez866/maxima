@@ -35,7 +35,16 @@
             & a[href*="home"] {
                 display: none;
             }
+<<<<<<< HEAD
             &:hover {
+=======
+            & a {
+                border-bottom: 2px solid transparent;
+            }
+            & .nuxt-link-exact-active.nuxt-link-active,
+            & a:hover {
+                border-bottom: 2px solid $orange;
+>>>>>>> 241f46beaef9906ed025d165890a7613729bb655
                 & a {
                     color: $orange;
                 }

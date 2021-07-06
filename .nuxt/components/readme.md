@@ -14,5 +14,9 @@ You can directly use them in pages and other components without the need to impo
 - `<HomeAbout>` | `<home-about>` (components/HomeAbout.vue)
 - `<HomeBanner>` | `<home-banner>` (components/homeBanner.vue)
 - `<HomeService>` | `<home-service>` (components/homeService.vue)
+<<<<<<< HEAD
 - `<Navbar>` | `<navbar>` (components/navbar.vue)
+=======
+- `<Navbar>` | `<navbar>` (components/Navbar.vue)
+>>>>>>> 241f46beaef9906ed025d165890a7613729bb655
 - `<Perks>` | `<perks>` (components/Perks.vue)

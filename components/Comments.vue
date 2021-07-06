@@ -67,6 +67,5 @@ export default {
       return this.$store.getters.perks
     },
   },
-  methods: {},
 }
 </script>
