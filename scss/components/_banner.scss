@@ -28,3 +28,39 @@
         }
     }
 }
+
+.home_banner {
+    & article {
+        padding: 0 3.91%;
+        display: grid;
+        grid-template-columns: 666px 1fr;
+        &>div {
+            display: flex;
+            align-items: center;
+            background: url(../assets/img/bg2.png);
+            position: relative;
+            &>div {
+                position: relative;
+                max-width: 43rem;
+                z-index: 10;
+                margin-left: auto;
+                margin-right: 11rem;
+                & a {
+                    @include btn-creator(5px, $orange, 15rem, 45px);
+                    background-color: $orange;
+                    margin-top: 5rem;
+                    color: $white;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    & figure {
+        width: 100%;
+        height: 458px;
+        & img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

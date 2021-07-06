@@ -4,6 +4,7 @@
     <HomeBanner />
     <Perks />
     <HomeAbout />
+    <homeService />
     <Comments />
     <Contact-component />
     <Footer />
