@@ -1,0 +1,32 @@
+{
+  "AboutAbout": {
+    "description": "Auto imported from components/AboutAbout.vue"
+  },
+  "AboutBanner": {
+    "description": "Auto imported from components/AboutBanner.vue"
+  },
+  "Comments": {
+    "description": "Auto imported from components/Comments.vue"
+  },
+  "ContactComponent": {
+    "description": "Auto imported from components/ContactComponent.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "HomeAbout": {
+    "description": "Auto imported from components/HomeAbout.vue"
+  },
+  "HomeBanner": {
+    "description": "Auto imported from components/homeBanner.vue"
+  },
+  "HomeService": {
+    "description": "Auto imported from components/homeService.vue"
+  },
+  "Navbar": {
+    "description": "Auto imported from components/Navbar.vue"
+  },
+  "Perks": {
+    "description": "Auto imported from components/Perks.vue"
+  }
+}
