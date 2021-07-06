@@ -18,13 +18,13 @@
     "description": "Auto imported from components/HomeAbout.vue"
   },
   "HomeBanner": {
-    "description": "Auto imported from components/HomeBanner.vue"
+    "description": "Auto imported from components/homeBanner.vue"
   },
   "HomeService": {
-    "description": "Auto imported from components/HomeService.vue"
+    "description": "Auto imported from components/homeService.vue"
   },
   "Navbar": {
-    "description": "Auto imported from components/Navbar.vue"
+    "description": "Auto imported from components/navbar.vue"
   },
   "Perks": {
     "description": "Auto imported from components/Perks.vue"

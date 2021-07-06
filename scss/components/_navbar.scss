@@ -28,7 +28,6 @@
             @include transition;
         }
         & li {
-            border-bottom: 2px solid transparent;
             margin-right: 2rem;
             &:nth-child(2) {
                 display: none;
@@ -37,10 +36,20 @@
                 display: none;
             }
             &:hover {
-                border-bottom: 2px solid $orange;
                 & a {
                     color: $orange;
                 }
+            }
+        }
+        & a {
+            display: block;
+            transition: all .4s ease-in-out;
+            &:before {
+                content: '';
+                width: 0;
+                height: 2px;
+                background: $orange;
+                transition: all .4s linear;
             }
         }
     }
