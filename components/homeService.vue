@@ -11,7 +11,7 @@
         :key="data.ID"
         class="home_service_item swiper-slide"
       >
-        <div :style="`background: url(${data.acf.service_list_img_bg})`">
+        <div :style="`background-image: url(${data.acf.service_list_img_bg})`">
           <h4>SERVICES</h4>
           <h2 class="title">{{ data.service_banner_title }}</h2>
           <ul>
@@ -31,7 +31,6 @@
 
 <script>
 import { directive } from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
 export default {
   name: 'Slider',
   directives: {
@@ -40,7 +39,7 @@ export default {
   data() {
     return {
       swiperOption: {
-        spaceBetween: 50,
+        spaceBetween: 'auto',
         pagination: {
           el: '.swiper-pagination',
           clickable: true,

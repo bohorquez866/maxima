@@ -1,20 +1,38 @@
 .home_service {
-    padding: 0 3.91%;
+    padding: 0 3.91%!important;
     margin-bottom: 13rem;
     position: relative;
+    overflow: visible!important;
     .swiper-pagination {
         position: absolute;
-        bottom: 0;
+        bottom: -6rem;
+        left: 0;
+        right: 0;
+        & .swiper-pagination-bullet {
+            background-color: #CFCFCF;
+            opacity: 1;
+            &:not(:last-of-type) {
+                margin-right: 1rem;
+            }
+        }
+        & .swiper-pagination-bullet-active {
+            background-color: $orange;
+        }
     }
     & &_item {
         display: grid;
         grid-template-columns: repeat(2, 50%);
         grid-template-rows: 52rem;
         height: 52rem;
+        &>div {
+            background-size: cover;
+            background-position: center center;
+        }
         & figure {
-            width: fit-content;
+            width: 100%;
             & img {
                 height: 100%;
+                width: 100%;
             }
         }
     }
