@@ -16,6 +16,7 @@ import { createStore } from './store.js'
 import nuxt_plugin_plugin_b8b08684 from 'nuxt_plugin_plugin_b8b08684' // Source: .\\components\\plugin.js (mode: 'all')
 import nuxt_plugin_axios_cc14443e from 'nuxt_plugin_axios_cc14443e' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_vueawesomeswiper_95d16dae from 'nuxt_plugin_vueawesomeswiper_95d16dae' // Source: ..\\node_modules\\vue-awesome-swiper (mode: 'client')
+import nuxt_plugin_global_0de9124f from 'nuxt_plugin_global_0de9124f' // Source: ..\\mixin\\global.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -222,6 +223,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_vueawesomeswiper_95d16dae === 'function') {
     await nuxt_plugin_vueawesomeswiper_95d16dae(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_global_0de9124f === 'function') {
+    await nuxt_plugin_global_0de9124f(app.context, inject)
   }
 
   // Lock enablePreview in context
