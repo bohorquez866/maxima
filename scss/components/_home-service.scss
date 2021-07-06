@@ -1,0 +1,21 @@
+.home_service {
+    padding: 0 3.91%;
+    margin-bottom: 13rem;
+    position: relative;
+    .swiper-pagination {
+        position: absolute;
+        bottom: 0;
+    }
+    & &_item {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: 52rem;
+        height: 52rem;
+        & figure {
+            width: fit-content;
+            & img {
+                height: 100%;
+            }
+        }
+    }
+}

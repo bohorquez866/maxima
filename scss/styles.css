@@ -807,6 +807,32 @@ i.icon-arrow-black {
   margin-right: 11rem;
 }
 
+.home_service {
+  padding: 0 3.91%;
+  margin-bottom: 13rem;
+  position: relative;
+}
+
+.home_service .swiper-pagination {
+  position: absolute;
+  bottom: 0;
+}
+
+.home_service .home_service_item {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 52rem;
+  height: 52rem;
+}
+
+.home_service .home_service_item figure {
+  width: fit-content;
+}
+
+.home_service .home_service_item figure img {
+  height: 100%;
+}
+
 .footer {
   background-color: #003127;
   display: flex;
