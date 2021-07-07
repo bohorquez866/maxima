@@ -26,17 +26,48 @@
     </div>
 
     <form>
-      <h2 class="title">COntact for something</h2>
+      <input type="text" class="contact_input" />
+      <input type="text" class="contact_input" />
+      <textarea name="message" id="" placeholder="Your Message"></textarea>
+      <input type="text" class="contact_input" />
     </form>
   </section>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+  data() {
+    return {
+      form: {
+        name: '',
+        email: '',
+        message: '',
+      },
+    }
+  },
   computed: {
     contact() {
       return this.$store.getters.perks
     },
+  },
+
+  methods: {
+    // submitData() {
+    //   const emailBody = {
+    //     'your-name': this.form.name,
+    //     'your-email': this.form.email,
+    //     'your-message': this.form.message,
+    //   }
+    //   const form = new FormData()
+    //   for (const field in emailBody) {
+    //     form.append(field, emailBody[field])
+    //   }
+    //   const responsee = this.axios.post(
+    //     `http://localhost/maxima/backend/wp-json/contact-form-7/v1/contact-forms/5/feedback`,
+    //     form
+    //   )
+    // },
   },
 }
 </script>
