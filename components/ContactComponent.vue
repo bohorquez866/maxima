@@ -25,58 +25,84 @@
       </div>
     </div>
 
-    <form class="wpcf7-form" novalidate="novalidate" @submit="formSubmit">
-      <div class="form-full">
-        <span class="wpcf7-class textarea-159">
-          <textarea
-            name="your-message"
-            id="messenger"
-            v-model="formMsg"
-            placeholder="Your Message"
-          ></textarea>
-        </span>
+    <form
+      class="wpcf7-form"
+      novalidate="novalidate"
+      @submit.prevent="sendEmail"
+      method="POST"
+    >
+      <div>
+        <textarea name="message" id="message" placeholder="message"></textarea>
       </div>
-      <input type="submit" value="send" />
+      <div>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value="sasasas"
+          placeholder="Your Name"
+        />
+      </div>
+
+      <div>
+        <input
+          type="mail"
+          id="email"
+          name="email"
+          value="asasas"
+          placeholder="Your Mail"
+        />
+      </div>
+
+      <button type="submit" id="form-submit">sasasas</button>
     </form>
   </section>
 </template>
 
 <script>
 import axios from 'axios'
+import { extend } from 'vee-validate'
+import { required, email } from 'vee-validate/dist/rules'
+
+// No message specified.
+extend('email', email)
+
+// Override the default message.
+extend('required', {
+  ...required,
+  message: 'This field is required',
+})
 export default {
   data() {
     return {
-      formMsg: '',
+      name: 'namedsfs',
+      email: 'bohorquez866@gmail.com',
+      message: 'dfdsfsdsfsdfsdfsdfsdfsd',
     }
   },
   computed: {
     contact() {
       return this.$store.getters.perks
     },
-    urlPath() {
+    url() {
       return this.$store.getters.urlPath
     },
   },
+
   methods: {
-    formSubmit(e) {
-      e.preventDefault()
+    sendEmail: function () {
       const formData = new FormData()
-      const dat = {
-        'your-message': this.formMsg,
-      }
-      for (const name in dat) {
-        formData.append(name, dat[name])
-      }
-      //* Axios Post
-      axios({
-        method: 'post',
-        url: `${this.urlPath}wp-json/contact-form-7/v1/contact-forms/5/feedback`,
-        data: formData,
-        headers: { 'Content-type': 'multipart/form-data' },
-      })
-        .then(console.log(Response.data))
-        .catch((err) => {
-          console.error(err)
+      formData.append('name', 'asdasdasdasd')
+      formData.append('email', 'prueba@gmail.com')
+      formData.append('message', 'sassas')
+      axios
+        .post(`http://localhost/maxima/backend/mail.php`, formData)
+        .then((res) => {
+          a
+          console.log(res)
+        })
+        .catch((error) => {
+          console.log(error)
         })
     },
   },
