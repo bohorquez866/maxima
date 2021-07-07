@@ -25,11 +25,18 @@
       </div>
     </div>
 
-    <form>
-      <input type="text" class="contact_input" />
-      <input type="text" class="contact_input" />
-      <textarea name="message" id="" placeholder="Your Message"></textarea>
-      <input type="text" class="contact_input" />
+    <form class="wpcf7-form" novalidate="novalidate" @submit="formSubmit">
+      <div class="form-full">
+        <span class="wpcf7-class textarea-159">
+          <textarea
+            name="your-message"
+            id="messenger"
+            v-model="formMsg"
+            placeholder="Your Message"
+          ></textarea>
+        </span>
+      </div>
+      <input type="submit" value="send" />
     </form>
   </section>
 </template>
@@ -39,35 +46,39 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      form: {
-        name: '',
-        email: '',
-        message: '',
-      },
+      formMsg: '',
     }
   },
   computed: {
     contact() {
       return this.$store.getters.perks
     },
+    urlPath() {
+      return this.$store.getters.urlPath
+    },
   },
-
   methods: {
-    // submitData() {
-    //   const emailBody = {
-    //     'your-name': this.form.name,
-    //     'your-email': this.form.email,
-    //     'your-message': this.form.message,
-    //   }
-    //   const form = new FormData()
-    //   for (const field in emailBody) {
-    //     form.append(field, emailBody[field])
-    //   }
-    //   const responsee = this.axios.post(
-    //     `http://localhost/maxima/backend/wp-json/contact-form-7/v1/contact-forms/5/feedback`,
-    //     form
-    //   )
-    // },
+    formSubmit(e) {
+      e.preventDefault()
+      const formData = new FormData()
+      const dat = {
+        'your-message': this.formMsg,
+      }
+      for (const name in dat) {
+        formData.append(name, dat[name])
+      }
+      //* Axios Post
+      axios({
+        method: 'post',
+        url: `${this.urlPath}wp-json/contact-form-7/v1/contact-forms/5/feedback`,
+        data: formData,
+        headers: { 'Content-type': 'multipart/form-data' },
+      })
+        .then(console.log(Response.data))
+        .catch((err) => {
+          console.error(err)
+        })
+    },
   },
 }
 </script>
