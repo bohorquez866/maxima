@@ -32,20 +32,20 @@
         @submit.prevent="handleSubmit(sendEmail)"
         method="POST"
       >
-        <div>
+        <div class="input_item">
           <ValidationProvider name="text" rules="required" v-slot="{ errors }">
             <textarea
               name="message"
               id="message"
               v-model="message"
-              placeholder="message"
+              placeholder="Your Message"
               class="contact_input"
             ></textarea>
             <span style="color: red">{{ errors[0] }}</span>
           </ValidationProvider>
         </div>
 
-        <div>
+        <div class="input_item">
           <input
             type="text"
             id="name"
@@ -56,7 +56,7 @@
           />
         </div>
 
-        <div>
+        <div class="input_item">
           <input
             type="mail"
             id="email"
@@ -67,7 +67,7 @@
           />
         </div>
 
-        <button type="submit" id="form-submit">sasasas</button>
+        <button class="btn_general" type="submit" id="form-submit">Send</button>
       </form>
     </ValidationObserver>
   </section>
