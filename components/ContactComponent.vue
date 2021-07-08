@@ -24,46 +24,55 @@
         </p>
       </div>
     </div>
+    <ValidationObserver v-slot="{ handleSubmit }">
+      <form
+        class="wpcf7-form"
+        novalidate="novalidate"
+        @submit.prevent="handleSubmit(sendEmail)"
+        method="POST"
+      >
+        <div>
+          <ValidationProvider name="text" rules="required" v-slot="{ errors }">
+            <textarea
+              name="message"
+              id="message"
+              v-model="message"
+              placeholder="message"
+            ></textarea>
+            <span style="color: red">{{ errors[0] }}</span>
+          </ValidationProvider>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            v-model="name"
+            placeholder="Your Name"
+          />
+        </div>
 
-    <form
-      class="wpcf7-form"
-      novalidate="novalidate"
-      @submit.prevent="sendEmail"
-      method="POST"
-    >
-      <div>
-        <textarea name="message" id="message" placeholder="message"></textarea>
-      </div>
-      <div>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value="sasasas"
-          placeholder="Your Name"
-        />
-      </div>
+        <div>
+          <input
+            type="mail"
+            id="email"
+            name="email"
+            v-model="email"
+            placeholder="Your Mail"
+          />
+        </div>
 
-      <div>
-        <input
-          type="mail"
-          id="email"
-          name="email"
-          value="asasas"
-          placeholder="Your Mail"
-        />
-      </div>
-
-      <button type="submit" id="form-submit">sasasas</button>
-    </form>
+        <button type="submit" id="form-submit">sasasas</button>
+      </form>
+    </ValidationObserver>
   </section>
 </template>
 
 <script>
 import axios from 'axios'
+import { ValidationProvider, ValidationObserver } from 'vee-validate'
 import { extend } from 'vee-validate'
 import { required, email } from 'vee-validate/dist/rules'
-
 // No message specified.
 extend('email', email)
 
@@ -72,12 +81,13 @@ extend('required', {
   ...required,
   message: 'This field is required',
 })
+// Override the default message.
 export default {
   data() {
     return {
-      name: 'namedsfs',
-      email: 'bohorquez866@gmail.com',
-      message: 'dfdsfsdsfsdfsdfsdfsdfsd',
+      name: '',
+      email: '',
+      message: '',
     }
   },
   computed: {
@@ -88,17 +98,19 @@ export default {
       return this.$store.getters.urlPath
     },
   },
-
+  components: {
+    ValidationProvider,
+    ValidationObserver,
+  },
   methods: {
     sendEmail: function () {
       const formData = new FormData()
-      formData.append('name', 'asdasdasdasd')
-      formData.append('email', 'prueba@gmail.com')
-      formData.append('message', 'sassas')
+      formData.append('name', this.name)
+      formData.append('email', this.email)
+      formData.append('message', this.message)
       axios
         .post(`http://localhost/maxima/backend/mail.php`, formData)
         .then((res) => {
-          a
           console.log(res)
         })
         .catch((error) => {

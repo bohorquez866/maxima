@@ -21,6 +21,7 @@ export default {
     plugins: [
         { src: '@/node_modules/vue-awesome-swiper', mode: 'client' },
         './mixin/global.js',
+        { src: '@/node_modules/vee-validate' },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -41,5 +42,8 @@ export default {
     axios: {},
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {},
+    build: {
+        transpile: ['vee-validate/dist/rules'],
+        extend(config, ctx) {},
+    },
 }

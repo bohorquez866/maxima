@@ -3,24 +3,28 @@
     "name": "about",
     "path": "/about",
     "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\about.vue",
-    "chunkName": "pages/about"
+    "chunkName": "pages/about",
+    "_name": "_dbb6ad88"
   },
   {
     "name": "contact",
     "path": "/contact",
     "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\contact.vue",
-    "chunkName": "pages/contact"
+    "chunkName": "pages/contact",
+    "_name": "_c3c7c2e2"
   },
   {
     "name": "services",
     "path": "/services",
     "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\services.vue",
-    "chunkName": "pages/services"
+    "chunkName": "pages/services",
+    "_name": "_1b43f202"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_9c46f7fe"
   }
 ]
