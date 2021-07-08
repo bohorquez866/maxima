@@ -35,30 +35,34 @@
             & a[href*="home"] {
                 display: none;
             }
-<<<<<<< HEAD
             &:hover {
-=======
-            & a {
-                border-bottom: 2px solid transparent;
-            }
-            & .nuxt-link-exact-active.nuxt-link-active,
-            & a:hover {
-                border-bottom: 2px solid $orange;
->>>>>>> 241f46beaef9906ed025d165890a7613729bb655
                 & a {
                     color: $orange;
+                    &:before {
+                        width: 100%;
+                    }
                 }
             }
         }
         & a {
             display: block;
             transition: all .4s ease-in-out;
+            position: relative;
             &:before {
                 content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
                 width: 0;
                 height: 2px;
                 background: $orange;
                 transition: all .4s linear;
+            }
+            &.nuxt-link-active {
+                color: $orange;
+                &:before {
+                    width: 100%;
+                }
             }
         }
     }

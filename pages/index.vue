@@ -2,7 +2,7 @@
   <main>
     <Navbar />
     <HomeBanner />
-    <Perks />
+    <Perks /> 
     <HomeAbout />
     <homeService />
     <Comments />
