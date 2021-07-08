@@ -46,25 +46,31 @@
         </div>
 
         <div>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            v-model="name"
-            class="contact_input"
-            placeholder="Your Name"
-          />
+          <ValidationProvider name="text" rules="required" v-slot="{ errors }">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              v-model="name"
+              class="contact_input"
+              placeholder="Your Name"
+            />
+            <span style="color: red">{{ errors[0] }}</span>
+          </ValidationProvider>
         </div>
 
         <div>
-          <input
-            type="mail"
-            id="email"
-            name="email"
-            class="contact_input"
-            v-model="email"
-            placeholder="Your Mail"
-          />
+          <ValidationProvider name="text" rules="required" v-slot="{ errors }">
+            <input
+              type="mail"
+              id="email"
+              name="email"
+              class="contact_input"
+              v-model="email"
+              placeholder="Your Mail"
+            />
+            <span style="color: red">{{ errors[0] }}</span>
+          </ValidationProvider>
         </div>
 
         <button type="submit" id="form-submit">sasasas</button>
