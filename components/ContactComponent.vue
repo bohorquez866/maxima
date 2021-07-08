@@ -39,6 +39,7 @@
               id="message"
               v-model="message"
               placeholder="message"
+              class="contact_input"
             ></textarea>
             <span style="color: red">{{ errors[0] }}</span>
           </ValidationProvider>
@@ -50,6 +51,7 @@
             id="name"
             name="name"
             v-model="name"
+            class="contact_input"
             placeholder="Your Name"
           />
         </div>
@@ -59,6 +61,7 @@
             type="mail"
             id="email"
             name="email"
+            class="contact_input"
             v-model="email"
             placeholder="Your Mail"
           />
