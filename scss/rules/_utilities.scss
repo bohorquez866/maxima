@@ -2,36 +2,17 @@
     display: flex;
 }
 
-.btn {
-    border: none;
-    outline: none;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: $primary-font;
-    display: inline-block;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @include transition;
-    &+& {
-        margin-left: 3rem;
-    }
-    &--yellow {
-        background-color: $yellow;
-        color: $white;
-        padding: 1px 2rem;
-        border: 2px solid transparent;
-        width: 172px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-style: italic;
+.btn_general {
+    @include btn-creator(5px, $orange, 15rem, 45px);
+    background-color: $orange;
+    color: $white;
+    font-size: 15px;
+    transition: all .3s ease-in-out;
+    @media(min-width: 1025px) {
         &:hover {
-            background-color: transparent;
+            background-color: $white;
             color: $black;
-            border: 2px solid $black
+            border-color: $black;
         }
     }
 }

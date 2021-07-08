@@ -16,14 +16,37 @@
             height: 12rem;
             border-radius: 5px;
             overflow: hidden;
+            border: 1px solid;
+            transition: all .3s ease-in-out;
             &.perk-figure-1 {
                 background-color: #E8EEE2;
+                border-color: #E8EEE2;
             }
             &.perk-figure-2 {
                 background-color: #FFE9E2;
+                border-color: #FFE9E2;
             }
             &.perk-figure-3 {
                 background-color: $cream;
+                border-color: $cream;
+            }
+            @media(min-width: 1025px) {
+                &:hover {
+                    background-color: $white;
+                    border-color: $black;
+                    .perk_brown {
+                        display: none;
+                    }
+                    .perk_color {
+                        display: block;
+                    }
+                }
+            }
+            img {
+                transition: all .3s ease-in-out;
+                &.perk_color {
+                    display: none;
+                }
             }
         }
         & .perk_info {

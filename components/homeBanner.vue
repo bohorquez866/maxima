@@ -12,7 +12,7 @@
             <h4>SERVICES</h4>
             <h2 class="title">{{ data.home_title }}</h2>
             <p>{{ data.home_text }}</p>
-            <nuxt-link :to="data.slug">Read More</nuxt-link>
+            <nuxt-link :to="data.slug" class="btn_general">Read More</nuxt-link>
           </div>
         </div>
         <figure>

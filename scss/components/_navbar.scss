@@ -58,7 +58,7 @@
                 background: $orange;
                 transition: all .4s linear;
             }
-            &.nuxt-link-active {
+            &.nuxt-link-exact-active {
                 color: $orange;
                 &:before {
                     width: 100%;
@@ -68,5 +68,20 @@
     }
     & .fixed-social {
         margin-left: auto;
+        li {
+            margin-right: 15px;
+            font-size: 16px;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                transition: all .3s ease-in-out;
+                @media(min-width: 1025px) {
+                    &:hover {
+                        color: $orange;
+                    }
+                }
+            }
+        }
     }
 }
