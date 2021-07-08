@@ -24,9 +24,10 @@
         </p>
       </div>
     </div>
-    <ValidationObserver v-slot="{ handleSubmit }">
+
+    <ValidationObserver class="home-form-wrapper" v-slot="{ handleSubmit }">
       <form
-        class="wpcf7-form"
+        class="form-home"
         novalidate="novalidate"
         @submit.prevent="handleSubmit(sendEmail)"
         method="POST"
@@ -42,6 +43,7 @@
             <span style="color: red">{{ errors[0] }}</span>
           </ValidationProvider>
         </div>
+
         <div>
           <input
             type="text"
