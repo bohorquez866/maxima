@@ -1314,6 +1314,35 @@ button.swiper-pagination-bullet {
   font-size: 18px;
 }
 
+.contact .form-home {
+  width: 100%;
+}
+
+.contact .form-home > div {
+  margin-bottom: 2rem;
+}
+
+.contact .form-home textarea.contact_input {
+  height: 14rem;
+}
+
+.contact .form-home .contact_input {
+  width: 100%;
+  border: 1px solid #AEAEAE;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  display: block;
+  font-weight: normal;
+  /* or 111% */
+}
+
+.contact .form-home .contact_input, .contact .form-home .contact_input::placeholder {
+  letter-spacing: 0.05em;
+  color: #939393;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
 .banner {
   display: grid;
   grid-template-columns: 1fr max-content;

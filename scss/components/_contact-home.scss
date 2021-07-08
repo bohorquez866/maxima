@@ -35,5 +35,27 @@
     }
     & .form-home {
         width: 100%;
+        &>div {
+            margin-bottom: 2rem;
+        }
+        & textarea.contact_input {
+            height: 14rem;
+        }
+        & .contact_input {
+            width: 100%;
+            border: 1px solid #AEAEAE;
+            border-radius: 5px;
+            padding: 1rem 2rem;
+            display: block;
+            font-weight: normal;
+            /* or 111% */
+            &,
+            &::placeholder {
+                letter-spacing: 0.05em;
+                color: #939393;
+                font-family: $font_02;
+                font-size: 14px;
+            }
+        }
     }
 }
