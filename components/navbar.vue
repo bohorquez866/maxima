@@ -15,8 +15,17 @@
     </ul>
 
     <ul class="fixed-social">
-      <li v-for="icon in social.social_media_icons" :key="icon.ID">
-        <a :href="icon.url">{{ icon.type }}</a>
+      <li>
+        <a
+          class="icon-phone"
+          :href="`mailto: ${optionsData.contact_phone}`"
+        ></a>
+      </li>
+      <li>
+        <a class="icon-mail" :href="`mailto: ${optionsData.contact_email}`"></a>
+      </li>
+      <li v-for="icon in optionsData.social_media_icons" :key="icon.ID">
+        <a :class="`icon-${icon.type}`" :href="icon.url"></a>
       </li>
     </ul>
   </nav>
@@ -31,14 +40,10 @@ export default {
     nav() {
       return this.$store.getters.menu
     },
-    social() {
-      return this.$store.getters.perks
-    },
+
     optionsData() {
       return this.$store.getters.perks
     },
   },
-  mounted() {},
-  methods: {},
 }
 </script>
