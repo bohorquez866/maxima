@@ -78,8 +78,8 @@ export default {
         urlPerks: 'wp-json/acf/v3/options/options',
         urlHome: 'wp-json/acf/v3/pages',
         urlService: 'wp-json/wp/v2/service?per_page=100',
-        urlCommercial: 'wp/v2/service?filter[categoria]=commercial&filter[posts_per_page]=100',
-        urlResidential: 'wp/v2/service?filter[categoria]=residential&filter[posts_per_page]=100',
+        urlCommercial: 'wp-json/wp/v2/service?filter[categoria]=commercial&filter[posts_per_page]=100',
+        urlResidential: 'wp-json/wp/v2/service?filter[categoria]=residential&filter[posts_per_page]=100',
         urlCategory: 'wp-json/wp/v2/categoria',
         menu: null,
     }),
@@ -109,9 +109,9 @@ export default {
         this.getMenu()
         this.getPerks()
         this.getHomePage()
-        this.getServiceData()
         this.getCategoryData()
-        this.getServicesData()
+        this.getResidentialData()
+        this.getCommercialData()
     },
     async mounted() {
         this.$loading = this.$refs.loading
@@ -136,8 +136,11 @@ export default {
         optionsData() {
             return this.$store.getters.perks
         },
-        servicesInfo() {
-            return this.$store.getters.services
+        commercialInfo() {
+            return this.$store.getters.commercial
+        },
+        residentialInfo() {
+            return this.$store.getters.residential
         },
         urlPath() {
             return this.$store.getters.urlPath
@@ -274,15 +277,7 @@ export default {
                 })
                 .catch((error) => error)
         },
-        getServiceData() {
-            axios
-                .get(`${this.urlPath}${this.urlHome}`)
-                .then((response) => {
-                    const finalData = response.data
-                    this.$store.commit('SET_SERVICES_ITEMS', finalData)
-                })
-                .catch((error) => error)
-        },
+
         getCategoryData() {
             axios
                 .get(`${this.urlPath}${this.urlCategory}`)
@@ -292,13 +287,21 @@ export default {
                 })
                 .catch((error) => error)
         },
-        getServicesData() {
+        getResidentialData() {
             axios
-                .get(`${this.urlPath}${this.urlService}`)
+                .get(`${this.urlPath}${this.urlResidential}`)
                 .then((response) => {
                     const finalData = response.data
-                    this.$store.commit('SET_SERVICES_ITEMS', finalData)
-                    console.log(this.servicesInfo)
+                    this.$store.commit('SET_RESIDENTIAL_ITEMS', finalData)
+                })
+                .catch((error) => error)
+        },
+        getCommercialData() {
+            axios
+                .get(`${this.urlPath}${this.urlCommercial}`)
+                .then((response) => {
+                    const finalData = response.data
+                    this.$store.commit('SET_COMMERCIAL_ITEMS', finalData)
                 })
                 .catch((error) => error)
         },
