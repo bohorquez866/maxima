@@ -1581,6 +1581,27 @@ button.swiper-pagination-bullet {
   width: 100%;
 }
 
+.posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.posts .posts_item {
+  max-width: 50rem;
+}
+
+.posts .posts_item:nth-child(odd) {
+  justify-self: end;
+}
+
+.posts .posts_item img {
+  width: 100%;
+}
+
+.posts .posts_item .post_img--mobile {
+  display: none;
+}
+
 .footer {
   background-color: #003127;
   display: flex;

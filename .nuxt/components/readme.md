@@ -8,6 +8,7 @@ You can directly use them in pages and other components without the need to impo
 
 - `<AboutAbout>` | `<about-about>` (components/AboutAbout.vue)
 - `<AboutBanner>` | `<about-banner>` (components/AboutBanner.vue)
+- `<CategoryPosts>` | `<category-posts>` (components/CategoryPosts.vue)
 - `<Comments>` | `<comments>` (components/Comments.vue)
 - `<ContactComponent>` | `<contact-component>` (components/ContactComponent.vue)
 - `<Footer>` | `<footer>` (components/Footer.vue)
@@ -16,3 +17,4 @@ You can directly use them in pages and other components without the need to impo
 - `<HomeService>` | `<home-service>` (components/homeService.vue)
 - `<Navbar>` | `<navbar>` (components/Navbar.vue)
 - `<Perks>` | `<perks>` (components/Perks.vue)
+- `<ServiceBanner>` | `<service-banner>` (components/ServiceBanner.vue)

@@ -5,6 +5,9 @@
   "AboutBanner": {
     "description": "Auto imported from components/AboutBanner.vue"
   },
+  "CategoryPosts": {
+    "description": "Auto imported from components/CategoryPosts.vue"
+  },
   "Comments": {
     "description": "Auto imported from components/Comments.vue"
   },
@@ -28,5 +31,8 @@
   },
   "Perks": {
     "description": "Auto imported from components/Perks.vue"
+  },
+  "ServiceBanner": {
+    "description": "Auto imported from components/ServiceBanner.vue"
   }
 }

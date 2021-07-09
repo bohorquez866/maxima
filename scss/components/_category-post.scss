@@ -1,0 +1,17 @@
+.posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    &>article {}
+    & .posts_item {
+        &:nth-child(odd) {
+            justify-self: end;
+        }
+        max-width: 50rem;
+        & img {
+            width: 100%;
+        }
+        & .post_img--mobile {
+            display: none;
+        }
+    }
+}

@@ -1,8 +1,7 @@
 export const state = () => ({
     menu: [],
     perks: [],
-    home: {},
-
+    home: [],
     commercial: [],
     residential: [],
     category: [],
@@ -24,10 +23,36 @@ export const mutations = {
     },
 
     SET_COMMERCIAL_ITEMS(state, payload) {
-        state.commercial = payload
+        let arrayCommercial = []
+        let arrayChilds = []
+        for (let i = 0; i < payload.length; i++) {
+            arrayChilds.push(payload[i])
+            if (i % 2 != 0) {
+                arrayCommercial.push(arrayChilds)
+                arrayChilds = []
+            } else {
+                if (payload.length - 1 == i) {
+                    arrayCommercial.push(arrayChilds)
+                }
+            }
+        }
+        state.commercial = arrayCommercial
     },
     SET_RESIDENTIAL_ITEMS(state, payload) {
-        state.residential = payload
+        let arrayResidential = []
+        let arrayChilds = []
+        for (let i = 0; i < payload.length; i++) {
+            arrayChilds.push(payload[i])
+            if (i % 2 != 0) {
+                arrayResidential.push(arrayChilds)
+                arrayChilds = []
+            } else {
+                if (payload.length - 1 == i) {
+                    arrayResidential.push(arrayChilds)
+                }
+            }
+        }
+        state.residential = arrayResidential
     },
 }
 export const getters = {
@@ -72,6 +97,7 @@ export const actions = {
         commit('SET_COMMERCIAL_ITEMS', payload)
     },
     setResidentialItems({ commit }, payload) {
+        console.log(payload, 'residential')
         commit('SET_RESIDENTIAL_ITEMS', payload)
     },
 }

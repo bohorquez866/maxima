@@ -1,9 +1,17 @@
 <template>
   <main id="2">
     <navbar />
+    <CategoryPosts
+      :posts="commercialInfo"
+      :banner="category[0]"
+      v-if="visibleCommercial"
+    />
 
-    <h1>SERVICEEEE</h1>
-    <div v-html="servicesInfo"></div>
+    <CategoryPosts
+      :posts="residentialInfo"
+      :banner="category[1]"
+      v-if="visibleResidential"
+    />
 
     <Footer />
   </main>
@@ -11,9 +19,27 @@
 
 <script>
 export default {
+  data() {
+    return {
+      visibleCommercial: true,
+      visibleResidential: false,
+    }
+  },
   computed: {
-    servicesInfo() {
-      return this.$store.getters.services
+    commercialInfo() {
+      return this.$store.getters.commercial
+    },
+    residentialInfo() {
+      return this.$store.getters.residential
+    },
+    category() {
+      return this.$store.getters.category
+    },
+  },
+  methods: {
+    showResidential() {
+      this.visibleResidential = true
+      this.visibleCommercial = false
     },
   },
 }
