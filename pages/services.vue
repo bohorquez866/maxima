@@ -3,7 +3,8 @@
     <navbar />
 
     <h1>SERVICEEEE</h1>
-    {{}}
+    <div v-html="servicesInfo"></div>
+
     <Footer />
   </main>
 </template>

@@ -78,6 +78,8 @@ export default {
         urlPerks: 'wp-json/acf/v3/options/options',
         urlHome: 'wp-json/acf/v3/pages',
         urlService: 'wp-json/wp/v2/service?per_page=100',
+        urlCommercial: 'wp/v2/service?filter[categoria]=commercial&filter[posts_per_page]=100',
+        urlResidential: 'wp/v2/service?filter[categoria]=residential&filter[posts_per_page]=100',
         urlCategory: 'wp-json/wp/v2/categoria',
         menu: null,
     }),
@@ -295,8 +297,8 @@ export default {
                 .get(`${this.urlPath}${this.urlService}`)
                 .then((response) => {
                     const finalData = response.data
-                    console.log(finalData)
                     this.$store.commit('SET_SERVICES_ITEMS', finalData)
+                    console.log(this.servicesInfo)
                 })
                 .catch((error) => error)
         },
