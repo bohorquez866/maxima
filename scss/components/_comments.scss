@@ -2,6 +2,7 @@
     background-color: $cream;
     padding: 8rem 0 10rem 0;
     position: relative;
+    overflow: hidden;
     &::before,
     &::after {
         position: absolute;

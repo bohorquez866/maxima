@@ -35,19 +35,53 @@
             & a[href*="home"] {
                 display: none;
             }
-            & a {
-                border-bottom: 2px solid transparent;
-            }
-            & .nuxt-link-exact-active.nuxt-link-active,
-            & a:hover {
-                border-bottom: 2px solid $orange;
+            &:hover {
                 & a {
                     color: $orange;
+                    &:before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        & a {
+            display: block;
+            transition: all .4s ease-in-out;
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: $orange;
+                transition: all .4s linear;
+            }
+            &.nuxt-link-exact-active {
+                color: $orange;
+                &:before {
+                    width: 100%;
                 }
             }
         }
     }
     & .fixed-social {
         margin-left: auto;
+        li {
+            margin-right: 15px;
+            font-size: 16px;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                transition: all .3s ease-in-out;
+                @media(min-width: 1025px) {
+                    &:hover {
+                        color: $orange;
+                    }
+                }
+            }
+        }
     }
 }

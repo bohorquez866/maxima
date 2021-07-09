@@ -45,12 +45,8 @@
                 z-index: 10;
                 margin-left: auto;
                 margin-right: 11rem;
-                & a {
-                    @include btn-creator(5px, $orange, 15rem, 45px);
-                    background-color: $orange;
-                    margin-top: 5rem;
-                    color: $white;
-                    font-size: 15px;
+                p {
+                    margin-bottom: 5rem;
                 }
             }
         }

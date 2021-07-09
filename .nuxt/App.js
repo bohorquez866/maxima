@@ -109,6 +109,7 @@ export default {
         this.getHomePage()
         this.getServiceData()
         this.getCategoryData()
+        this.getServicesData()
     },
     async mounted() {
         this.$loading = this.$refs.loading
@@ -133,7 +134,9 @@ export default {
         optionsData() {
             return this.$store.getters.perks
         },
-
+        servicesInfo() {
+            return this.$store.getters.services
+        },
         urlPath() {
             return this.$store.getters.urlPath
         },
@@ -284,6 +287,16 @@ export default {
                 .then((response) => {
                     const finalData = response.data
                     this.$store.commit('SET_CATEGORY_ITEMS', finalData)
+                })
+                .catch((error) => error)
+        },
+        getServicesData() {
+            axios
+                .get(`${this.urlPath}${this.urlService}`)
+                .then((response) => {
+                    const finalData = response.data
+                    console.log(finalData)
+                    this.$store.commit('SET_SERVICES_ITEMS', finalData)
                 })
                 .catch((error) => error)
         },

@@ -25,20 +25,26 @@
       </div>
     </div>
 
-    <ValidationObserver class="home-form-wrapper" v-slot="{ handleSubmit }">
+    <ValidationObserver
+      class="home-form-wrapper"
+      v-slot="{ handleSubmit }"
+      ref="form"
+    >
       <form
+        :key="reset"
         class="form-home"
         novalidate="novalidate"
         @submit.prevent="handleSubmit(sendEmail)"
         method="POST"
       >
-        <div>
+        <div class="input_item">
           <ValidationProvider name="text" rules="required" v-slot="{ errors }">
             <textarea
+              ref="inputs"
               name="message"
               id="message"
               v-model="message"
-              placeholder="message"
+              placeholder="Your Message"
               class="contact_input"
             ></textarea>
             <span style="color: red">{{ errors[0] }}</span>
@@ -60,7 +66,11 @@
         </div>
 
         <div>
-          <ValidationProvider name="text" rules="required" v-slot="{ errors }">
+          <ValidationProvider
+            name="text"
+            rules="required|email"
+            v-slot="{ errors }"
+          >
             <input
               type="mail"
               id="email"
@@ -73,7 +83,11 @@
           </ValidationProvider>
         </div>
 
-        <button type="submit" id="form-submit">sasasas</button>
+        <button class="btn_general" type="submit" id="form-submit">Send</button>
+
+        <span v-if="successMessage" class="success-message">
+          <p>SENT SUCCESSFULLY</p>
+        </span>
       </form>
     </ValidationObserver>
   </section>
@@ -96,11 +110,14 @@ extend('required', {
 export default {
   data() {
     return {
-      name: '',
-      email: '',
-      message: '',
+      name: null,
+      email: null,
+      message: null,
+      successMessage: false,
+      reset: 0,
     }
   },
+
   computed: {
     contact() {
       return this.$store.getters.perks
@@ -109,24 +126,37 @@ export default {
       return this.$store.getters.urlPath
     },
   },
+
   components: {
     ValidationProvider,
     ValidationObserver,
   },
+
   methods: {
     sendEmail: function () {
       const formData = new FormData()
       formData.append('name', this.name)
       formData.append('email', this.email)
       formData.append('message', this.message)
+
       axios
         .post(`http://localhost/maxima/backend/mail.php`, formData)
-        .then((res) => {
-          console.log(res)
-        })
+        .then((res) => {})
         .catch((error) => {
           console.log(error)
         })
+
+      this.name = null
+      this.email = null
+      this.message = null
+      this.reset++
+
+      console.log(this.reset)
+      this.successMessage = true
+      setTimeout(() => {
+        this.successMessage = false
+      }, 3000)
+      //*
     },
   },
 }

@@ -1,5 +1,6 @@
 .page-info {
     display: flex;
+    align-items: center;
     justify-content: center;
     column-gap: 8rem;
     margin-bottom: 11rem;
@@ -35,25 +36,20 @@
     }
     & .home-about-info {
         width: 40rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         & h4 {
             margin-bottom: 1.5rem;
             text-transform: uppercase;
+            width: 100%;
         }
         & .title {
             margin-bottom: 3.5rem;
+            width: 100%;
         }
         & p:not(:last-of-type) {
             margin-bottom: 1.5rem;
         }
         & a {
             margin-top: 4rem;
-            @include btn-creator(5px, $orange, 15.5rem, 45px);
-            background-color: $orange;
-            color: $white;
-            text-transform: capitalize;
         }
     }
 }

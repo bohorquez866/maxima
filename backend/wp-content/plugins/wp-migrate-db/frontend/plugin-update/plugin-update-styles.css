@@ -15,24 +15,29 @@
 .plugin-update-tr.wpmdbpro-custom .update-message.pre-shiny-updates {
   padding-left: 40px;
 }
+
 .plugin-update-tr.wpmdbpro-custom-visible .update-message.pre-shiny-updates::before,
 .plugin-update-tr.wpmdbpro-custom .update-message.pre-shiny-updates::before {
   margin-left: -30px;
   float: left;
 }
+
 .plugin-update-tr.wpmdbpro-custom-visible .update-message.pre-shiny-updates p,
 .plugin-update-tr.wpmdbpro-custom .update-message.pre-shiny-updates p {
   display: inline-block;
   margin: 0;
 }
+
 .plugin-update-tr.wpmdbpro-custom-visible .update-message.pre-shiny-updates span,
 .plugin-update-tr.wpmdbpro-custom .update-message.pre-shiny-updates span {
   display: block;
 }
+
 .plugin-update-tr.wpmdbpro-custom-visible .update-message.post-shiny-updates p::before,
 .plugin-update-tr.wpmdbpro-custom .update-message.post-shiny-updates p::before {
   position: absolute;
 }
+
 .plugin-update-tr.wpmdbpro-custom-visible .update-message.post-shiny-updates p span,
 .plugin-update-tr.wpmdbpro-custom .update-message.post-shiny-updates p span {
   margin-left: 30px;
@@ -48,5 +53,3 @@
 .plugins .plugin-update-tr .wpmdb-compat-plugin-row-error .notice {
   margin-top: 0;
 }
-
-/*# sourceMappingURL=plugin-update-styles.css.map */

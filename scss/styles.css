@@ -173,41 +173,34 @@ h4 {
   display: flex;
 }
 
-.btn {
-  border: none;
+.btn_general {
+  appearance: none;
   outline: none;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: "Open Sans", sans-serif;
-  display: inline-block;
-  display: flex;
+  border-radius: 5px;
+  border: 1px solid #F57F2F;
+  font-weight: 600;
+  width: auto;
+  padding: 0 35px;
+  box-sizing: border-box;
+  height: 45px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all .5s ease-in-out;
-}
-
-.btn + .btn {
-  margin-left: 3rem;
-}
-
-.btn--yellow {
-  background-color: #FFCF00;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  font-family: "Source Serif Pro", serif;
+  background-color: #F57F2F;
   color: #fff;
-  padding: 1px 2rem;
-  border: 2px solid transparent;
-  width: 172px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-style: italic;
+  font-size: 15px;
+  transition: all .3s ease-in-out;
 }
 
-.btn--yellow:hover {
-  background-color: transparent;
-  color: #000;
-  border: 2px solid #000;
+@media (min-width: 1025px) {
+  .btn_general:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #000;
+  }
 }
 
 .header-responsive-picture {
@@ -1009,22 +1002,60 @@ button.swiper-pagination-bullet {
   display: none;
 }
 
-.navbar__list li a {
-  border-bottom: 2px solid transparent;
-}
-
-.navbar__list li .nuxt-link-exact-active.nuxt-link-active,
-.navbar__list li a:hover {
-  border-bottom: 2px solid #F57F2F;
-}
-
-.navbar__list li .nuxt-link-exact-active.nuxt-link-active a,
-.navbar__list li a:hover a {
+.navbar__list li:hover a {
   color: #F57F2F;
+}
+
+.navbar__list li:hover a:before {
+  width: 100%;
+}
+
+.navbar__list a {
+  display: block;
+  transition: all .4s ease-in-out;
+  position: relative;
+}
+
+.navbar__list a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #F57F2F;
+  transition: all .4s linear;
+}
+
+.navbar__list a.nuxt-link-exact-active {
+  color: #F57F2F;
+}
+
+.navbar__list a.nuxt-link-exact-active:before {
+  width: 100%;
 }
 
 .navbar .fixed-social {
   margin-left: auto;
+}
+
+.navbar .fixed-social li {
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.navbar .fixed-social li:last-child {
+  margin-right: 0;
+}
+
+.navbar .fixed-social li a {
+  transition: all .3s ease-in-out;
+}
+
+@media (min-width: 1025px) {
+  .navbar .fixed-social li a:hover {
+    color: #F57F2F;
+  }
 }
 
 .perks {
@@ -1050,18 +1081,44 @@ button.swiper-pagination-bullet {
   height: 12rem;
   border-radius: 5px;
   overflow: hidden;
+  border: 1px solid;
+  transition: all .3s ease-in-out;
 }
 
 .perks .perk figure.perk-figure-1 {
   background-color: #E8EEE2;
+  border-color: #E8EEE2;
 }
 
 .perks .perk figure.perk-figure-2 {
   background-color: #FFE9E2;
+  border-color: #FFE9E2;
 }
 
 .perks .perk figure.perk-figure-3 {
   background-color: #FFF6E7;
+  border-color: #FFF6E7;
+}
+
+@media (min-width: 1025px) {
+  .perks .perk figure:hover {
+    background-color: #fff;
+    border-color: #000;
+  }
+  .perks .perk figure:hover .perk_brown {
+    display: none;
+  }
+  .perks .perk figure:hover .perk_color {
+    display: block;
+  }
+}
+
+.perks .perk figure img {
+  transition: all .3s ease-in-out;
+}
+
+.perks .perk figure img.perk_color {
+  display: none;
 }
 
 .perks .perk .perk_info {
@@ -1081,6 +1138,7 @@ button.swiper-pagination-bullet {
 
 .page-info {
   display: flex;
+  align-items: center;
   justify-content: center;
   column-gap: 8rem;
   margin-bottom: 11rem;
@@ -1122,18 +1180,17 @@ button.swiper-pagination-bullet {
 
 .page-info .home-about-info {
   width: 40rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .page-info .home-about-info h4 {
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .page-info .home-about-info .title {
   margin-bottom: 3.5rem;
+  width: 100%;
 }
 
 .page-info .home-about-info p:not(:last-of-type) {
@@ -1142,23 +1199,6 @@ button.swiper-pagination-bullet {
 
 .page-info .home-about-info a {
   margin-top: 4rem;
-  appearance: none;
-  outline: none;
-  border-radius: 5px;
-  border: 1px solid #F57F2F;
-  text-transform: uppercase;
-  font-weight: 600;
-  width: 15.5rem;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  letter-spacing: 0.05em;
-  font-family: "Source Serif Pro", serif;
-  background-color: #F57F2F;
-  color: #fff;
-  text-transform: capitalize;
 }
 
 .page-info.about_info::after {
@@ -1169,6 +1209,7 @@ button.swiper-pagination-bullet {
   background-color: #FFF6E7;
   padding: 8rem 0 10rem 0;
   position: relative;
+  overflow: hidden;
 }
 
 .comments::before, .comments::after {
@@ -1343,6 +1384,29 @@ button.swiper-pagination-bullet {
   font-size: 14px;
 }
 
+.contact .success-message {
+  background-color: #0c5c41;
+  width: 100%;
+  border-radius: 5px;
+  width: 30rem;
+  padding: 1rem 2rem;
+  margin-top: 4rem;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+
+.contact .success-message p {
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  border-bottom: 3px solid white;
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .banner {
   display: grid;
   grid-template-columns: 1fr max-content;
@@ -1399,25 +1463,8 @@ button.swiper-pagination-bullet {
   margin-right: 11rem;
 }
 
-.home_banner article > div > div a {
-  appearance: none;
-  outline: none;
-  border-radius: 5px;
-  border: 1px solid #F57F2F;
-  text-transform: uppercase;
-  font-weight: 600;
-  width: 15rem;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  letter-spacing: 0.05em;
-  font-family: "Source Serif Pro", serif;
-  background-color: #F57F2F;
-  margin-top: 5rem;
-  color: #fff;
-  font-size: 15px;
+.home_banner article > div > div p {
+  margin-bottom: 5rem;
 }
 
 .home_banner figure {
@@ -1490,6 +1537,18 @@ button.swiper-pagination-bullet {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.home_service .home_service_item > div:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: .55;
 }
 
 .home_service .home_service_item > div article {
@@ -1500,6 +1559,8 @@ button.swiper-pagination-bullet {
   align-items: center;
   flex-direction: column;
   display: flex;
+  position: relative;
+  z-index: 2;
 }
 
 .home_service .home_service_item > div article h2 {

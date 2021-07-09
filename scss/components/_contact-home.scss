@@ -58,4 +58,24 @@
             }
         }
     }
+    & .success-message {
+        background-color: rgb(12, 92, 65);
+        width: 100%;
+        border-radius: 5px;
+        width: 30rem;
+        padding: 1rem 2rem;
+        margin-top: 4rem;
+        margin-bottom: 0;
+        @include margin-x;
+        display: block;
+        text-align: center;
+        & p {
+            font-weight: 600;
+            font-family: $font_02;
+            color: $white;
+            border-bottom: 3px solid white;
+            width: fit-content;
+            margin: 0 auto;
+        }
+    }
 }
