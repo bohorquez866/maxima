@@ -1581,25 +1581,111 @@ button.swiper-pagination-bullet {
   width: 100%;
 }
 
-.posts {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.residential_services,
+.commercial_services {
+  margin-bottom: 14rem;
 }
 
-.posts .posts_item {
+.residential_services .posts,
+.commercial_services .posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4.69%;
+  padding: 4rem 0;
+}
+
+.residential_services .posts:nth-child(2n+2),
+.commercial_services .posts:nth-child(2n+2) {
+  background-color: #F7FFEF;
+}
+
+.residential_services .posts:nth-child(4n+4),
+.commercial_services .posts:nth-child(4n+4) {
+  background-color: #FFF4F0;
+}
+
+.residential_services .posts .posts_item,
+.commercial_services .posts .posts_item {
   max-width: 50rem;
 }
 
-.posts .posts_item:nth-child(odd) {
+.residential_services .posts .posts_item:nth-child(odd),
+.commercial_services .posts .posts_item:nth-child(odd) {
   justify-self: end;
 }
 
-.posts .posts_item img {
+.residential_services .posts .posts_item h2,
+.commercial_services .posts .posts_item h2 {
+  margin-top: 2rem;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 25px;
+  /* or 132% */
+  letter-spacing: 0.05em;
+  color: #412903;
+}
+
+.residential_services .posts .posts_item > div,
+.commercial_services .posts .posts_item > div {
+  min-height: 8rem;
+}
+
+.residential_services .posts .posts_item a,
+.commercial_services .posts .posts_item a {
+  margin-top: 3rem;
+}
+
+.residential_services .posts .posts_item img,
+.commercial_services .posts .posts_item img {
   width: 100%;
 }
 
-.posts .posts_item .post_img--mobile {
+.residential_services .posts .posts_item .post_img--mobile,
+.commercial_services .posts .posts_item .post_img--mobile {
   display: none;
+}
+
+.residential_services .service_banner,
+.commercial_services .service_banner {
+  margin-bottom: 9rem;
+  padding: 0 3.91%;
+  display: flex;
+  height: 32rem;
+}
+
+.residential_services .service_banner figure,
+.commercial_services .service_banner figure {
+  flex-basis: 60%;
+}
+
+.residential_services .service_banner figure img,
+.commercial_services .service_banner figure img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.residential_services .service_banner article,
+.commercial_services .service_banner article {
+  background: url(../assets/img/bg.png);
+  flex-basis: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.residential_services .service_banner article h1,
+.commercial_services .service_banner article h1 {
+  margin-bottom: 1rem;
+}
+
+.residential_services .service_banner article > div,
+.commercial_services .service_banner article > div {
+  max-width: 39rem;
+}
+
+.residential_services .service_banner figure {
+  order: -1;
 }
 
 .footer {

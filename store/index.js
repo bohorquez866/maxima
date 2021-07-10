@@ -97,7 +97,6 @@ export const actions = {
         commit('SET_COMMERCIAL_ITEMS', payload)
     },
     setResidentialItems({ commit }, payload) {
-        console.log(payload, 'residential')
         commit('SET_RESIDENTIAL_ITEMS', payload)
     },
 }

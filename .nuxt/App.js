@@ -301,7 +301,6 @@ export default {
                 .get(`${this.urlPath}${this.urlCommercial}`)
                 .then((response) => {
                     const finalData = response.data
-                    console.log(finalData)
                     this.$store.commit('SET_COMMERCIAL_ITEMS', finalData)
                 })
                 .catch((error) => error)
