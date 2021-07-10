@@ -58,6 +58,10 @@
                     list-style-type: disc;
                     margin-left: 12rem;
                     @extend .text;
+                    @include mq($bpLarge) {
+                        margin-bottom: 5px;
+                        margin-left: 2rem;
+                    }
                 }
             }
         }

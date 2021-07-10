@@ -1380,6 +1380,13 @@ button.swiper-pagination-bullet {
   justify-content: center;
 }
 
+@media only screen and (max-width: 106em) {
+  .contact {
+    column-gap: 6rem;
+    grid-template-columns: 40rem 45rem;
+  }
+}
+
 .contact_info h2 {
   margin-bottom: 4rem;
 }
@@ -1678,6 +1685,13 @@ button.swiper-pagination-bullet {
   margin-left: 12rem;
 }
 
+@media only screen and (max-width: 106em) {
+  .home_service .home_service_item > div article li {
+    margin-bottom: 5px;
+    margin-left: 2rem;
+  }
+}
+
 .home_service .home_service_item figure {
   width: 100%;
 }
@@ -1713,6 +1727,15 @@ button.swiper-pagination-bullet {
   color: rgba(65, 41, 3, 0.07);
 }
 
+@media only screen and (max-width: 106em) {
+  .residential_services .posts::before, .residential_services .posts::after,
+  .commercial_services .posts::before,
+  .commercial_services .posts::after {
+    font-size: 6.5rem;
+    letter-spacing: 0.1em;
+  }
+}
+
 .residential_services .posts::before,
 .commercial_services .posts::before {
   top: 4rem;
@@ -1743,6 +1766,13 @@ button.swiper-pagination-bullet {
 .residential_services .posts .posts_item:nth-child(odd),
 .commercial_services .posts .posts_item:nth-child(odd) {
   justify-self: end;
+}
+
+@media only screen and (max-width: 106em) {
+  .residential_services .posts .posts_item,
+  .commercial_services .posts .posts_item {
+    width: 40rem;
+  }
 }
 
 .residential_services .posts .posts_item h2,
@@ -1880,8 +1910,20 @@ button.swiper-pagination-bullet {
   content: 'NANCE';
 }
 
+@media only screen and (max-width: 106em) {
+  .commercial_services .posts-1::before {
+    left: -2rem;
+  }
+}
+
 .commercial_services .posts-1::after {
   content: 'MAINT';
+}
+
+@media only screen and (max-width: 106em) {
+  .commercial_services .posts-1::after {
+    right: -3rem;
+  }
 }
 
 .commercial_services .posts-3::before {
@@ -1894,6 +1936,12 @@ button.swiper-pagination-bullet {
   right: -4rem;
 }
 
+@media only screen and (max-width: 106em) {
+  .commercial_services .posts-3::after {
+    right: -3rem;
+  }
+}
+
 .commercial_services .posts-5::before {
   content: ' HOOLS';
   left: -2rem;
@@ -1902,6 +1950,12 @@ button.swiper-pagination-bullet {
 .commercial_services .posts-5::after {
   content: 'FLOOR';
   right: -4rem;
+}
+
+@media only screen and (max-width: 106em) {
+  .commercial_services .posts-5::after {
+    right: -2rem;
+  }
 }
 
 .footer {

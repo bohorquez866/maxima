@@ -4,6 +4,10 @@
     grid-template-columns: 40rem 57rem;
     column-gap: 14rem;
     justify-content: center;
+    @include mq($bpLarge) {
+        column-gap: 6rem;
+        grid-template-columns: 40rem 45rem;
+    }
     &_info {
         & h2 {
             margin-bottom: 4rem;

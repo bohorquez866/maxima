@@ -16,6 +16,10 @@
             letter-spacing: 0.15em;
             font-family: $font_01;
             color: rgba(65, 41, 3, 0.07);
+            @include mq($bpLarge) {
+                font-size: 6.5rem;
+                letter-spacing: 0.1em;
+            }
         }
         &::before {
             top: 4rem;
@@ -36,6 +40,9 @@
                 justify-self: end;
             }
             max-width: 50rem;
+            @include mq($bpLarge) {
+                width: 40rem;
+            }
             & h2 {
                 margin-top: 2rem;
                 font-weight: 600;
@@ -159,9 +166,15 @@
         &-1 {
             &::before {
                 content: 'NANCE';
+                @include mq($bpLarge) {
+                    left: -2rem;
+                }
             }
             &::after {
                 content: 'MAINT';
+                @include mq($bpLarge) {
+                    right: -3rem;
+                }
             }
         }
         &-3 {
@@ -172,6 +185,9 @@
             &::after {
                 content: 'CLEAN';
                 right: -4rem;
+                @include mq($bpLarge) {
+                    right: -3rem;
+                }
             }
         }
         &-5 {
@@ -182,6 +198,9 @@
             &::after {
                 content: 'FLOOR';
                 right: -4rem;
+                @include mq($bpLarge) {
+                    right: -2rem;
+                }
             }
         }
     }
