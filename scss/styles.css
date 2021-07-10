@@ -120,7 +120,7 @@ select:active {
 
 @media only screen and (min-width: 106em) {
   .text, p, .home_service .home_service_item > div article li {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 
@@ -169,7 +169,7 @@ h4 {
 *H4 har letter-spacing av  0.025
 *title har letter-spacing av  0.01
 */
-.is-flex, .arrow {
+.is-flex {
   display: flex;
 }
 
@@ -220,19 +220,19 @@ h4 {
 }
 
 .arrow {
-  width: 4.2rem;
-  height: 95px;
-  background-color: #000;
+  width: fit-content;
+  height: fit-content;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 45%;
-  z-index: 10000;
-  color: #fff;
+  top: 36%;
+  z-index: 100;
+  color: #F57F2F;
   font-weight: 600;
   font-size: 3rem;
   cursor: pointer;
   transition: all .3s ease;
+  display: none;
 }
 
 .arrow i {
@@ -240,7 +240,7 @@ h4 {
 }
 
 .arrow i::before {
-  color: #fff !important;
+  color: #F57F2F !important;
 }
 
 @media only screen and (max-width: 106em) {
@@ -1067,10 +1067,22 @@ button.swiper-pagination-bullet {
   padding: 11rem 13.31%;
 }
 
+@media only screen and (max-width: 106em) {
+  .perks {
+    column-gap: 6rem;
+  }
+}
+
 .perks .perk {
   display: grid;
   grid-template-columns: 12rem 26rem;
   column-gap: 2.5rem;
+}
+
+@media only screen and (max-width: 106em) {
+  .perks .perk {
+    grid-template-columns: 9rem 18rem;
+  }
 }
 
 .perks .perk figure {
@@ -1083,6 +1095,12 @@ button.swiper-pagination-bullet {
   overflow: hidden;
   border: 1px solid;
   transition: all .3s ease-in-out;
+}
+
+@media only screen and (max-width: 106em) {
+  .perks .perk figure {
+    height: 9rem;
+  }
 }
 
 .perks .perk figure.perk-figure-1 {
@@ -1117,6 +1135,12 @@ button.swiper-pagination-bullet {
   transition: all .3s ease-in-out;
 }
 
+@media only screen and (max-width: 106em) {
+  .perks .perk figure img {
+    height: 4.5rem;
+  }
+}
+
 .perks .perk figure img.perk_color {
   display: none;
 }
@@ -1132,8 +1156,14 @@ button.swiper-pagination-bullet {
   font-size: 17px;
   line-height: 22px;
   width: 50%;
-  /* or 129% */
   letter-spacing: 0.05em;
+}
+
+@media only screen and (max-width: 106em) {
+  .perks .perk .perk_info h3 {
+    width: 60%;
+    font-size: 14px;
+  }
 }
 
 .page-info {
@@ -1159,6 +1189,13 @@ button.swiper-pagination-bullet {
   letter-spacing: 0.25em;
 }
 
+@media only screen and (max-width: 106em) {
+  .page-info::after {
+    font-size: 11rem;
+    top: -0.5rem;
+  }
+}
+
 .page-info::before {
   content: 'ABOUT US';
   left: 5%;
@@ -1169,8 +1206,22 @@ button.swiper-pagination-bullet {
   letter-spacing: 0.15em;
 }
 
+@media only screen and (max-width: 106em) {
+  .page-info::before {
+    left: -4%;
+    top: calc(37% + -.5rem);
+    font-size: 8.5rem;
+  }
+}
+
 .page-info figure {
   width: 42rem;
+}
+
+@media only screen and (max-width: 106em) {
+  .page-info figure {
+    width: 35rem;
+  }
 }
 
 .page-info figure img {
@@ -1202,7 +1253,7 @@ button.swiper-pagination-bullet {
 }
 
 .page-info.about_info::after {
-  top: 0.5rem;
+  top: -2.5rem;
 }
 
 .comments {
@@ -1210,6 +1261,12 @@ button.swiper-pagination-bullet {
   padding: 8rem 0 10rem 0;
   position: relative;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 106em) {
+  .comments {
+    padding: 5rem 0 6rem 0;
+  }
 }
 
 .comments::before, .comments::after {
@@ -1445,7 +1502,7 @@ button.swiper-pagination-bullet {
 .home_banner article {
   padding: 0 3.91%;
   display: grid;
-  grid-template-columns: 666px 1fr;
+  grid-template-columns: 34.69% 1fr;
 }
 
 .home_banner article > div {
@@ -1474,14 +1531,46 @@ button.swiper-pagination-bullet {
 
 .home_banner figure img {
   height: 100%;
+  object-fit: cover;
+  object-position: top;
   width: 100%;
 }
 
+.home_banner .arrow.arrow-next {
+  left: 3rem;
+  transform: rotate(180deg);
+}
+
+.home_banner .arrow.arrow-prev {
+  right: 3rem;
+  transform: rotate(unset);
+}
+
+.home_banner .arrow.arrow-prev,
+.home_banner .arrow.arrow-next {
+  display: flex;
+}
+
+.home_banner .slide-2 {
+  grid-template-columns: 1fr 34.69%;
+}
+
+.home_banner .slide-2 figure {
+  order: -1;
+}
+
 .contact-page .contact {
-  grid-template-columns: 80rem 1fr;
+  grid-template-columns: 41.67% 1fr;
   grid-template-rows: 60rem;
   padding: 0 3.91%;
+  column-gap: 0;
   padding-bottom: 8rem;
+}
+
+@media only screen and (max-width: 106em) {
+  .contact-page .contact {
+    grid-template-rows: 43rem;
+  }
 }
 
 .contact-page .contact_info {
@@ -1495,6 +1584,23 @@ button.swiper-pagination-bullet {
   width: 40rem;
   margin-left: auto;
   margin-right: 11rem;
+}
+
+@media only screen and (max-width: 106em) {
+  .contact-page .contact_info > div {
+    margin-right: 5rem;
+  }
+}
+
+.contact-page .home-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets/img/contact-bg.jpg);
+}
+
+.contact-page .form-home {
+  max-width: 57rem;
 }
 
 .home_service {
@@ -1592,6 +1698,31 @@ button.swiper-pagination-bullet {
   grid-template-columns: repeat(2, 1fr);
   column-gap: 4.69%;
   padding: 4rem 0;
+  position: relative;
+}
+
+.residential_services .posts::before, .residential_services .posts::after,
+.commercial_services .posts::before,
+.commercial_services .posts::after {
+  position: absolute;
+  font-weight: normal;
+  font-size: 100px;
+  line-height: 75px;
+  letter-spacing: 0.15em;
+  font-family: "Source Serif Pro", serif;
+  color: rgba(65, 41, 3, 0.07);
+}
+
+.residential_services .posts::before,
+.commercial_services .posts::before {
+  top: 4rem;
+  left: -4rem;
+}
+
+.residential_services .posts::after,
+.commercial_services .posts::after {
+  bottom: 4rem;
+  right: -4rem;
 }
 
 .residential_services .posts:nth-child(2n+2),
@@ -1622,6 +1753,7 @@ button.swiper-pagination-bullet {
   line-height: 25px;
   /* or 132% */
   letter-spacing: 0.05em;
+  margin-bottom: 1rem;
   color: #412903;
 }
 
@@ -1655,7 +1787,36 @@ button.swiper-pagination-bullet {
 
 .residential_services .service_banner figure,
 .commercial_services .service_banner figure {
+  position: relative;
   flex-basis: 60%;
+}
+
+.residential_services .service_banner figure .toggle-service,
+.commercial_services .service_banner figure .toggle-service {
+  position: absolute;
+  display: block;
+  width: 32rem;
+  padding-top: 3rem;
+  cursor: pointer;
+  padding-left: 4rem;
+  height: 100%;
+  background: linear-gradient(180deg, #f47520ce 25%, rgba(245, 127, 47, 0) 100%);
+  background-blend-mode: multiply;
+  transform: rotate(270deg);
+}
+
+.residential_services .service_banner figure .toggle-service span,
+.commercial_services .service_banner figure .toggle-service span {
+  color: #fff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  font-family: "Source Serif Pro", serif;
+  letter-spacing: 0.05em;
+  display: block;
+  width: 50%;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .residential_services .service_banner figure img,
@@ -1677,6 +1838,7 @@ button.swiper-pagination-bullet {
 .residential_services .service_banner article h1,
 .commercial_services .service_banner article h1 {
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .residential_services .service_banner article > div,
@@ -1686,6 +1848,60 @@ button.swiper-pagination-bullet {
 
 .residential_services .service_banner figure {
   order: -1;
+}
+
+.residential_services .posts-1::before {
+  content: 'ANING';
+  left: -2rem;
+}
+
+.residential_services .posts-1::after {
+  content: 'CLEAN';
+}
+
+.residential_services .posts-3::before {
+  content: ' ANING';
+  left: -2rem;
+}
+
+.residential_services .posts-3::after {
+  content: 'CARPET';
+  right: -4rem;
+}
+
+.commercial_services .service_banner figure .toggle-service {
+  top: 0;
+  right: 0;
+  transform: rotate(90deg);
+  padding-left: 8rem;
+}
+
+.commercial_services .posts-1::before {
+  content: 'NANCE';
+}
+
+.commercial_services .posts-1::after {
+  content: 'MAINT';
+}
+
+.commercial_services .posts-3::before {
+  content: ' DUCTS';
+  left: -2rem;
+}
+
+.commercial_services .posts-3::after {
+  content: 'CLEAN';
+  right: -4rem;
+}
+
+.commercial_services .posts-5::before {
+  content: ' HOOLS';
+  left: -2rem;
+}
+
+.commercial_services .posts-5::after {
+  content: 'FLOOR';
+  right: -4rem;
 }
 
 .footer {

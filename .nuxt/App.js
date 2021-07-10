@@ -78,8 +78,8 @@ export default {
         urlPerks: 'wp-json/acf/v3/options/options',
         urlHome: 'wp-json/acf/v3/pages',
         urlService: 'wp-json/wp/v2/service?per_page=100',
-        urlCommercial: 'wp-json/wp/v2/service?filter[categoria]=commercial&filter[posts_per_page]=100',
-        urlResidential: 'wp-json/wp/v2/service?filter[categoria]=residential&filter[posts_per_page]=100',
+        urlCommercial: 'wp-json/wp/v2/service?filter[categoria]=commercial&filter[posts_per_page]=20&filter[orderby]=date&order=asc',
+        urlResidential: 'wp-json/wp/v2/service?filter[categoria]=residential&filter[posts_per_page]=20&filter[orderby]=date&order=asc',
         urlCategory: 'wp-json/wp/v2/categoria',
         menu: null,
     }),
@@ -292,6 +292,7 @@ export default {
                 .get(`${this.urlPath}${this.urlResidential}`)
                 .then((response) => {
                     const finalData = response.data
+                    console.log(finalData)
                     this.$store.commit('SET_RESIDENTIAL_ITEMS', finalData)
                 })
                 .catch((error) => error)

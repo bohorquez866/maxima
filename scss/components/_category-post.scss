@@ -6,12 +6,30 @@
         grid-template-columns: repeat(2, 1fr);
         column-gap: 4.69%;
         padding: 4rem 0;
+        position: relative;
+        &::before,
+        &::after {
+            position: absolute;
+            font-weight: normal;
+            font-size: 100px;
+            line-height: 75px;
+            letter-spacing: 0.15em;
+            font-family: $font_01;
+            color: rgba(65, 41, 3, 0.07);
+        }
+        &::before {
+            top: 4rem;
+            left: -4rem;
+        }
+        &::after {
+            bottom: 4rem;
+            right: -4rem;
+        }
         &:nth-child(2n+2) {
             background-color: #F7FFEF;
         }
         &:nth-child(4n+4) {
             background-color: #FFF4F0;
-            ;
         }
         & .posts_item {
             &:nth-child(odd) {
@@ -25,6 +43,7 @@
                 line-height: 25px;
                 /* or 132% */
                 letter-spacing: 0.05em;
+                margin-bottom: 1rem;
                 color: #412903;
             }
             &>div {
@@ -47,7 +66,32 @@
         display: flex;
         height: 32rem;
         & figure {
+            position: relative;
             flex-basis: 60%;
+            & .toggle-service {
+                position: absolute;
+                display: block;
+                width: 32rem;
+                padding-top: 3rem;
+                cursor: pointer;
+                padding-left: 4rem;
+                height: 100%;
+                background: linear-gradient(180deg, #f47520ce 25%, rgba(245, 127, 47, 0) 100%);
+                background-blend-mode: multiply;
+                transform: rotate( 270deg);
+                & span {
+                    color: $white;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 25px;
+                    font-family: $font_01;
+                    letter-spacing: 0.05em;
+                    display: block;
+                    width: 50%;
+                    line-height: 1.2;
+                    text-transform: uppercase;
+                }
+            }
             & img {
                 object-fit: cover;
                 width: 100%;
@@ -62,6 +106,7 @@
             justify-content: center;
             & h1 {
                 margin-bottom: 1rem;
+                text-transform: uppercase;
             }
             &>div {
                 max-width: 39rem;
@@ -74,6 +119,70 @@
     .service_banner {
         & figure {
             order: -1;
+        }
+    }
+    & .posts {
+        &-1 {
+            &::before {
+                content: 'ANING';
+                left: -2rem;
+            }
+            &::after {
+                content: 'CLEAN';
+            }
+        }
+        &-3 {
+            &::before {
+                content: ' ANING';
+                left: -2rem;
+            }
+            &::after {
+                content: 'CARPET';
+                right: -4rem;
+            }
+        }
+    }
+}
+
+.commercial_services {
+    & .service_banner {
+        & figure {
+            & .toggle-service {
+                top: 0;
+                right: 0;
+                transform: rotate(90deg);
+                padding-left: 8rem;
+            }
+        }
+    }
+    & .posts {
+        &-1 {
+            &::before {
+                content: 'NANCE';
+            }
+            &::after {
+                content: 'MAINT';
+            }
+        }
+        &-3 {
+            &::before {
+                content: ' DUCTS';
+                left: -2rem;
+            }
+            &::after {
+                content: 'CLEAN';
+                right: -4rem;
+            }
+        }
+        &-5 {
+            &::before {
+                content: ' HOOLS';
+                left: -2rem;
+            }
+            &::after {
+                content: 'FLOOR';
+                right: -4rem;
+            }
         }
     }
 }

@@ -5,9 +5,24 @@
     class="home_banner swiper w-5/6 ml-auto relative"
   >
     <section class="swiper-wrapper">
-      <article v-for="data in category" :key="data.id" class="swiper-slide">
-        <span class="arrow">-></span>
-        <div>
+      <!-- SLIDE -->
+      <article
+        v-for="(data, index) in category"
+        :key="data.id"
+        :class="`swiper-slide slide-${index + 1}`"
+      >
+        <div class="content-wrapper">
+          <span
+            :class="{
+              'icon-arrow2': true,
+              arrow: true,
+              'arrow-next': index + 1 == 1,
+              'arrow-prev': index + 1 == 2,
+            }"
+          >
+          </span>
+
+          <!-- inner content -->
           <div>
             <h4>SERVICES</h4>
             <h2 class="title">{{ data.home_title }}</h2>
@@ -15,9 +30,11 @@
             <nuxt-link :to="data.slug" class="btn_general">Read More</nuxt-link>
           </div>
         </div>
+
         <figure>
           <img :src="data.acf.home_image" alt="" />
         </figure>
+        <!--  -->
       </article>
     </section>
   </section>
@@ -44,8 +61,8 @@ export default {
         effect: 'fade',
         fadeEffect: { crossFade: true },
         navigation: {
-          nextEl: '.comment-arrow-next',
-          prevEl: '.comment-arrow-prev',
+          nextEl: '.arrow.arrow-next',
+          prevEl: '.arrow.arrow-prev',
         },
       },
     }

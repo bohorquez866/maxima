@@ -10,20 +10,33 @@
         </div>
       </article>
       <figure>
-        <button @click="showResidential" v-if="visibleCommercial2">
-          TOGGLE CATGS COM
-        </button>
+        <p
+          class="toggle-service"
+          @click="showResidential"
+          v-if="visibleCommercial2"
+        >
+          <span>Commercial Cleaning</span>
+        </p>
 
-        <button @click="showCommercial" v-if="visibleResidential2">
-          TOGGLE CATGS RWS
-        </button>
+        <p
+          class="toggle-service"
+          @click="showResidential"
+          v-if="visibleResidential2"
+        >
+          <span>House Cleaning</span>
+        </p>
         <img :src="banner.acf.service_banner_img" alt="" />
       </figure>
     </section>
 
     <!-- Posts -->
     <section v-if="posts">
-      <article class="posts" v-for="(array, index) in posts" :key="index">
+      <article
+        class="posts"
+        :class="`posts-${index + 1}`"
+        v-for="(array, index) in posts"
+        :key="index"
+      >
         <div class="posts_item" v-for="post in array" :key="post.ID">
           <img
             :src="post.acf.image_mobile_service"
@@ -65,14 +78,14 @@ export default {
       )
     },
     showResidential() {
-      this.visibleResidential2 = true
-      this.visibleCommercial2 = false
       this.toggleServBanner()
-    },
-    showCommercial() {
-      this.visibleResidential2 = false
-      this.visibleCommercial2 = true
-      this.toggleServBanner()
+      if (this.visibleCommercial2) {
+        this.visibleResidential2 = true
+        this.visibleCommercial2 = false
+      } else if (this.visibleResidential2) {
+        this.visibleCommercial2 = true
+        this.visibleResidential2 = false
+      }
     },
   },
 }

@@ -33,7 +33,7 @@
     & article {
         padding: 0 3.91%;
         display: grid;
-        grid-template-columns: 666px 1fr;
+        grid-template-columns: 34.69% 1fr;
         &>div {
             display: flex;
             align-items: center;
@@ -56,7 +56,28 @@
         height: 458px;
         & img {
             height: 100%;
+            object-fit: cover;
+            object-position: top;
             width: 100%;
+        }
+    }
+    .arrow.arrow-next {
+        left: 3rem;
+        transform: rotate(180deg);
+    }
+    .arrow.arrow-prev {
+        right: 3rem;
+        transform: rotate(unset);
+    }
+    .arrow.arrow-prev,
+    .arrow.arrow-next {
+        display: flex;
+    }
+    // & .slide-1 {}
+    & .slide-2 {
+        grid-template-columns: 1fr 34.69%;
+        & figure {
+            order: -1;
         }
     }
 }

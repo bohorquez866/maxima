@@ -1,9 +1,13 @@
 .contact-page {
     & .contact {
-        grid-template-columns: 80rem 1fr;
+        grid-template-columns: 41.67% 1fr;
         grid-template-rows: 60rem;
         padding: 0 3.91%;
+        column-gap: 0;
         padding-bottom: 8rem;
+        @include mq($bpLarge) {
+            grid-template-rows: 43rem;
+        }
     }
     & .contact_info {
         justify-content: center;
@@ -14,6 +18,18 @@
             width: 40rem;
             margin-left: auto;
             margin-right: 11rem;
+            @include mq($bpLarge) {
+                margin-right: 5rem;
+            }
         }
+    }
+    & .home-form-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../assets/img/contact-bg.jpg);
+    }
+    & .form-home {
+        max-width: 57rem;
     }
 }

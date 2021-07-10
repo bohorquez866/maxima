@@ -30,24 +30,23 @@
 }
 
 .arrow {
-    width: 4.2rem;
-    height: 95px;
-    background-color: $black;
-    @extend .is-flex;
+    width: fit-content;
+    height: fit-content;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 45%;
-    z-index: 10000;
-    color: $white;
+    top: 36%;
+    z-index: 100;
+    color: $orange;
     font-weight: 600;
     font-size: 3rem;
     cursor: pointer;
     transition: all .3s ease;
+    display: none;
     & i {
         font-size: 1.6rem;
         &::before {
-            color: $white!important;
+            color: $orange!important;
         }
     }
     @include mq($bpLarge) {
