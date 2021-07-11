@@ -1,12 +1,20 @@
 .residential_services,
 .commercial_services {
     margin-bottom: 14rem;
+    @include mq($bpMedium) {
+        margin-bottom: 9rem;
+        padding: 0 3rem;
+    }
     .posts {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 4.69%;
         padding: 4rem 0;
         position: relative;
+        @include mq($bpMedium) {
+            grid-template-columns: 1fr;
+            padding: 0;
+        }
         &::before,
         &::after {
             position: absolute;
@@ -19,6 +27,9 @@
             @include mq($bpLarge) {
                 font-size: 6.5rem;
                 letter-spacing: 0.1em;
+            }
+            @include mq($bpMedium) {
+                display: none;
             }
         }
         &::before {
@@ -36,12 +47,23 @@
             background-color: #FFF4F0;
         }
         & .posts_item {
-            &:nth-child(odd) {
-                justify-self: end;
-            }
             max-width: 50rem;
+            //* media Queries
             @include mq($bpLarge) {
                 width: 40rem;
+            }
+            @include mq($bpMedium) {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 40% calc(60% - 2rem);
+                margin-bottom: 4rem;
+                column-gap: 2rem;
+                & p {
+                    grid-row: 2/3;
+                }
+            }
+            &:nth-child(odd) {
+                justify-self: end;
             }
             & h2 {
                 margin-top: 2rem;
@@ -58,9 +80,30 @@
             }
             & a {
                 margin-top: 3rem;
+                &.read-more {
+                    display: none;
+                    grid-column: 2/3;
+                    @include mq($bpMedium) {
+                        display: block;
+                    }
+                }
+                @include mq($bpMedium) {
+                    display: none;
+                }
             }
             & img {
                 width: 100%;
+                &.post_img--mobile {
+                    display: none;
+                    @include mq($bpMedium) {
+                        display: block;
+                        height: 100%;
+                    }
+                }
+                @include mq($bpMedium) {
+                    grid-row: 1/span 2;
+                    display: none;
+                }
             }
             & .post_img--mobile {
                 display: none;

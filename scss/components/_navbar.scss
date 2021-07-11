@@ -9,6 +9,9 @@
     & .fixed-social {
         display: flex;
         align-items: center;
+        @include mq($bpMedium) {
+            display: none;
+        }
     }
     //
     .logo {

@@ -2,6 +2,9 @@
     display: grid;
     grid-template-columns: 1fr max-content;
     padding: 0 3.91%;
+    @include mq($bpLarge) {
+        grid-template-columns: 40% 60%;
+    }
     & &_item {
         display: flex;
         flex-direction: column;
@@ -26,6 +29,9 @@
             z-index: 10;
             max-width: 43rem;
         }
+        & img {
+            width: 100%;
+        }
     }
 }
 
@@ -34,17 +40,27 @@
         padding: 0 3.91%;
         display: grid;
         grid-template-columns: 34.69% 1fr;
+        @include mq($bpLarge) {
+            grid-template-columns: 40% 60%;
+        }
         &>div {
             display: flex;
             align-items: center;
             background: url(../assets/img/bg2.png);
             position: relative;
+            & h2 {
+                margin-bottom: 2rem;
+            }
             &>div {
                 position: relative;
                 max-width: 43rem;
                 z-index: 10;
                 margin-left: auto;
                 margin-right: 11rem;
+                @include mq($bpLarge) {
+                    max-width: 35rem;
+                    margin-right: 5rem;
+                }
                 p {
                     margin-bottom: 5rem;
                 }

@@ -50,6 +50,8 @@
           <nuxt-link to="contact" class="btn_general">
             Adquire Service
           </nuxt-link>
+
+          <nuxt-link class="read-more" to="/about">Read More</nuxt-link>
         </div>
       </article>
     </section>
