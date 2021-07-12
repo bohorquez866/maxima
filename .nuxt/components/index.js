@@ -9,7 +9,7 @@ export { default as Footer } from '../..\\components\\Footer.vue'
 export { default as HomeAbout } from '../..\\components\\HomeAbout.vue'
 export { default as HomeBanner } from '../..\\components\\homeBanner.vue'
 export { default as HomeService } from '../..\\components\\homeService.vue'
-export { default as Navbar } from '../..\\components\\Navbar.vue'
+export { default as Navbar } from '../..\\components\\navbar.vue'
 export { default as Perks } from '../..\\components\\Perks.vue'
 export { default as ServiceBanner } from '../..\\components\\ServiceBanner.vue'
 
@@ -22,6 +22,6 @@ export const LazyFooter = import('../..\\components\\Footer.vue' /* webpackChunk
 export const LazyHomeAbout = import('../..\\components\\HomeAbout.vue' /* webpackChunkName: "components/home-about" */).then(c => wrapFunctional(c.default || c))
 export const LazyHomeBanner = import('../..\\components\\homeBanner.vue' /* webpackChunkName: "components/home-banner" */).then(c => wrapFunctional(c.default || c))
 export const LazyHomeService = import('../..\\components\\homeService.vue' /* webpackChunkName: "components/home-service" */).then(c => wrapFunctional(c.default || c))
-export const LazyNavbar = import('../..\\components\\Navbar.vue' /* webpackChunkName: "components/navbar" */).then(c => wrapFunctional(c.default || c))
+export const LazyNavbar = import('../..\\components\\navbar.vue' /* webpackChunkName: "components/navbar" */).then(c => wrapFunctional(c.default || c))
 export const LazyPerks = import('../..\\components\\Perks.vue' /* webpackChunkName: "components/perks" */).then(c => wrapFunctional(c.default || c))
 export const LazyServiceBanner = import('../..\\components\\ServiceBanner.vue' /* webpackChunkName: "components/service-banner" */).then(c => wrapFunctional(c.default || c))

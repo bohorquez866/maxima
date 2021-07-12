@@ -43,15 +43,16 @@
             class="post_img--mobile"
             alt=""
           />
-          <img :src="post.acf.img_post" alt="" />
+          <img class="desktop-img" :src="post.acf.img_post" alt="" />
+          <article>
+            <h2>{{ post.title.rendered }}</h2>
+            <div v-html="post.content.rendered"></div>
+            <nuxt-link to="contact" class="btn_general">
+              Adquire Service
+            </nuxt-link>
 
-          <h2>{{ post.title.rendered }}</h2>
-          <div v-html="post.content.rendered"></div>
-          <nuxt-link to="contact" class="btn_general">
-            Adquire Service
-          </nuxt-link>
-
-          <nuxt-link class="read-more" to="/about">Read More</nuxt-link>
+            <nuxt-link class="read-more" to="/about">Read More</nuxt-link>
+          </article>
         </div>
       </article>
     </section>

@@ -12,6 +12,9 @@
         font-size: 15rem;
         color: rgba(65, 41, 3, 0.07);
         font-family: $font_01;
+        @include mq($bpMedium) {
+            display: none;
+        }
     }
     &::after {
         content: 'MENTS';
@@ -27,8 +30,15 @@
     & h4 {
         text-align: center;
     }
+    & h4 {
+        margin-bottom: 0;
+    }
     & h2 {
         margin-bottom: 4rem;
+        @include mq($bpMedium) {
+            margin-bottom: 3rem;
+            font-size: 23px;
+        }
     }
     & img {
         width: 109px;
@@ -40,6 +50,10 @@
     }
     & p {
         text-align: center;
+        @include mq($bpMedium) {
+            padding: 0 4rem;
+            margin-top: 2rem;
+        }
     }
     & strong {
         font-weight: 600;
@@ -50,6 +64,9 @@
         letter-spacing: 0.05em;
         display: block;
         margin-top: 3.5rem;
+        @include mq($bpMedium) {
+            margin-top: 3rem;
+        }
     }
     & .swiper-container {
         width: 100%;

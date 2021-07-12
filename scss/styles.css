@@ -138,12 +138,13 @@ select:active {
 
 .read-more {
   color: #F57F2F;
-  text-align: center;
   font-style: normal;
-  font-weight: 500;
   font-family: "Source Serif Pro", serif;
-  font-size: 14px;
   display: block;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  margin-top: 2rem;
 }
 
 h4 {
@@ -154,6 +155,12 @@ h4 {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 60em) {
+  h4 {
+    font-size: 12px;
+  }
 }
 
 .title {
@@ -201,6 +208,12 @@ h4 {
     background-color: #fff;
     color: #000;
     border-color: #000;
+  }
+}
+
+@media only screen and (max-width: 60em) {
+  .btn_general {
+    height: 38px;
   }
 }
 
@@ -1081,6 +1094,13 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media only screen and (max-width: 60em) {
+  .perks {
+    flex-direction: column;
+    padding: 5rem 4rem;
+  }
+}
+
 .perks .perk {
   display: grid;
   grid-template-columns: 12rem 26rem;
@@ -1090,6 +1110,12 @@ button.swiper-pagination-bullet {
 @media only screen and (max-width: 106em) {
   .perks .perk {
     grid-template-columns: 9rem 18rem;
+  }
+}
+
+@media only screen and (max-width: 60em) {
+  .perks .perk {
+    margin-bottom: 4.5rem;
   }
 }
 
@@ -1183,10 +1209,22 @@ button.swiper-pagination-bullet {
   position: relative;
 }
 
+@media only screen and (max-width: 60em) {
+  .page-info {
+    flex-direction: column;
+  }
+}
+
 .page-info::before, .page-info::after {
   position: absolute;
   color: rgba(65, 41, 3, 0.07);
   font-family: "Source Serif Pro", serif;
+}
+
+@media only screen and (max-width: 60em) {
+  .page-info::before, .page-info::after {
+    display: none;
+  }
 }
 
 .page-info::after {
@@ -1241,6 +1279,13 @@ button.swiper-pagination-bullet {
   width: 40rem;
 }
 
+@media only screen and (max-width: 60em) {
+  .page-info .home-about-info {
+    padding: 0 4rem;
+    margin-top: 5rem;
+  }
+}
+
 .page-info .home-about-info h4 {
   margin-bottom: 1.5rem;
   text-transform: uppercase;
@@ -1284,6 +1329,12 @@ button.swiper-pagination-bullet {
   font-family: "Source Serif Pro", serif;
 }
 
+@media only screen and (max-width: 60em) {
+  .comments::before, .comments::after {
+    display: none;
+  }
+}
+
 .comments::after {
   content: 'MENTS';
   left: -10rem;
@@ -1301,8 +1352,19 @@ button.swiper-pagination-bullet {
   text-align: center;
 }
 
+.comments h4 {
+  margin-bottom: 0;
+}
+
 .comments h2 {
   margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 60em) {
+  .comments h2 {
+    margin-bottom: 3rem;
+    font-size: 23px;
+  }
 }
 
 .comments img {
@@ -1319,6 +1381,13 @@ button.swiper-pagination-bullet {
   text-align: center;
 }
 
+@media only screen and (max-width: 60em) {
+  .comments p {
+    padding: 0 4rem;
+    margin-top: 2rem;
+  }
+}
+
 .comments strong {
   font-weight: 600;
   font-size: 16px;
@@ -1328,6 +1397,12 @@ button.swiper-pagination-bullet {
   letter-spacing: 0.05em;
   display: block;
   margin-top: 3.5rem;
+}
+
+@media only screen and (max-width: 60em) {
+  .comments strong {
+    margin-top: 3rem;
+  }
 }
 
 .comments .swiper-container {
@@ -1745,7 +1820,6 @@ button.swiper-pagination-bullet {
   .residential_services,
   .commercial_services {
     margin-bottom: 9rem;
-    padding: 0 3rem;
   }
 }
 
@@ -1762,7 +1836,7 @@ button.swiper-pagination-bullet {
   .residential_services .posts,
   .commercial_services .posts {
     grid-template-columns: 1fr;
-    padding: 0;
+    padding: 3rem 0;
   }
 }
 
@@ -1834,13 +1908,25 @@ button.swiper-pagination-bullet {
   .commercial_services .posts .posts_item {
     width: 100%;
     display: grid;
-    grid-template-columns: 40% calc(60% - 2rem);
+    grid-template-columns: 30% calc(70% - 2rem);
     margin-bottom: 4rem;
     column-gap: 2rem;
+    padding: 0 3rem;
+  }
+  .residential_services .posts .posts_item:last-of-type,
+  .commercial_services .posts .posts_item:last-of-type {
+    margin-bottom: 0;
   }
   .residential_services .posts .posts_item p,
   .commercial_services .posts .posts_item p {
     grid-row: 2/3;
+    height: 4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .residential_services .posts .posts_item .desktop-img,
+  .commercial_services .posts .posts_item .desktop-img {
+    display: none;
   }
 }
 
@@ -1861,9 +1947,26 @@ button.swiper-pagination-bullet {
   color: #412903;
 }
 
+@media only screen and (max-width: 60em) {
+  .residential_services .posts .posts_item h2,
+  .commercial_services .posts .posts_item h2 {
+    font-size: 15px;
+    width: 60%;
+    margin-top: 0;
+  }
+}
+
 .residential_services .posts .posts_item > div,
 .commercial_services .posts .posts_item > div {
   min-height: 8rem;
+}
+
+@media only screen and (max-width: 60em) {
+  .residential_services .posts .posts_item > div,
+  .commercial_services .posts .posts_item > div {
+    min-height: auto;
+    height: fit-content;
+  }
 }
 
 .residential_services .posts .posts_item a,
@@ -1875,6 +1978,7 @@ button.swiper-pagination-bullet {
 .commercial_services .posts .posts_item a.read-more {
   display: none;
   grid-column: 2/3;
+  margin-top: 2rem;
 }
 
 @media only screen and (max-width: 60em) {
@@ -1912,7 +2016,6 @@ button.swiper-pagination-bullet {
 @media only screen and (max-width: 60em) {
   .residential_services .posts .posts_item img,
   .commercial_services .posts .posts_item img {
-    grid-row: 1/span 2;
     display: none;
   }
 }
@@ -1930,10 +2033,26 @@ button.swiper-pagination-bullet {
   height: 32rem;
 }
 
+@media only screen and (max-width: 60em) {
+  .residential_services .service_banner,
+  .commercial_services .service_banner {
+    flex-direction: column-reverse;
+    height: initial;
+    padding: 0;
+  }
+}
+
 .residential_services .service_banner figure,
 .commercial_services .service_banner figure {
   position: relative;
   flex-basis: 60%;
+}
+
+@media only screen and (max-width: 60em) {
+  .residential_services .service_banner figure,
+  .commercial_services .service_banner figure {
+    height: 165px;
+  }
 }
 
 .residential_services .service_banner figure .toggle-service,
@@ -1971,6 +2090,13 @@ button.swiper-pagination-bullet {
   height: 100%;
 }
 
+@media only screen and (max-width: 60em) {
+  .residential_services .service_banner figure img,
+  .commercial_services .service_banner figure img {
+    height: 165px;
+  }
+}
+
 .residential_services .service_banner article,
 .commercial_services .service_banner article {
   background: url(../assets/img/bg.png);
@@ -1986,9 +2112,27 @@ button.swiper-pagination-bullet {
   text-transform: uppercase;
 }
 
+@media only screen and (max-width: 60em) {
+  .residential_services .service_banner article h1,
+  .commercial_services .service_banner article h1 {
+    font-size: 25px;
+  }
+}
+
 .residential_services .service_banner article > div,
 .commercial_services .service_banner article > div {
   max-width: 39rem;
+}
+
+@media only screen and (max-width: 60em) {
+  .residential_services .service_banner article > div,
+  .commercial_services .service_banner article > div {
+    height: 21rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 .residential_services .service_banner figure {

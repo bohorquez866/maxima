@@ -5,11 +5,17 @@
     column-gap: 8rem;
     margin-bottom: 11rem;
     position: relative;
+    @include mq($bpMedium) {
+        flex-direction: column;
+    }
     &::before,
     &::after {
         position: absolute;
         color: rgba(65, 41, 3, 0.07);
         font-family: $font_01;
+        @include mq($bpMedium) {
+            display: none;
+        }
     }
     &::after {
         content: 'ABOUT';
@@ -48,6 +54,10 @@
     }
     & .home-about-info {
         width: 40rem;
+        @include mq($bpMedium) {
+            padding: 0 4rem;
+            margin-top: 5rem;
+        }
         & h4 {
             margin-bottom: 1.5rem;
             text-transform: uppercase;

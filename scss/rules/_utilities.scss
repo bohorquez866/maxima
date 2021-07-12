@@ -15,6 +15,9 @@
             border-color: $black;
         }
     }
+    @include mq($bpMedium) {
+        height: 38px;
+    }
 }
 
 .header-responsive-picture {

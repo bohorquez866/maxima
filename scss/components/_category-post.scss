@@ -3,7 +3,6 @@
     margin-bottom: 14rem;
     @include mq($bpMedium) {
         margin-bottom: 9rem;
-        padding: 0 3rem;
     }
     .posts {
         display: grid;
@@ -13,7 +12,7 @@
         position: relative;
         @include mq($bpMedium) {
             grid-template-columns: 1fr;
-            padding: 0;
+            padding: 3rem 0;
         }
         &::before,
         &::after {
@@ -55,11 +54,21 @@
             @include mq($bpMedium) {
                 width: 100%;
                 display: grid;
-                grid-template-columns: 40% calc(60% - 2rem);
+                grid-template-columns: 30% calc(70% - 2rem);
                 margin-bottom: 4rem;
                 column-gap: 2rem;
+                padding: 0 3rem;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
                 & p {
                     grid-row: 2/3;
+                    height: 4rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .desktop-img {
+                    display: none;
                 }
             }
             &:nth-child(odd) {
@@ -74,15 +83,25 @@
                 letter-spacing: 0.05em;
                 margin-bottom: 1rem;
                 color: #412903;
+                @include mq($bpMedium) {
+                    font-size: 15px;
+                    width: 60%;
+                    margin-top: 0;
+                }
             }
             &>div {
                 min-height: 8rem;
+                @include mq($bpMedium) {
+                    min-height: auto;
+                    height: fit-content;
+                }
             }
             & a {
                 margin-top: 3rem;
                 &.read-more {
                     display: none;
                     grid-column: 2/3;
+                    margin-top: 2rem;
                     @include mq($bpMedium) {
                         display: block;
                     }
@@ -101,7 +120,6 @@
                     }
                 }
                 @include mq($bpMedium) {
-                    grid-row: 1/span 2;
                     display: none;
                 }
             }
@@ -115,9 +133,17 @@
         padding: 0 3.91%;
         display: flex;
         height: 32rem;
+        @include mq($bpMedium) {
+            flex-direction: column-reverse;
+            height: initial;
+            padding: 0;
+        }
         & figure {
             position: relative;
             flex-basis: 60%;
+            @include mq($bpMedium) {
+                height: 165px;
+            }
             & .toggle-service {
                 position: absolute;
                 display: block;
@@ -146,6 +172,9 @@
                 object-fit: cover;
                 width: 100%;
                 height: 100%;
+                @include mq($bpMedium) {
+                    height: 165px;
+                }
             }
         }
         & article {
@@ -157,9 +186,19 @@
             & h1 {
                 margin-bottom: 1rem;
                 text-transform: uppercase;
+                @include mq($bpMedium) {
+                    font-size: 25px;
+                }
             }
             &>div {
                 max-width: 39rem;
+                @include mq($bpMedium) {
+                    height: 21rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                }
             }
         }
     }

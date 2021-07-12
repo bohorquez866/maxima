@@ -77,12 +77,13 @@
 
 .read-more {
     color: $orange;
-    text-align: center;
     font-style: normal;
-    font-weight: 500;
     font-family: $font_01;
-    font-size: 14px;
     display: block;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
 }
 
 h4 {
@@ -93,6 +94,9 @@ h4 {
     letter-spacing: 0.25em;
     text-transform: uppercase;
     margin-bottom: 1rem;
+    @include mq($bpMedium) {
+        font-size: 12px;
+    }
 }
 
 .title {
