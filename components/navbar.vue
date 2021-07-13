@@ -1,9 +1,6 @@
 <!-- Please remove this file from your project -->
 <template>
   <div>
-    <div class="preloader" v-once v-if="isLoading">
-      <span>X</span>
-    </div>
     <nav class="navbar">
       <nuxt-link to="/" class="logo">
         <img :src="optionsData.logo" alt="Logo" />
@@ -89,9 +86,7 @@ export default {
     }
   },
 
-  mounted() {
-    this.handlePreloader()
-  },
+  mounted() {},
 
   computed: {
     currentRouteName() {
@@ -107,12 +102,6 @@ export default {
   },
 
   methods: {
-    handlePreloader() {
-      setTimeout(() => {
-        this.isLoading = false
-      }, 3000)
-    },
-
     toggleNavbar() {
       this.menuMobile = !this.menuMobile
     },
