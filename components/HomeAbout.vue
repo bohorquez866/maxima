@@ -3,6 +3,11 @@
     <template v-if="home[3]">
       <figure>
         <img :src="home[3].acf.home_about_img" alt="" />
+        <img
+          :src="home[3].acf.home_about_img_responsive"
+          class="responsive-service-img"
+          alt=""
+        />
       </figure>
       <article class="home-about-info">
         <h4>About Us</h4>

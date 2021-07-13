@@ -2,7 +2,7 @@
 .commercial_services {
     margin-bottom: 14rem;
     @include mq($bpMedium) {
-        margin-bottom: 9rem;
+        margin-bottom: 8rem;
     }
     .posts {
         display: grid;
@@ -155,6 +155,9 @@
                 background: linear-gradient(180deg, #f47520ce 25%, rgba(245, 127, 47, 0) 100%);
                 background-blend-mode: multiply;
                 transform: rotate( 270deg);
+                @include mq($bpMedium) {
+                    width: 165px;
+                }
                 & span {
                     color: $white;
                     font-style: normal;
@@ -166,6 +169,23 @@
                     width: 50%;
                     line-height: 1.2;
                     text-transform: uppercase;
+                    @include mq($bpMedium) {
+                        display: none;
+                    }
+                }
+                & strong {
+                    display: none;
+                    width: fit-content;
+                    position: absolute;
+                    top: 1rem;
+                    transform: rotate( 270deg);
+                    &::before {
+                        color: $white;
+                        font-size: 25px;
+                    }
+                    @include mq($bpMedium) {
+                        display: block;
+                    }
                 }
             }
             & img {
@@ -198,16 +218,42 @@
                     flex-direction: column;
                     justify-content: center;
                     text-align: center;
+                    & p {
+                        max-width: 30rem;
+                    }
                 }
             }
         }
     }
 }
 
+.service_modal {
+    position: absolute;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.397);
+    overflow: hidden;
+    height: 50rem;
+    z-index: 100;
+    display: none;
+    left: 0;
+    >div {
+        background-color: $white;
+    }
+    & img {
+        display: block!important;
+    }
+}
+
 .residential_services {
     .service_banner {
+        @include mq($bpMedium) {
+            flex-direction: column;
+        }
         & figure {
             order: -1;
+            & .toggle-service strong {
+                left: 43%;
+            }
         }
     }
     & .posts {

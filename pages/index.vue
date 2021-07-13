@@ -2,11 +2,11 @@
   <main>
     <Navbar />
     <HomeBanner />
-    <Perks /> 
+    <Perks />
     <HomeAbout />
     <homeService />
     <Comments />
-    <Contact-component />
+    <Contact-component class="contact-index" />
     <Footer />
   </main>
 </template>

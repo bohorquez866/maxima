@@ -109,6 +109,9 @@ serif;
     cursor: pointer;
     letter-spacing: 0.05em;
     font-family: $font_01;
+    @include mq($bpLarge) {
+        padding: 0 25px;
+    }
 }
 
 $bpXLarge: 118.75em; //1900px

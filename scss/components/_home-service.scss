@@ -3,6 +3,7 @@
     margin-bottom: 13rem;
     position: relative;
     overflow: visible!important;
+    @include mq($bpMedium) {}
     .swiper-pagination {
         position: absolute;
         bottom: -6rem!important;
@@ -24,6 +25,9 @@
         grid-template-columns: repeat(2, 50%);
         grid-template-rows: 52rem;
         height: 52rem;
+        @include mq($bpMedium) {
+            grid-template-columns: 1fr;
+        }
         &>div {
             background-size: cover;
             background-position: center center;
@@ -62,11 +66,18 @@
                         margin-bottom: 5px;
                         margin-left: 2rem;
                     }
+                    @include mq($bpMedium) {
+                        margin-bottom: 5px;
+                        margin-left: 4rem;
+                    }
                 }
             }
         }
         & figure {
             width: 100%;
+            @include mq($bpMedium) {
+                display: none;
+            }
             & img {
                 height: 100%;
                 width: 100%;

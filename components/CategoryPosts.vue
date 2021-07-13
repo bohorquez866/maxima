@@ -16,6 +16,7 @@
           v-if="visibleCommercial2"
         >
           <span>Commercial Cleaning</span>
+          <strong class="icon-arrow2"></strong>
         </p>
 
         <p
@@ -23,6 +24,7 @@
           @click="showResidential"
           v-if="visibleResidential2"
         >
+          <strong class="icon-arrow2"></strong>
           <span>House Cleaning</span>
         </p>
         <img :src="banner.acf.service_banner_img" alt="" />
@@ -43,15 +45,24 @@
             class="post_img--mobile"
             alt=""
           />
+
           <img class="desktop-img" :src="post.acf.img_post" alt="" />
           <article>
             <h2>{{ post.title.rendered }}</h2>
             <div v-html="post.content.rendered"></div>
-            <nuxt-link to="contact" class="btn_general">
-              Adquire Service
-            </nuxt-link>
 
             <nuxt-link class="read-more" to="/about">Read More</nuxt-link>
+
+            <section class="service_modal">
+              <div>
+                <img class="desktop-img" :src="post.acf.img_post" alt="" />
+                <h3>{{ post.title.rendered }}</h3>
+                <div v-html="post.content.rendered"></div>
+                <nuxt-link to="contact" class="btn_general">
+                  Get In Touch
+                </nuxt-link>
+              </div>
+            </section>
           </article>
         </div>
       </article>

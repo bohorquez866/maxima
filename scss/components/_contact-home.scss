@@ -11,9 +11,15 @@
     &_info {
         & h2 {
             margin-bottom: 4rem;
+            @include mq($bpMedium) {
+                margin-bottom: 2rem;
+            }
         }
         & .social-contact {
             margin-top: 4rem;
+            @include mq($bpLarge) {
+                margin-top: 1.5rem;
+            }
             & p {
                 display: flex;
                 align-items: center;
@@ -81,5 +87,11 @@
             width: fit-content;
             margin: 0 auto;
         }
+    }
+}
+
+.contact.contact-index {
+    @include mq($bpMedium) {
+        display: none;
     }
 }

@@ -27,6 +27,9 @@
         display: flex;
         column-gap: 3rem;
         text-transform: capitalize;
+        @include mq($bpMedium) {
+            column-gap: 1.5rem;
+        }
     }
     & p {
         margin-bottom: 3rem;
@@ -38,6 +41,9 @@
         text-align: center;
         letter-spacing: 0.03em;
         max-width: 40rem;
+        @include mq($bpMedium) {
+            max-width: 28rem;
+        }
     }
     & &-social {
         width: fit-content;

@@ -32,7 +32,12 @@
         </div>
 
         <figure>
-          <img :src="data.acf.home_image" alt="" />
+          <img :src="data.acf.home_image" alt="banner image" />
+          <img
+            :src="data.acf.home_image_responsive"
+            class="banner-responsive-image"
+            alt="banner image"
+          />
         </figure>
         <!--  -->
       </article>
