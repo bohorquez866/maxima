@@ -1847,6 +1847,12 @@ button.swiper-pagination-bullet {
   position: relative;
 }
 
+@media only screen and (max-width: 60em) {
+  .banner .banner_item {
+    padding: 5rem 0;
+  }
+}
+
 .banner .banner_item::before {
   content: '';
   background: url(../assets/img/bg.png);
@@ -1863,6 +1869,15 @@ button.swiper-pagination-bullet {
   position: relative;
   z-index: 9;
   max-width: 43rem;
+}
+
+@media only screen and (max-width: 60em) {
+  .banner .banner_item > div {
+    max-width: 30rem;
+  }
+  .banner .banner_item > div * {
+    text-align: center;
+  }
 }
 
 .banner .banner_item img {
@@ -1892,6 +1907,7 @@ button.swiper-pagination-bullet {
   display: flex;
   align-items: center;
   background: url(../assets/img/bg2.png);
+  background-size: cover;
   position: relative;
 }
 
@@ -1919,6 +1935,10 @@ button.swiper-pagination-bullet {
     margin-left: auto;
     margin-right: auto;
     padding: 4rem 0;
+  }
+  .home_banner article > div > div a.btn_general {
+    display: none !important;
+    visibility: hidden;
   }
   .home_banner article > div > div * {
     text-align: center;

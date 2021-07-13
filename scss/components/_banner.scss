@@ -17,6 +17,9 @@
         background-size: inherit;
         background-color: #FFF6E7;
         position: relative;
+        @include mq($bpMedium) {
+            padding: 5rem 0;
+        }
         &::before {
             content: '';
             background: url(../assets/img/bg.png);
@@ -31,6 +34,12 @@
             position: relative;
             z-index: 9;
             max-width: 43rem;
+            @include mq($bpMedium) {
+                max-width: 30rem;
+                & * {
+                    text-align: center;
+                }
+            }
         }
         & img {
             width: 100%;
@@ -54,6 +63,7 @@
             display: flex;
             align-items: center;
             background: url(../assets/img/bg2.png);
+            background-size: cover;
             position: relative;
             & h2 {
                 margin-bottom: 2rem;
@@ -71,6 +81,10 @@
                 @include mq($bpMedium) {
                     @include margin-x;
                     padding: 4rem 0;
+                    a.btn_general {
+                        display: none!important;
+                        visibility: hidden;
+                    }
                     & * {
                         text-align: center;
                     }
