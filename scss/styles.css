@@ -310,6 +310,16 @@ h4 {
   right: 0;
 }
 
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.4s;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0.1;
+}
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?lbeasr");
