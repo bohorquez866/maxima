@@ -410,6 +410,39 @@ i.icon-arrow-black {
   display: block;
 }
 
+.preloader {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader span {
+  font-size: 5rem;
+  color: #F57F2F;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  animation-name: rotation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
 /**
  * Swiper 5.3.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions

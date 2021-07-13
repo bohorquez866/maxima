@@ -1,10 +1,12 @@
 export const state = () => ({
+    isLoading: true,
     menu: [],
     perks: [],
     home: [],
     commercial: [],
     residential: [],
     category: [],
+
     urlPath: 'http://localhost/maxima/backend/',
 })
 
@@ -54,7 +56,11 @@ export const mutations = {
         }
         state.residential = arrayResidential
     },
+    TOGGLE_LOADER(state, payload) {
+        state.isLoading = payload
+    },
 }
+
 export const getters = {
     menu(state) {
         return state.menu
@@ -78,6 +84,9 @@ export const getters = {
     urlPath(state) {
         return state.urlPath
     },
+    isLoading(state) {
+        return state.isLoading
+    },
 }
 export const actions = {
     setMenuItems({ commit }, payload) {
@@ -98,5 +107,8 @@ export const actions = {
     },
     setResidentialItems({ commit }, payload) {
         commit('SET_RESIDENTIAL_ITEMS', payload)
+    },
+    toggleLoader({ commit }, payload) {
+        commit('TOGGLE_LOADER', payload)
     },
 }
