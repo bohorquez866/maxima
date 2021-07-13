@@ -11,7 +11,7 @@
     </div>
     <ul class="navbar__list" :class="{ 'mobile-active': menuMobile }">
       <article>
-        <div class="close" @click="toggleNavbar">X</div>
+        <div class="close icon-cross" @click="toggleNavbar"></div>
         <div class="">
           <li>
             <NuxtLink to="/">Home</NuxtLink>

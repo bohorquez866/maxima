@@ -52,6 +52,13 @@ li {
   list-style: none;
 }
 
+button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 h1,
 h2,
 h3,
@@ -2266,6 +2273,18 @@ button.swiper-pagination-bullet {
   }
 }
 
+.residential_services .posts .read-more,
+.commercial_services .posts .read-more {
+  display: none;
+}
+
+@media only screen and (max-width: 60em) {
+  .residential_services .posts .read-more,
+  .commercial_services .posts .read-more {
+    display: block;
+  }
+}
+
 .residential_services .posts::before, .residential_services .posts::after,
 .commercial_services .posts::before,
 .commercial_services .posts::after {
@@ -2602,22 +2621,62 @@ button.swiper-pagination-bullet {
 }
 
 .service_modal {
-  position: absolute;
-  border-radius: 15px;
+  position: fixed;
+  padding: 0 2rem;
   background-color: rgba(0, 0, 0, 0.397);
   overflow: hidden;
-  height: 50rem;
+  height: 100vh;
   z-index: 100;
   display: none;
   left: 0;
+  top: 0;
+  width: 100%;
+  align-items: center;
+}
+
+.service_modal .close-modal {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+@media only screen and (max-width: 60em) {
+  .service_modal.active {
+    display: flex;
+  }
 }
 
 .service_modal > div {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.service_modal > div article {
   background-color: #fff;
+  padding: 0 3rem 0 3rem;
+  padding-bottom: 4rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: relative;
+  z-index: 5;
+}
+
+.service_modal > div article h3 {
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service_modal > div article > div {
+  margin-bottom: 3rem;
 }
 
 .service_modal img {
-  display: block !important;
+  height: 24rem;
+  width: 100%;
+  display: flex !important;
+  margin-bottom: -4rem;
+  object-fit: cover;
 }
 
 @media only screen and (max-width: 60em) {

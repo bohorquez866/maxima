@@ -292,7 +292,7 @@ export default {
                 .get(`${this.urlPath}${this.urlResidential}`)
                 .then((response) => {
                     const finalData = response.data
-                    console.log(finalData)
+
                     this.$store.commit('SET_RESIDENTIAL_ITEMS', finalData)
                 })
                 .catch((error) => error)

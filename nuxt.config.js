@@ -41,6 +41,8 @@ export default {
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {},
 
+    transition: {},
+
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
         transpile: ['vee-validate/dist/rules'],

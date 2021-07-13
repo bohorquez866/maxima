@@ -43,7 +43,7 @@
           <img
             :src="post.acf.image_mobile_service"
             class="post_img--mobile"
-            alt=""
+            alt="picture"
           />
 
           <img class="desktop-img" :src="post.acf.img_post" alt="" />
@@ -51,21 +51,30 @@
             <h2>{{ post.title.rendered }}</h2>
             <div v-html="post.content.rendered"></div>
 
-            <nuxt-link class="read-more" to="/about">Read More</nuxt-link>
-
-            <section class="service_modal">
-              <div>
-                <img class="desktop-img" :src="post.acf.img_post" alt="" />
-                <h3>{{ post.title.rendered }}</h3>
-                <div v-html="post.content.rendered"></div>
-                <nuxt-link to="contact" class="btn_general">
-                  Get In Touch
-                </nuxt-link>
-              </div>
-            </section>
+            <button @click="showModal(post)" class="read-more">
+              Read More
+            </button>
           </article>
         </div>
       </article>
+      <!-- //* MODAL -->
+      <section
+        class="service_modal"
+        :class="{ active: modalShown }"
+        v-if="modalShown"
+      >
+        <div v-if="selectedItem">
+          <span class="close-modal icon-cross" @click="closeModal"></span>
+          <img class="desktop-img" :src="selectedItem.acf.img_post" alt="" />
+          <article>
+            <h3>{{ selectedItem.title.rendered }}</h3>
+            <div v-html="selectedItem.content.rendered"></div>
+            <nuxt-link to="contact" class="btn_general">
+              Get In Touch
+            </nuxt-link>
+          </article>
+        </div>
+      </section>
     </section>
   </div>
 </template>
@@ -76,6 +85,8 @@ export default {
     return {
       visibleCommercial2: true,
       visibleResidential2: null,
+      modalShown: false,
+      selectedItem: {},
     }
   },
   props: {
@@ -90,6 +101,15 @@ export default {
         this.visibleResidential2,
         this.visibleCommercial2
       )
+    },
+
+    showModal(postObject) {
+      this.selectedItem = postObject
+      this.modalShown = true
+      console.log(this.selectedItem)
+    },
+    closeModal() {
+      this.modalShown = false
     },
     showResidential() {
       this.toggleServBanner()

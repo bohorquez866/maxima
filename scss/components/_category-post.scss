@@ -14,6 +14,12 @@
             grid-template-columns: 1fr;
             padding: 3rem 0;
         }
+        & .read-more {
+            display: none;
+            @include mq($bpMedium) {
+                display: block;
+            }
+        }
         &::before,
         &::after {
             position: absolute;
@@ -228,19 +234,54 @@
 }
 
 .service_modal {
-    position: absolute;
-    border-radius: 15px;
+    position: fixed;
+    padding: 0 2rem;
     background-color: rgba(0, 0, 0, 0.397);
     overflow: hidden;
-    height: 50rem;
+    height: 100vh;
     z-index: 100;
     display: none;
     left: 0;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    & .close-modal {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+    &.active {
+        @include mq($bpMedium) {
+            display: flex;
+        }
+    }
     >div {
-        background-color: $white;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        & article {
+            background-color: $white;
+            padding: 0 3rem 0 3rem;
+            padding-bottom: 4rem;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            position: relative;
+            z-index: 5;
+            & h3 {
+                padding-top: 2rem;
+                margin-bottom: 2rem;
+            }
+            &>div {
+                margin-bottom: 3rem;
+            }
+        }
     }
     & img {
-        display: block!important;
+        height: 24rem;
+        width: 100%;
+        display: flex!important;
+        margin-bottom: -4rem;
+        object-fit: cover;
     }
 }
 
