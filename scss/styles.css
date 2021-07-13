@@ -312,12 +312,12 @@ h4 {
 
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.4s;
+  transition: all .5s ease-in-out;
 }
 
 .page-enter,
 .page-leave-to {
-  opacity: 0.1;
+  opacity: 0.05;
 }
 
 @font-face {

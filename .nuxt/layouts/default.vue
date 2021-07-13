@@ -14,7 +14,7 @@ export default {
       isLoading: true,
     }
   },
-  mounted() {
+  beforeMount() {
     setTimeout(() => {
       this.handlePreloader()
     }, 2000)

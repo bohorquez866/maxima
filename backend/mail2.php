@@ -11,14 +11,16 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 // *********************************
-$nombre = 'jesus';
-$telefono ='12312312412';
-$correo ='bohorquez866@gmail.com';
-$mensaje = 'hola';
+
+$correo = $_POST["email"];
+$nombre = $_POST["name"];
+$mensaje = $_POST["message"];
+$phone = $_POST["phone"];
+$service = $_POST['service'];
 // **************** Datos destinatario ****************
-$asunto = 'hola';
+$asunto = "Test";
 $destino = 'bohorquez866@gmail.com';
-$nombreUser = 'user'; // nombre, por ejemplo nuevo mensaje de 'portafolio web'
+$nombreUser = "correo prueba"; // nombre, por ejemplo nuevo mensaje de 'portafolio web'
 //Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
@@ -37,13 +39,17 @@ try {
     $mail->setFrom($destino, $nombreUser);
     $mail->addAddress($destino); 
 
-     //Attachments
+    // //Attachments
     // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = $asunto;
-    $mail->Body    = "Nombre: ".$nombre."<br> Correo: ".$correo."<br> Mensaje: ".$mensaje."<br> telefono: ".$telefono;
+    $mail->Body    = "Nombre: ".$nombre." <br> 
+                      Correo: ".$correo."<br> 
+                      Phone: ".$phone." <br>
+                      Service: ".$service." <br>
+                      Mensaje: ".$mensaje."<br>";
 
     $mail->send();
     echo 'enviado con éxito';

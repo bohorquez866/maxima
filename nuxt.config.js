@@ -22,6 +22,7 @@ export default {
         { src: '@/node_modules/vue-awesome-swiper', mode: 'client' },
         './mixin/global.js',
         { src: '@/node_modules/vee-validate' },
+        // { src: '@/node_modules/@morioh/v-lightbox' },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
