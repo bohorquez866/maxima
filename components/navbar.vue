@@ -11,6 +11,7 @@
         <span></span>
       </div>
       <ul class="navbar__list" :class="{ 'mobile-active': menuMobile }">
+        <div @click="toggleNavbar" class="bg-close"></div>
         <article>
           <div class="close icon-cross" @click="toggleNavbar"></div>
           <div class="">
@@ -85,8 +86,6 @@ export default {
       isLoading: true,
     }
   },
-
-  mounted() {},
 
   computed: {
     currentRouteName() {

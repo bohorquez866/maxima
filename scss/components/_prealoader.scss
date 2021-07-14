@@ -9,23 +9,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    & span {
-        font-size: 5rem;
-        color: $orange;
-        font-family: $font_02;
-        font-weight: 600;
-        animation-name: rotation;
-        animation-duration: 1s;
-        animation-timing-function: ease;
-        animation-iteration-count: infinite;
+    text-align: center;
+    &>div {
+        width: 300px;
+        position: relative;
     }
 }
 
-@keyframes rotation {
-    from {
-        transform: rotate(0deg);
+.blob-1,
+.blob-2 {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    background: $orange;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.blob-1 {
+    left: 20%;
+    animation: osc-l 2.5s ease infinite;
+}
+
+.blob-2 {
+    left: 80%;
+    animation: osc-r 2.5s ease infinite;
+    background: #0ff;
+}
+
+@keyframes osc-l {
+    0% {
+        left: 20%;
     }
-    to {
-        transform: rotate(180deg);
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 20%;
+    }
+}
+
+@keyframes osc-r {
+    0% {
+        left: 80%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 80%;
     }
 }

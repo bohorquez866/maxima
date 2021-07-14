@@ -1,7 +1,10 @@
 <template>
   <div class="">
     <div class="preloader" v-once v-if="isLoading">
-      <span>X</span>
+      <div>
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+      </div>
     </div>
     <Nuxt keep-alive />
   </div>
