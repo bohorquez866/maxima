@@ -8,6 +8,8 @@ const components = {
   Comments: () => import('../..\\components\\Comments.vue' /* webpackChunkName: "components/comments" */).then(c => wrapFunctional(c.default || c)),
   ContactComponent: () => import('../..\\components\\ContactComponent.vue' /* webpackChunkName: "components/contact-component" */).then(c => wrapFunctional(c.default || c)),
   Footer: () => import('../..\\components\\Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c)),
+  FormContact: () => import('../..\\components\\FormContact.vue' /* webpackChunkName: "components/form-contact" */).then(c => wrapFunctional(c.default || c)),
+  FormHome: () => import('../..\\components\\FormHome.vue' /* webpackChunkName: "components/form-home" */).then(c => wrapFunctional(c.default || c)),
   HomeAbout: () => import('../..\\components\\HomeAbout.vue' /* webpackChunkName: "components/home-about" */).then(c => wrapFunctional(c.default || c)),
   HomeBanner: () => import('../..\\components\\homeBanner.vue' /* webpackChunkName: "components/home-banner" */).then(c => wrapFunctional(c.default || c)),
   HomeService: () => import('../..\\components\\homeService.vue' /* webpackChunkName: "components/home-service" */).then(c => wrapFunctional(c.default || c)),

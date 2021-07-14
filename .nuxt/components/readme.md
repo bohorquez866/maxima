@@ -12,6 +12,8 @@ You can directly use them in pages and other components without the need to impo
 - `<Comments>` | `<comments>` (components/Comments.vue)
 - `<ContactComponent>` | `<contact-component>` (components/ContactComponent.vue)
 - `<Footer>` | `<footer>` (components/Footer.vue)
+- `<FormContact>` | `<form-contact>` (components/FormContact.vue)
+- `<FormHome>` | `<form-home>` (components/FormHome.vue)
 - `<HomeAbout>` | `<home-about>` (components/HomeAbout.vue)
 - `<HomeBanner>` | `<home-banner>` (components/homeBanner.vue)
 - `<HomeService>` | `<home-service>` (components/homeService.vue)

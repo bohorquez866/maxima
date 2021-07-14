@@ -2404,7 +2404,6 @@ button.swiper-pagination-bullet {
   .commercial_services .posts {
     grid-template-columns: 1fr;
     padding: 3rem 0;
-    padding-top: 0;
   }
   .residential_services .posts:last-of-type,
   .commercial_services .posts:last-of-type {
@@ -2415,6 +2414,7 @@ button.swiper-pagination-bullet {
 .residential_services .posts .read-more,
 .commercial_services .posts .read-more {
   display: none;
+  margin-top: 1.5rem;
 }
 
 @media only screen and (max-width: 60em) {
@@ -2623,6 +2623,7 @@ button.swiper-pagination-bullet {
     flex-direction: column-reverse;
     height: initial;
     padding: 0;
+    margin-bottom: 5rem;
   }
 }
 
@@ -2777,6 +2778,12 @@ button.swiper-pagination-bullet {
   position: absolute;
   right: 1rem;
   top: 1rem;
+  transform: rotate(45deg);
+}
+
+.service_modal .close-modal::before {
+  font-size: 16px;
+  color: #F57F2F;
 }
 
 @media only screen and (max-width: 60em) {

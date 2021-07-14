@@ -13,13 +13,13 @@
         @include mq($bpMedium) {
             grid-template-columns: 1fr;
             padding: 3rem 0;
-            padding-top: 0;
             &:last-of-type {
                 padding-bottom: 0;
             }
         }
         & .read-more {
             display: none;
+            margin-top: 1.5rem;
             @include mq($bpMedium) {
                 display: block;
             }
@@ -147,6 +147,7 @@
             flex-direction: column-reverse;
             height: initial;
             padding: 0;
+            margin-bottom: 5rem;
         }
         & figure {
             position: relative;
@@ -253,6 +254,11 @@
         position: absolute;
         right: 1rem;
         top: 1rem;
+        transform: rotate(45deg);
+        &::before {
+            font-size: 16px;
+            color: $orange;
+        }
     }
     &.active {
         @include mq($bpMedium) {

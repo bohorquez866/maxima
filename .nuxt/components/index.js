@@ -6,6 +6,8 @@ export { default as CategoryPosts } from '../..\\components\\CategoryPosts.vue'
 export { default as Comments } from '../..\\components\\Comments.vue'
 export { default as ContactComponent } from '../..\\components\\ContactComponent.vue'
 export { default as Footer } from '../..\\components\\Footer.vue'
+export { default as FormContact } from '../..\\components\\FormContact.vue'
+export { default as FormHome } from '../..\\components\\FormHome.vue'
 export { default as HomeAbout } from '../..\\components\\HomeAbout.vue'
 export { default as HomeBanner } from '../..\\components\\homeBanner.vue'
 export { default as HomeService } from '../..\\components\\homeService.vue'
@@ -19,6 +21,8 @@ export const LazyCategoryPosts = import('../..\\components\\CategoryPosts.vue' /
 export const LazyComments = import('../..\\components\\Comments.vue' /* webpackChunkName: "components/comments" */).then(c => wrapFunctional(c.default || c))
 export const LazyContactComponent = import('../..\\components\\ContactComponent.vue' /* webpackChunkName: "components/contact-component" */).then(c => wrapFunctional(c.default || c))
 export const LazyFooter = import('../..\\components\\Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c))
+export const LazyFormContact = import('../..\\components\\FormContact.vue' /* webpackChunkName: "components/form-contact" */).then(c => wrapFunctional(c.default || c))
+export const LazyFormHome = import('../..\\components\\FormHome.vue' /* webpackChunkName: "components/form-home" */).then(c => wrapFunctional(c.default || c))
 export const LazyHomeAbout = import('../..\\components\\HomeAbout.vue' /* webpackChunkName: "components/home-about" */).then(c => wrapFunctional(c.default || c))
 export const LazyHomeBanner = import('../..\\components\\homeBanner.vue' /* webpackChunkName: "components/home-banner" */).then(c => wrapFunctional(c.default || c))
 export const LazyHomeService = import('../..\\components\\homeService.vue' /* webpackChunkName: "components/home-service" */).then(c => wrapFunctional(c.default || c))

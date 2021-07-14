@@ -17,6 +17,12 @@
   "Footer": {
     "description": "Auto imported from components/Footer.vue"
   },
+  "FormContact": {
+    "description": "Auto imported from components/FormContact.vue"
+  },
+  "FormHome": {
+    "description": "Auto imported from components/FormHome.vue"
+  },
   "HomeAbout": {
     "description": "Auto imported from components/HomeAbout.vue"
   },
