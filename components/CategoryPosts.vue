@@ -1,35 +1,37 @@
 <template>
   <div>
     <!-- Banner -->
-    <section class="service_banner" v-if="banner">
-      <article>
-        <div>
-          <h4>Services</h4>
-          <h1 class="title">{{ banner.service_list_title }}</h1>
-          <p>{{ banner.service_banner_text }}</p>
-        </div>
-      </article>
-      <figure>
-        <p
-          class="toggle-service"
-          @click="showResidential"
-          v-if="visibleCommercial2"
-        >
-          <span>Commercial Cleaning</span>
-          <strong class="icon-arrow2"></strong>
-        </p>
+    <transition name="fade">
+      <section class="service_banner" v-if="banner">
+        <article>
+          <div>
+            <h4>Services</h4>
+            <h1 class="title">{{ banner.service_list_title }}</h1>
+            <p>{{ banner.service_banner_text }}</p>
+          </div>
+        </article>
+        <figure>
+          <p
+            class="toggle-service"
+            @click="showResidential"
+            v-if="visibleCommercial2"
+          >
+            <span>Commercial Cleaning</span>
+            <strong class="icon-arrow2"></strong>
+          </p>
 
-        <p
-          class="toggle-service"
-          @click="showResidential"
-          v-if="visibleResidential2"
-        >
-          <strong class="icon-arrow2"></strong>
-          <span>House Cleaning</span>
-        </p>
-        <img :src="banner.acf.service_banner_img" alt="" />
-      </figure>
-    </section>
+          <p
+            class="toggle-service"
+            @click="showResidential"
+            v-if="visibleResidential2"
+          >
+            <strong class="icon-arrow2"></strong>
+            <span>House Cleaning</span>
+          </p>
+          <img :src="banner.acf.service_banner_img" alt="" />
+        </figure>
+      </section>
+    </transition>
 
     <!-- Posts -->
     <section v-if="posts">

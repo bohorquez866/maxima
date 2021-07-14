@@ -17,7 +17,6 @@
       class="residential_services"
       @toggle-banner="showResidential"
     />
-
     <Footer />
   </main>
 </template>

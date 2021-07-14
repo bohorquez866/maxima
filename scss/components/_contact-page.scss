@@ -57,6 +57,17 @@
     }
     & .form-home {
         max-width: 57rem;
+        & select {
+            width: 100%;
+            border: 1px solid #AEAEAE;
+            outline: none;
+            border-radius: 5px;
+            padding: 1rem 2rem;
+            &,
+            & option {
+                color: #939393;
+            }
+        }
         @include mq($bpLarge) {
             max-width: 45rem;
         }

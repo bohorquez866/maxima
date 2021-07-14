@@ -112,6 +112,7 @@ export default {
         this.getCategoryData()
         this.getResidentialData()
         this.getCommercialData()
+        this.getServices()
     },
     async mounted() {
         this.$loading = this.$refs.loading
@@ -142,6 +143,7 @@ export default {
         residentialInfo() {
             return this.$store.getters.residential
         },
+
         urlPath() {
             return this.$store.getters.urlPath
         },
@@ -294,6 +296,16 @@ export default {
                     const finalData = response.data
 
                     this.$store.commit('SET_RESIDENTIAL_ITEMS', finalData)
+                })
+                .catch((error) => error)
+        },
+        getServices() {
+            axios
+                .get(`${this.urlPath}${this.urlService}`)
+                .then((response) => {
+                    const finalData = response.data
+                    console.log(finalData)
+                    this.$store.commit('SET_SERVICE_ITEMS', finalData)
                 })
                 .catch((error) => error)
         },

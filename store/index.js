@@ -6,7 +6,7 @@ export const state = () => ({
     commercial: [],
     residential: [],
     category: [],
-
+    service: [],
     urlPath: 'http://localhost/maxima/backend/',
 })
 
@@ -20,10 +20,12 @@ export const mutations = {
     SET_HOME_ITEMS(state, payload) {
         state.home = payload
     },
+    SET_SERVICE_ITEMS(state, payload) {
+        state.service = payload
+    },
     SET_CATEGORY_ITEMS(state, payload) {
         state.category = payload
     },
-
     SET_COMMERCIAL_ITEMS(state, payload) {
         let arrayCommercial = []
         let arrayChilds = []
@@ -71,9 +73,11 @@ export const getters = {
     home(state) {
         return state.home
     },
-
     category(state) {
         return state.category
+    },
+    service(state) {
+        return state.service
     },
     commercial(state) {
         return state.commercial
@@ -98,9 +102,11 @@ export const actions = {
     setHomeItems({ commit }, payload) {
         commit('SET_HOME_ITEMS', payload)
     },
-
     setCategoryItems({ commit }, payload) {
         commit('SET_CATEGORY_ITEMS', payload)
+    },
+    setServiceItems({ commit }, payload) {
+        commit('SET_SERVICE_ITEMS', payload)
     },
     setCommercialItems({ commit }, payload) {
         commit('SET_COMMERCIAL_ITEMS', payload)

@@ -65,16 +65,16 @@
       <!-- SERVICE SELECT -->
       <div>
         <ValidationProvider name="service" rules="required" v-slot="{ errors }">
-          <select
-            name="service"
-            id="service"
-            v-model="service"
-            placeholder="Select The Service"
-          >
-            <option value="placeholder" disabled selected>
-              Select The Service
+          <select name="service" id="service" v-model="service">
+            <option selected="selected" disabled>Select The Service</option>
+
+            <option
+              v-for="option in serviceData"
+              :key="option.ID"
+              :value="option.title.rendered"
+            >
+              {{ option.title.rendered }}
             </option>
-            <option value="test1">This is a fookeng test</option>
           </select>
           <span style="color: red">{{ errors[0] }}</span>
         </ValidationProvider>
@@ -96,7 +96,6 @@
       </div>
 
       <button class="btn_general" type="submit" id="form-submit">Send</button>
-
       <span v-if="successMessage" class="success-message">
         <p>SENT SUCCESSFULLY</p>
       </span>
@@ -112,13 +111,12 @@ import { required, email, numeric } from 'vee-validate/dist/rules'
 
 // No message specified.
 extend('email', email)
-
 // Override the default message.
 extend('required', {
   ...required,
   message: 'This field is required',
 })
-// Override the default message.
+
 export default {
   data() {
     return {
@@ -135,8 +133,18 @@ export default {
     ValidationProvider,
     ValidationObserver,
   },
-
+  computed: {
+    serviceData() {
+      return this.$store.getters.service
+    },
+  },
+  mounted() {
+    this.logData()
+  },
   methods: {
+    logData() {
+      console.log(this.serviceData)
+    },
     sendEmail() {
       const formData = new FormData()
       formData.append('name', this.name)

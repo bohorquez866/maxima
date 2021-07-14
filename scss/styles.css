@@ -2250,6 +2250,19 @@ button.swiper-pagination-bullet {
   max-width: 57rem;
 }
 
+.contact-page .form-home select {
+  width: 100%;
+  border: 1px solid #AEAEAE;
+  outline: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+
+.contact-page .form-home select,
+.contact-page .form-home select option {
+  color: #939393;
+}
+
 @media only screen and (max-width: 106em) {
   .contact-page .form-home {
     max-width: 45rem;
@@ -2915,6 +2928,16 @@ button.swiper-pagination-bullet {
   .commercial_services .posts-5::after {
     right: -2rem;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 
 .footer {

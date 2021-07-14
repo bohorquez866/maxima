@@ -1,11 +1,11 @@
 <template>
   <div class="">
-    <div class="preloader" v-once v-if="isLoading">
+    <figure class="preloader" v-once v-if="isLoading">
       <div>
-        <div class="blob-1"></div>
-        <div class="blob-2"></div>
+        <span class="blob-1"></span>
+        <span class="blob-2"></span>
       </div>
-    </div>
+    </figure>
     <Nuxt keep-alive />
   </div>
 </template>
