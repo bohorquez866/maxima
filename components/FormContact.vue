@@ -49,7 +49,7 @@
 
       <!-- phone -->
       <div>
-        <ValidationProvider name="phone" rules="numeric" v-slot="{ errors }">
+        <ValidationProvider name="phone" rules="required" v-slot="{ errors }">
           <input
             type="tel"
             id="phone"
@@ -64,7 +64,7 @@
 
       <!-- SERVICE SELECT -->
       <div>
-        <ValidationProvider name="text" rules="required" v-slot="{ errors }">
+        <ValidationProvider name="service" rules="required" v-slot="{ errors }">
           <select
             name="service"
             id="service"
@@ -74,6 +74,7 @@
             <option value="placeholder" disabled selected>
               Select The Service
             </option>
+            <option value="test1">This is a fookeng test</option>
           </select>
           <span style="color: red">{{ errors[0] }}</span>
         </ValidationProvider>
@@ -141,6 +142,8 @@ export default {
       formData.append('name', this.name)
       formData.append('email', this.email)
       formData.append('message', this.message)
+      formData.append('phone', this.phone)
+      formData.append('service', this.service)
 
       axios
         .post(`http://localhost/maxima/backend/mail2.php`, formData)
@@ -152,6 +155,8 @@ export default {
       this.name = null
       this.email = null
       this.message = null
+      this.phone = null
+      this.service = null
       this.reset++
 
       console.log(this.reset)
