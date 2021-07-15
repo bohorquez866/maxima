@@ -20,7 +20,7 @@ export default {
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         { src: '@/node_modules/vue-awesome-swiper', mode: 'client' },
-        './mixin/global.js',
+        { src: './plugins/global.client.js', mode: 'client' },
         { src: '@/node_modules/vee-validate' },
         // { src: '@/node_modules/@morioh/v-lightbox' },
     ],
