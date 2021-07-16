@@ -2940,6 +2940,87 @@ button.swiper-pagination-bullet {
   opacity: 0;
 }
 
+.gallery {
+  padding-bottom: 8rem;
+}
+
+.gallery h1 {
+  text-align: center;
+  font-size: 6rem;
+  margin: 4rem 0;
+  color: #F57F2F;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 106em) {
+  .gallery h1 {
+    font-size: 4.5rem;
+    margin: 3rem 0;
+  }
+}
+
+@media only screen and (max-width: 60em) {
+  .gallery h1 {
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
+}
+
+.gallery .arrow {
+  display: block;
+}
+
+.gallery #silentbox-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 30rem);
+  grid-template-rows: 30rem;
+  justify-content: center;
+  column-gap: 5rem;
+  row-gap: 3rem;
+}
+
+@media only screen and (max-width: 106em) {
+  .gallery #silentbox-gallery {
+    grid-template-columns: repeat(4, 25rem);
+    grid-template-rows: 25rem;
+    column-gap: 3rem;
+    row-gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 60em) {
+  .gallery #silentbox-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+    grid-template-rows: initial;
+    column-gap: 3rem;
+    row-gap: 2rem;
+  }
+}
+
+.gallery #silentbox-gallery > a {
+  display: block;
+  height: fit-content;
+}
+
+.gallery #silentbox-gallery > a img {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 106em) {
+  .gallery #silentbox-gallery > a img {
+    height: 25rem;
+  }
+}
+
+@media only screen and (max-width: 60em) {
+  .gallery #silentbox-gallery > a img {
+    height: 15rem;
+  }
+}
+
 .footer {
   background-color: #003127;
   display: flex;

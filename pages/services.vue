@@ -46,7 +46,6 @@ export default {
       this.visibleCommercial = commercialChild
     },
     showCommercial(commercialChild, ResidentialChild) {
-      console.log(commercialChild)
       this.visibleResidential = ResidentialChild
       this.visibleCommercial = commercialChild
     },

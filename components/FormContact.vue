@@ -138,13 +138,9 @@ export default {
       return this.$store.getters.service
     },
   },
-  mounted() {
-    this.logData()
-  },
+
   methods: {
-    logData() {
-      console.log(this.serviceData)
-    },
+ 
     sendEmail() {
       const formData = new FormData()
       formData.append('name', this.name)

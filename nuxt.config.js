@@ -22,7 +22,7 @@ export default {
         { src: '@/node_modules/vue-awesome-swiper', mode: 'client' },
         { src: './plugins/global.client.js', mode: 'client' },
         { src: '@/node_modules/vee-validate' },
-        // { src: '@/node_modules/@morioh/v-lightbox' },
+        { src: '@/node_modules/vue-silentbox', mode: 'client' },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components

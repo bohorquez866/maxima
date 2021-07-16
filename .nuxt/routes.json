@@ -14,6 +14,13 @@
     "_name": "_c3c7c2e2"
   },
   {
+    "name": "Gallery",
+    "path": "/Gallery",
+    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\Gallery.vue",
+    "chunkName": "pages/Gallery",
+    "_name": "_7efa30a1"
+  },
+  {
     "name": "services",
     "path": "/services",
     "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\services.vue",
