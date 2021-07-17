@@ -17,6 +17,7 @@ You can directly use them in pages and other components without the need to impo
 - `<HomeAbout>` | `<home-about>` (components/HomeAbout.vue)
 - `<HomeBanner>` | `<home-banner>` (components/homeBanner.vue)
 - `<HomeService>` | `<home-service>` (components/homeService.vue)
+- `<Loader>` | `<loader>` (components/Loader.vue)
 - `<Navbar>` | `<navbar>` (components/navbar.vue)
 - `<Perks>` | `<perks>` (components/Perks.vue)
 - `<ServiceBanner>` | `<service-banner>` (components/ServiceBanner.vue)

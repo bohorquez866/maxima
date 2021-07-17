@@ -32,6 +32,9 @@
   "HomeService": {
     "description": "Auto imported from components/homeService.vue"
   },
+  "Loader": {
+    "description": "Auto imported from components/Loader.vue"
+  },
   "Navbar": {
     "description": "Auto imported from components/navbar.vue"
   },

@@ -1,4 +1,5 @@
 export default {
+    loading: '@/components/Loader.vue',
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'maxima',

@@ -166,6 +166,10 @@
                 background: linear-gradient(180deg, #f47520ce 25%, rgba(245, 127, 47, 0) 100%);
                 background-blend-mode: multiply;
                 transform: rotate( 270deg);
+                &:hover {
+                    @include transition;
+                    background: linear-gradient(180deg, #db3d0dce 25%, rgba(226, 76, 7, 0) 100%);
+                }
                 @include mq($bpMedium) {
                     width: 165px;
                 }

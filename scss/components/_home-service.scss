@@ -60,6 +60,35 @@
                 display: flex;
                 position: relative;
                 z-index: 2;
+                & .btn_general {
+                    position: absolute;
+                    left: calc(50% - 10%);
+                    top: 50%;
+                    z-index: -100;
+                    opacity: 0;
+                }
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: -100;
+                    @include transition;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    opacity: 0;
+                }
+                &:hover {
+                    & .btn_general {
+                        opacity: 1;
+                        z-index: 100;
+                    }
+                    &::before {
+                        opacity: 1;
+                        z-index: 100;
+                    }
+                }
                 & h2 {
                     margin-bottom: 3rem;
                 }

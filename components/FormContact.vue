@@ -82,7 +82,7 @@
 
       <!-- TEXTAREA -->
       <div class="input_item">
-        <ValidationProvider name="text" rules="required" v-slot="{ errors }">
+        <ValidationProvider name="text" v-slot="{ errors }">
           <textarea
             ref="inputs"
             name="message"
@@ -140,7 +140,6 @@ export default {
   },
 
   methods: {
- 
     sendEmail() {
       const formData = new FormData()
       formData.append('name', this.name)

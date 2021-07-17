@@ -1,11 +1,12 @@
 <template>
   <section
-    v-if="category"
     v-swiper="swiperOption"
     class="home_banner swiper w-5/6 ml-auto relative"
+    :key="reset"
   >
     <section class="swiper-wrapper">
       <!-- SLIDE -->
+
       <article
         v-for="(data, index) in category"
         :key="data.id"
@@ -18,6 +19,8 @@
               arrow: true,
               'arrow-next': index + 1 == 1,
               'arrow-prev': index + 1 == 2,
+              'home-arrow-1': index + 1 == 1,
+              'home-arrow-2': index + 1 == 2,
             }"
           >
           </span>
@@ -27,7 +30,7 @@
             <h4>SERVICES</h4>
             <h2 class="title">{{ data.home_title }}</h2>
             <p>{{ data.home_text }}</p>
-            <nuxt-link :to="data.slug" class="btn_general">Read More</nuxt-link>
+            <nuxt-link to="/services" class="btn_general">Read More</nuxt-link>
           </div>
         </div>
 
@@ -55,26 +58,35 @@ export default {
   },
   data() {
     return {
+      reset: 0,
+
       swiperOption: {
         slidesPerView: 1,
         spaceBetween: 50,
-        // pagination: {
-        //   el: '.swiper-pagination',
-        //   clickable: true,
-        // },
-        loop: true,
+        loop: false,
         effect: 'fade',
         fadeEffect: { crossFade: true },
         navigation: {
-          nextEl: '.arrow.arrow-next',
-          prevEl: '.arrow.arrow-prev',
+          nextEl: '.arrow.arrow-next.home-arrow-1',
+          prevEl: '.arrow.arrow-prev.home-arrow-2',
         },
       },
     }
   },
+
   computed: {
     category() {
       return this.$store.getters.category
+    },
+  },
+  mounted() {
+    setTimeout(() => {
+      this.resetBanner()
+    }, 1000)
+  },
+  methods: {
+    resetBanner() {
+      this.reset += 1
     },
   },
 }

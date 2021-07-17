@@ -67,10 +67,13 @@
                 font-size: 14px;
             }
         }
+        & .btn_general {
+            width: 15rem;
+        }
     }
     & .success-message {
         background-color: rgb(12, 92, 65);
-        width: 100%;
+        width: 80%;
         border-radius: 5px;
         width: 30rem;
         padding: 1rem 2rem;

@@ -114,7 +114,6 @@ export default {
       this.message = null
       this.reset++
 
-      console.log(this.reset)
       this.successMessage = true
       setTimeout(() => {
         this.successMessage = false

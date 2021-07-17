@@ -99,6 +99,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include transition;
+        &:hover {
+            background-color: $orange;
+            &::before {
+                color: $white;
+            }
+        }
         &::before {
             font-size: 13px;
         }

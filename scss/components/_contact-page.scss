@@ -1,6 +1,6 @@
 .contact-page {
     & .contact {
-        grid-template-columns: 41.67% 1fr;
+        grid-template-columns: 47.67% 1fr;
         grid-template-rows: 60rem;
         padding: 0 3.91%;
         column-gap: 0;
@@ -34,9 +34,9 @@
             }
         }
         >div {
-            width: 40rem;
+            width: 43rem;
             margin-left: auto;
-            margin-right: 11rem;
+            margin-right: 15rem;
             @include mq($bpLarge) {
                 margin-right: 9rem;
                 width: 35rem;

@@ -20,6 +20,7 @@
                 {{ data2.service_list_item }}
               </li>
             </ul>
+            <nuxt-link class="btn_general" to="/services">Read More</nuxt-link>
           </article>
         </div>
 

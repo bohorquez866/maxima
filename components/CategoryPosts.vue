@@ -16,7 +16,7 @@
             @click="showResidential"
             v-if="visibleCommercial2"
           >
-            <span>Commercial Cleaning</span>
+            <span>House Cleaning</span>
             <strong class="icon-arrow2"></strong>
           </p>
 
@@ -26,7 +26,7 @@
             v-if="visibleResidential2"
           >
             <strong class="icon-arrow2"></strong>
-            <span>House Cleaning</span>
+            <span>Commercial Cleaning</span>
           </p>
           <img :src="banner.acf.service_banner_img" alt="" />
         </figure>
@@ -50,8 +50,12 @@
 
           <img class="desktop-img" :src="post.acf.img_post" alt="" />
           <article>
-            <h2>{{ post.title.rendered }}</h2>
+            <h2 v-html="post.title.rendered"></h2>
             <div v-html="post.content.rendered"></div>
+
+            <nuxtLink to="/contact" class="btn_general">
+              Acquire Service
+            </nuxtLink>
 
             <button @click="showModal(post)" class="read-more">
               Read More
@@ -59,24 +63,27 @@
           </article>
         </div>
       </article>
+
       <!-- //* MODAL -->
-      <section
-        class="service_modal"
-        :class="{ active: modalShown }"
-        v-if="modalShown"
-      >
-        <div v-if="selectedItem">
-          <span class="close-modal icon-cross" @click="closeModal"></span>
-          <img class="desktop-img" :src="selectedItem.acf.img_post" alt="" />
-          <article>
-            <h3>{{ selectedItem.title.rendered }}</h3>
-            <div v-html="selectedItem.content.rendered"></div>
-            <nuxt-link to="contact" class="btn_general">
-              Get In Touch
-            </nuxt-link>
-          </article>
-        </div>
-      </section>
+      <transition name="fade">
+        <section
+          class="service_modal"
+          :class="{ active: modalShown }"
+          v-if="modalShown"
+        >
+          <div v-if="selectedItem">
+            <span class="close-modal icon-cross" @click="closeModal"></span>
+            <img class="desktop-img" :src="selectedItem.acf.img_post" alt="" />
+            <article>
+              <h3>{{ selectedItem.title.rendered }}</h3>
+              <div v-html="selectedItem.content.rendered"></div>
+              <nuxt-link to="contact" class="btn_general">
+                Get In Touch
+              </nuxt-link>
+            </article>
+          </div>
+        </section>
+      </transition>
     </section>
   </div>
 </template>
