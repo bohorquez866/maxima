@@ -43,9 +43,15 @@ export default {
     return {
       swiperOption: {
         spaceBetween: 'auto',
+
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
+        },
+
+        autoplay: {
+          speed: 4000,
+          delay: 4000,
         },
         loop: true,
         effect: 'fade',

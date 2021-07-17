@@ -1,8 +1,8 @@
 .contact {
     padding: 11rem 0;
     display: grid;
-    grid-template-columns: 40rem 57rem;
-    column-gap: 14rem;
+    grid-template-columns: 43rem 57rem;
+    column-gap: 11rem;
     justify-content: center;
     @include mq($bpLarge) {
         column-gap: 6rem;
@@ -10,7 +10,7 @@
     }
     &_info {
         & h2 {
-            margin-bottom: 4rem;
+            margin-bottom: 1rem;
             @include mq($bpMedium) {
                 margin-bottom: 2rem;
             }
@@ -46,7 +46,7 @@
     & .form-home {
         width: 100%;
         &>div {
-            margin-bottom: 2rem;
+            margin-bottom: 1.7rem;
         }
         & textarea.contact_input {
             height: 14rem;

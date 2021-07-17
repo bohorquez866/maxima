@@ -14,7 +14,7 @@
           <p
             class="toggle-service"
             @click="showResidential"
-            v-if="visibleCommercial2"
+            v-if="visibleCommercial"
           >
             <span>House Cleaning</span>
             <strong class="icon-arrow2"></strong>
@@ -23,7 +23,7 @@
           <p
             class="toggle-service"
             @click="showResidential"
-            v-if="visibleResidential2"
+            v-if="visibleResidential"
           >
             <strong class="icon-arrow2"></strong>
             <span>Commercial Cleaning</span>
@@ -75,7 +75,7 @@
             <span class="close-modal icon-cross" @click="closeModal"></span>
             <img class="desktop-img" :src="selectedItem.acf.img_post" alt="" />
             <article>
-              <h3>{{ selectedItem.title.rendered }}</h3>
+              <h3 v-html="selectedItem.title.rendered"></h3>
               <div v-html="selectedItem.content.rendered"></div>
               <nuxt-link to="contact" class="btn_general">
                 Get In Touch
@@ -92,8 +92,6 @@
 export default {
   data() {
     return {
-      visibleCommercial2: true,
-      visibleResidential2: null,
       modalShown: false,
       selectedItem: {},
     }
@@ -102,16 +100,15 @@ export default {
     posts: Array,
     banner: Object,
   },
-
-  methods: {
-    toggleServBanner() {
-      this.$emit(
-        'toggle-banner',
-        this.visibleResidential2,
-        this.visibleCommercial2
-      )
+  computed: {
+    visibleCommercial() {
+      return this.$store.getters.visibleCommercial
     },
-
+    visibleResidential() {
+      return this.$store.getters.visibleResidential
+    },
+  },
+  methods: {
     showModal(postObject) {
       this.selectedItem = postObject
       this.modalShown = true
@@ -121,13 +118,14 @@ export default {
       this.modalShown = false
     },
     showResidential() {
-      this.toggleServBanner()
-      if (this.visibleCommercial2) {
-        this.visibleResidential2 = true
-        this.visibleCommercial2 = false
-      } else if (this.visibleResidential2) {
-        this.visibleCommercial2 = true
-        this.visibleResidential2 = false
+      if (this.visibleCommercial) {
+        this.$router.push('/services/residential')
+        // this.visibleResidential2 = true
+        // this.visibleCommercial2 = false
+      } else if (this.visibleResidential) {
+        this.$router.push('/services/commercial')
+        // this.visibleCommercial2 = true
+        // this.visibleResidential2 = false
       }
     },
   },

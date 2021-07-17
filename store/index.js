@@ -8,8 +8,44 @@ export const state = () => ({
     category: [],
     service: [],
     urlPath: 'http://localhost/maxima/backend/',
+    visibleResidential: false,
+    visibleCommercial: true,
 })
-
+export const getters = {
+    menu(state) {
+        return state.menu
+    },
+    perks(state) {
+        return state.perks
+    },
+    home(state) {
+        return state.home
+    },
+    category(state) {
+        return state.category
+    },
+    service(state) {
+        return state.service
+    },
+    commercial(state) {
+        return state.commercial
+    },
+    residential(state) {
+        return state.residential
+    },
+    urlPath(state) {
+        return state.urlPath
+    },
+    isLoading(state) {
+        return state.isLoading
+    },
+    visibleCommercial(state) {
+        return state.visibleCommercial
+    },
+    visibleResidential(state) {
+        return state.visibleResidential
+    },
+}
 export const mutations = {
     SET_MENU_ITEMS(state, payload) {
         state.menu = payload
@@ -61,35 +97,11 @@ export const mutations = {
     TOGGLE_LOADER(state, payload) {
         state.isLoading = payload
     },
-}
-
-export const getters = {
-    menu(state) {
-        return state.menu
+    TOGGLE_VISIBLE_COMMERCIAL(state, payload) {
+        state.visibleCommercial = payload
     },
-    perks(state) {
-        return state.perks
-    },
-    home(state) {
-        return state.home
-    },
-    category(state) {
-        return state.category
-    },
-    service(state) {
-        return state.service
-    },
-    commercial(state) {
-        return state.commercial
-    },
-    residential(state) {
-        return state.residential
-    },
-    urlPath(state) {
-        return state.urlPath
-    },
-    isLoading(state) {
-        return state.isLoading
+    TOGGLE_VISIBLE_RESIDENTIAL(state, payload) {
+        state.visibleResidential = payload
     },
 }
 export const actions = {
@@ -116,5 +128,11 @@ export const actions = {
     },
     toggleLoader({ commit }, payload) {
         commit('TOGGLE_LOADER', payload)
+    },
+    toggleCommercial({ commit }, payload) {
+        commit('TOGGLE_VISIBLE_COMMERCIAL', payload)
+    },
+    toggleResidential({ commit }, payload) {
+        commit('TOGGLE_VISIBLE_RESIDENTIAL', payload)
     },
 }

@@ -66,6 +66,9 @@
             background: url(../assets/img/bg2.png);
             background-size: cover;
             position: relative;
+            & h4 {
+                margin-bottom: 0;
+            }
             & h2 {
                 margin-bottom: 2rem;
             }
@@ -74,14 +77,15 @@
                 max-width: 43rem;
                 z-index: 10;
                 margin-left: auto;
-                margin-right: 11rem;
+                margin-right: 8rem;
                 @include mq($bpLarge) {
                     max-width: 35rem;
                     margin-right: 5rem;
                 }
                 @include mq($bpMedium) {
+                    max-width: 100%;
                     @include margin-x;
-                    padding: 4rem 0;
+                    padding: 4rem 3rem;
                     a.btn_general {
                         text-align: center;
                         margin: 0 auto;
@@ -103,7 +107,7 @@
     }
     & figure {
         width: 100%;
-        height: 660px;
+        height: 550px;
         @include mq($bpMedium) {
             height: 23rem;
         }
@@ -126,15 +130,21 @@
     .arrow.arrow-next {
         left: 3rem;
         transform: rotate(180deg);
+        @include mq($bpMedium) {
+            left: 1rem;
+        }
     }
     .arrow.arrow-prev {
         right: 3rem;
         transform: rotate(unset);
+        @include mq($bpMedium) {
+            right: 1rem;
+        }
     }
     .arrow.arrow-prev,
     .arrow.arrow-next {
         @include mq($bpMedium) {
-            display: none;
+            display: block;
         }
     }
     & .swiper-slide.swiper-slide-active {
@@ -143,6 +153,11 @@
         }
     }
     & .slide-1 {
+        @include mq-min($bpMedium) {
+            & .arrow.arrow-prev {
+                display: none;
+            }
+        }
         @include mq($bpMedium) {
             &>div {
                 grid-row: 2/3;
@@ -150,6 +165,11 @@
         }
     }
     & .slide-2 {
+        @include mq-min($bpMedium) {
+            & .arrow.arrow-next {
+                display: none;
+            }
+        }
         grid-template-columns: 1fr 34.69%;
         @include mq($bpMedium) {
             grid-template-columns: 1fr;
@@ -164,6 +184,11 @@
 }
 
 .about_banner {
+    @include mq($bpLarge) {
+        & img {
+            width: 100%;
+        }
+    }
     @include mq($bpMedium) {
         grid-template-columns: 1fr;
         & img {

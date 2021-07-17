@@ -30,9 +30,6 @@
     & h4 {
         text-align: center;
     }
-    & h4 {
-        margin-bottom: 0;
-    }
     & h2 {
         margin-bottom: 4rem;
         @include mq($bpMedium) {
@@ -86,7 +83,7 @@
     & .arrow-container {
         display: flex;
         justify-content: center;
-        column-gap: 3rem;
+        column-gap: 1.5rem;
         margin-top: 3rem;
     }
     & .comment-arrow {

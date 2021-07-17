@@ -18,8 +18,25 @@
             <li>
               <NuxtLink to="/">Home</NuxtLink>
             </li>
+            <li>
+              <p>Services</p>
+              <ul class="submenu">
+                <li>
+                  <nuxt-link to="/services/commercial" class="submenu-link"
+                    >Commercial</nuxt-link
+                  >
+                </li>
+
+                <li>
+                  <nuxt-link to="/services/residential" class="submenu-link"
+                    >Residential</nuxt-link
+                  >
+                </li>
+              </ul>
+            </li>
+
             <li v-for="item in nav" :key="item.ID" ref="identifier">
-              <NuxtLink :to="item.title">{{ item.title }}</NuxtLink>
+              <NuxtLink :to="`/${item.title}`">{{ item.title }}</NuxtLink>
             </li>
           </div>
           <!--//* NAVBAR MOBILE FOOTER -->

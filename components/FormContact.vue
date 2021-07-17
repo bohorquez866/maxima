@@ -64,23 +64,29 @@
 
       <!-- SERVICE SELECT -->
       <div>
-        <ValidationProvider name="service" rules="required" v-slot="{ errors }">
+        <ValidationProvider name="phone" rules="required" v-slot="{ errors }">
+          <!-- <Field name="service" as="select">
+            <option>Coffee</option>
+            <option>Tea</option>
+            <option>Coke</option>
+          </Field>
+          -->
           <select name="service" id="service" v-model="service">
-            <option selected="selected" disabled>Select The Service</option>
+            <option value="none" selected disabled>Select The Service</option>
 
             <option
               v-for="option in serviceData"
               :key="option.ID"
               :value="option.title.rendered"
-            >
-              {{ option.title.rendered }}
-            </option>
+              v-html="option.title.rendered"
+            ></option>
+            -->
           </select>
           <span style="color: red">{{ errors[0] }}</span>
         </ValidationProvider>
       </div>
 
-      <!-- TEXTAREA -->
+      <!-- //* TEXTAREA -->
       <div class="input_item">
         <ValidationProvider name="text" v-slot="{ errors }">
           <textarea
@@ -105,7 +111,7 @@
 
 <script>
 import axios from 'axios'
-import { ValidationProvider, ValidationObserver } from 'vee-validate'
+import { ValidationProvider, ValidationObserver, Field } from 'vee-validate'
 import { extend } from 'vee-validate'
 import { required, email, numeric } from 'vee-validate/dist/rules'
 
@@ -118,13 +124,16 @@ extend('required', {
 })
 
 export default {
+  components: {
+    Field,
+  },
   data() {
     return {
       name: null,
       email: null,
       message: null,
       phone: null,
-      service: null,
+      service: 'Select your Service',
       successMessage: false,
       reset: 0,
     }

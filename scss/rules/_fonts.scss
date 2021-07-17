@@ -53,7 +53,7 @@
 
 .text {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
     letter-spacing: 0.05em;
     font-family: $font_02;
     color: $black;
@@ -71,7 +71,7 @@
         font-size: 15px;
     }
     @include mq($bpLarge) {
-        line-height: 20px;
+        line-height: 1.7;
     }
 }
 
@@ -91,7 +91,15 @@ h4 {
     /* or 90% */
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
+    @include mq($bpLarge) {
+        font-size: 14px;
+    }
+    @include mq($bpMedium) {
+        line-height: initial;
+        margin-bottom: 0;
+        font-size: 15px;
+    }
 }
 
 .title {

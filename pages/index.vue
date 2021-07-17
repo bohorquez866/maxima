@@ -1,7 +1,7 @@
 <template>
   <main>
     <Navbar />
-    <HomeBanner />
+    <HomeBanner keep-alive />
     <Perks />
     <HomeAbout />
     <homeService />

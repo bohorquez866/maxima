@@ -21,6 +21,9 @@
 
 <script>
 export default {
+  mounted() {
+    console.log(this.$route, 'gasdasd')
+  },
   computed: {
     commercialInfo() {
       return this.$store.getters.commercial
@@ -36,26 +39,6 @@ export default {
     },
     visibleResidential() {
       return this.$store.getters.visibleResidential
-    },
-  },
-  methods: {
-    showResidential() {
-      if (this.$route.params.commercial == 'residential') {
-        this.$store.dispatch('toggleResidential', true)
-        this.$store.dispatch('toggleCommercial', false)
-        // this.visibleResidential2 = true
-        // this.visibleCommercial2 = false
-      } else if (this.$route.params.commercial == 'commercial') {
-        this.$store.dispatch('toggleCommercial', true)
-        this.$store.dispatch('toggleResidential', false)
-        // this.visibleCommercial2 = true
-        // this.visibleResidential2 = false
-      }
-    },
-  },
-  watch: {
-    '$route.params.commercial'() {
-      this.showResidential()
     },
   },
 }

@@ -28,7 +28,7 @@
         &::after {
             position: absolute;
             font-weight: normal;
-            font-size: 100px;
+            font-size: 110px;
             line-height: 75px;
             letter-spacing: 0.15em;
             font-family: $font_01;
@@ -73,9 +73,12 @@
                 }
                 & p {
                     grid-row: 2/3;
-                    height: 4rem;
+                    height: 4.5rem;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
                 }
                 .desktop-img {
                     display: none;
@@ -95,11 +98,10 @@
                 color: #412903;
                 @include mq($bpMedium) {
                     font-size: 15px;
-                    width: 60%;
                     margin-top: 0;
                 }
             }
-            &>div {
+            &>article>div {
                 min-height: 8rem;
                 @include mq($bpMedium) {
                     min-height: auto;
@@ -124,6 +126,7 @@
                 width: 100%;
                 &.post_img--mobile {
                     display: none;
+                    border-radius: 1rem;
                     @include mq($bpMedium) {
                         display: block;
                         height: 100%;
@@ -167,8 +170,10 @@
                 background-blend-mode: multiply;
                 transform: rotate( 270deg);
                 &:hover {
-                    @include transition;
-                    background: linear-gradient(180deg, #db3d0dce 25%, rgba(226, 76, 7, 0) 100%);
+                    @include mq-min($bpMedium) {
+                        @include transition;
+                        background: linear-gradient(180deg, #db3d0dce 25%, rgba(226, 76, 7, 0) 100%);
+                    }
                 }
                 @include mq($bpMedium) {
                     width: 165px;

@@ -10,7 +10,7 @@
             grid-template-columns: 46% 1fr;
         }
         @include mq($bpMedium) {
-            grid-template-rows: 43rem;
+            grid-template-rows: max-content;
             padding: 0;
             grid-template-columns: 100%;
             & h4 {
@@ -24,13 +24,16 @@
         flex-direction: column;
         background-position: center center;
         background-size: contain;
-        background-image: url(/_nuxt/assets/img/bg.png);
+        background-image: url(../assets/img/bg.png);
         @include mq($bpMedium) {
             padding: 5rem 4.5rem;
         }
         & h2 {
             @include mq($bpLarge) {
                 margin-bottom: 1rem;
+            }
+            @include mq($bpMedium) {
+                text-align: center;
             }
         }
         >div {
@@ -56,7 +59,7 @@
         }
     }
     & .form-home {
-        max-width: 57rem;
+        max-width: 70%;
         & select {
             width: 100%;
             border: 1px solid #AEAEAE;
@@ -68,8 +71,8 @@
                 color: #939393;
             }
         }
-        @include mq($bpLarge) {
-            max-width: 45rem;
+        @include mq($bpMedium) {
+            max-width: 100%;
         }
     }
 }

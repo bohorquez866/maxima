@@ -15,10 +15,10 @@ import { createStore } from './store.js'
 
 import nuxt_plugin_plugin_b8b08684 from 'nuxt_plugin_plugin_b8b08684' // Source: .\\components\\plugin.js (mode: 'all')
 import nuxt_plugin_axios_cc14443e from 'nuxt_plugin_axios_cc14443e' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_vueawesomeswiper_95d16dae from 'nuxt_plugin_vueawesomeswiper_95d16dae' // Source: ..\\node_modules\\vue-awesome-swiper (mode: 'client')
+import nuxt_plugin_vueawesomeswiper_95d16dae from 'nuxt_plugin_vueawesomeswiper_95d16dae' // Source: ..\\node_modules\\vue-awesome-swiper (mode: 'all')
 import nuxt_plugin_globalclient_37b60b87 from 'nuxt_plugin_globalclient_37b60b87' // Source: ..\\plugins\\global.client.js (mode: 'client')
 import nuxt_plugin_veevalidate_438e7a4d from 'nuxt_plugin_veevalidate_438e7a4d' // Source: ..\\node_modules\\vee-validate (mode: 'all')
-import nuxt_plugin_vuesilentbox_255928ef from 'nuxt_plugin_vuesilentbox_255928ef' // Source: ..\\node_modules\\vue-silentbox (mode: 'client')
+import nuxt_plugin_vuesilentbox_255928ef from 'nuxt_plugin_vuesilentbox_255928ef' // Source: ..\\node_modules\\vue-silentbox (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -223,7 +223,7 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_axios_cc14443e(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_vueawesomeswiper_95d16dae === 'function') {
+  if (typeof nuxt_plugin_vueawesomeswiper_95d16dae === 'function') {
     await nuxt_plugin_vueawesomeswiper_95d16dae(app.context, inject)
   }
 
@@ -235,7 +235,7 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_veevalidate_438e7a4d(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_vuesilentbox_255928ef === 'function') {
+  if (typeof nuxt_plugin_vuesilentbox_255928ef === 'function') {
     await nuxt_plugin_vuesilentbox_255928ef(app.context, inject)
   }
 

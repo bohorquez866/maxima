@@ -13,17 +13,8 @@
         :class="`swiper-slide slide-${index + 1}`"
       >
         <div class="content-wrapper">
-          <span
-            :class="{
-              'icon-arrow2': true,
-              arrow: true,
-              'arrow-next': index + 1 == 1,
-              'arrow-prev': index + 1 == 2,
-              'home-arrow-1': index + 1 == 1,
-              'home-arrow-2': index + 1 == 2,
-            }"
-          >
-          </span>
+          <span class="icon-arrow2 arrow arrow-next home-arrow-1"> </span>
+          <span class="icon-arrow2 arrow arrow-prev home-arrow-2"> </span>
 
           <!-- inner content -->
           <div>
@@ -63,8 +54,12 @@ export default {
       swiperOption: {
         slidesPerView: 1,
         spaceBetween: 50,
-        loop: false,
+        loop: true,
         effect: 'fade',
+        autoplay: {
+          speed: 4500,
+          delay: 3500,
+        },
         fadeEffect: { crossFade: true },
         navigation: {
           nextEl: '.arrow.arrow-next.home-arrow-1',

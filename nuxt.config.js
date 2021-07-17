@@ -20,10 +20,10 @@ export default {
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
-        { src: '@/node_modules/vue-awesome-swiper', mode: 'client' },
-        { src: './plugins/global.client.js', mode: 'client' },
+        { src: '@/node_modules/vue-awesome-swiper' },
+        { src: './plugins/global.client.js' },
         { src: '@/node_modules/vee-validate' },
-        { src: '@/node_modules/vue-silentbox', mode: 'client' },
+        { src: '@/node_modules/vue-silentbox' },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components

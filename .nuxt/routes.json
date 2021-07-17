@@ -14,17 +14,26 @@
     "_name": "_c3c7c2e2"
   },
   {
-    "name": "Gallery",
-    "path": "/Gallery",
-    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\Gallery.vue",
-    "chunkName": "pages/Gallery",
-    "_name": "_7efa30a1"
+    "name": "gallery",
+    "path": "/gallery",
+    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\gallery.vue",
+    "chunkName": "pages/gallery",
+    "_name": "_1b9088c1"
   },
   {
     "name": "services",
     "path": "/services",
     "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\services.vue",
     "chunkName": "pages/services",
+    "children": [
+      {
+        "name": "services-commercial",
+        "path": ":commercial?",
+        "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\services\\\\_commercial.vue",
+        "chunkName": "pages/services/_commercial",
+        "_name": "_b304130c"
+      }
+    ],
     "_name": "_1b43f202"
   },
   {
