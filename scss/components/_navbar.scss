@@ -113,7 +113,12 @@
                 }
                 width: 30rem;
                 flex-direction: column;
-                & li {
+                &>li {
+                    & p {
+                        display: block;
+                        line-height: initial;
+                        margin-top: 25px;
+                    }
                     border-top: 1px solid #D0D0D0;
                     @include margin-x;
                     width: calc(100% - 4rem);
@@ -127,7 +132,7 @@
                         /* identical to box height, or 64% */
                         letter-spacing: 0.08em;
                     }
-                    & a {
+                    &>a {
                         padding: 25px 0;
                     }
                 }
@@ -205,6 +210,14 @@
                 row-gap: 1rem;
                 opacity: 0;
                 z-index: -1;
+                @include mq($bpMedium) {
+                    position: relative;
+                    opacity: 1;
+                    z-index: initial;
+                    & * {
+                        color: black;
+                    }
+                }
                 & li {
                     margin-right: 0;
                     & a {
