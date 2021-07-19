@@ -60,12 +60,14 @@
             padding: 0;
             grid-template-columns: 1fr;
         }
+        @include mq($bpSmall) {
+            display: block;
+        }
         &>div {
             display: flex;
             align-items: center;
             background: url(../assets/img/bg2.png);
             background-size: cover;
-            position: relative;
             & h4 {
                 margin-bottom: 0;
             }
@@ -128,14 +130,14 @@
         }
     }
     .arrow.arrow-next {
-        left: 3rem;
+        left: 7rem;
         transform: rotate(180deg);
         @include mq($bpMedium) {
             left: 1rem;
         }
     }
     .arrow.arrow-prev {
-        right: 3rem;
+        right: 7rem;
         transform: rotate(unset);
         @include mq($bpMedium) {
             right: 1rem;
@@ -153,11 +155,10 @@
         }
     }
     & .slide-1 {
-        @include mq-min($bpMedium) {
-            & .arrow.arrow-prev {
-                display: none;
-            }
+        @include mq($bpLarge) {
+            grid-template-columns: 40% 60%;
         }
+        @include mq-min($bpMedium) {}
         @include mq($bpMedium) {
             &>div {
                 grid-row: 2/3;
@@ -165,11 +166,10 @@
         }
     }
     & .slide-2 {
-        @include mq-min($bpMedium) {
-            & .arrow.arrow-next {
-                display: none;
-            }
+        @include mq($bpLarge) {
+            grid-template-columns: 60% 40%;
         }
+        @include mq-min($bpMedium) {}
         grid-template-columns: 1fr 34.69%;
         @include mq($bpMedium) {
             grid-template-columns: 1fr;

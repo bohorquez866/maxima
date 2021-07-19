@@ -4,9 +4,10 @@
     class="home_banner swiper w-5/6 ml-auto relative"
     :key="reset"
   >
+  
     <section class="swiper-wrapper">
       <!-- SLIDE -->
-
+    
       <article
         v-for="(data, index) in category"
         :key="data.id"
@@ -15,7 +16,6 @@
         <div class="content-wrapper">
           <span class="icon-arrow2 arrow arrow-next home-arrow-1"> </span>
           <span class="icon-arrow2 arrow arrow-prev home-arrow-2"> </span>
-
           <!-- inner content -->
           <div>
             <h4>SERVICES</h4>
@@ -58,7 +58,7 @@ export default {
         effect: 'fade',
         autoplay: {
           speed: 4500,
-          delay: 3500,
+          delay: 7000,
         },
         fadeEffect: { crossFade: true },
         navigation: {

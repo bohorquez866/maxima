@@ -16,7 +16,7 @@
             @click="showResidential"
             v-if="visibleCommercial"
           >
-            <span>House Cleaning</span>
+            <span class="text-house">House Cleaning</span>
             <strong class="icon-arrow2"></strong>
           </p>
 

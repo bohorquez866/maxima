@@ -2,45 +2,45 @@
   {
     "name": "about",
     "path": "/about",
-    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\about.vue",
+    "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\about.vue",
     "chunkName": "pages/about",
-    "_name": "_dbb6ad88"
+    "_name": "_a7eec794"
   },
   {
     "name": "contact",
     "path": "/contact",
-    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\contact.vue",
+    "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\contact.vue",
     "chunkName": "pages/contact",
-    "_name": "_c3c7c2e2"
+    "_name": "_626189ee"
   },
   {
-    "name": "gallery",
-    "path": "/gallery",
-    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\gallery.vue",
-    "chunkName": "pages/gallery",
-    "_name": "_1b9088c1"
+    "name": "Gallery",
+    "path": "/Gallery",
+    "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\Gallery.vue",
+    "chunkName": "pages/Gallery",
+    "_name": "_a0a565ca"
   },
   {
     "name": "services",
     "path": "/services",
-    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\services.vue",
+    "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\services.vue",
     "chunkName": "pages/services",
     "children": [
       {
         "name": "services-commercial",
         "path": ":commercial?",
-        "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\services\\\\_commercial.vue",
+        "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\services\\\\_commercial.vue",
         "chunkName": "pages/services/_commercial",
-        "_name": "_b304130c"
+        "_name": "_17be9518"
       }
     ],
-    "_name": "_1b43f202"
+    "_name": "_4fe30c76"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\index.vue",
+    "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_9c46f7fe"
+    "_name": "_687f120a"
   }
 ]

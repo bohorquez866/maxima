@@ -5,6 +5,7 @@
       <nuxt-link to="/" class="logo">
         <img :src="optionsData.logo" alt="Logo" />
       </nuxt-link>
+      
       <div class="burger-menu" @click="toggleNavbar">
         <span></span>
         <span></span>

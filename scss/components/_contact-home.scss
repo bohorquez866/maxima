@@ -9,6 +9,9 @@
         grid-template-columns: 40rem 45rem;
     }
     &_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         & h2 {
             margin-bottom: 1rem;
             @include mq($bpMedium) {

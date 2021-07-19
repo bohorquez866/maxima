@@ -23,8 +23,8 @@
         display: flex;
         flex-direction: column;
         background-position: center center;
-        background-size: contain;
-        background-image: url(../assets/img/bg.png);
+        background-size: cover;
+        background-image: url(../assets/img/bg-contact.jpg);
         @include mq($bpMedium) {
             padding: 5rem 4.5rem;
         }
