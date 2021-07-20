@@ -9,7 +9,7 @@
           alt=""
         />
       </figure>
-      <article class="home-about-info">
+      <article data-aos="fade-left" class="home-about-info">
         <h4>About Us</h4>
         <h2 class="title">{{ home[4].acf.home_about_title }}</h2>
         <div v-html="home[4].acf.home_about_text"></div>

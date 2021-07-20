@@ -16,7 +16,7 @@ export default {
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: ['./scss/styles.css'],
+    css: ['./scss/styles.css', 'aos/dist/aos.css'],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
@@ -24,6 +24,7 @@ export default {
         { src: './plugins/global.client.js' },
         { src: '@/node_modules/vee-validate' },
         { src: '@/node_modules/vue-silentbox' },
+        { src: '~/plugins/aos', ssr: false }
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -49,5 +50,6 @@ export default {
     build: {
         transpile: ['vee-validate/dist/rules'],
         extend(config, ctx) {},
+        vendor: ["aos"]
     },
 }

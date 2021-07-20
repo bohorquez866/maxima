@@ -1,7 +1,9 @@
 <template>
   <section class="comments">
-    <h4>Comments</h4>
-    <h2 class="title">{{ comments.comments_title }}</h2>
+    <div data-aos="fade-up">
+      <h4>Comments</h4>
+      <h2 class="title">{{ comments.comments_title }}</h2>
+    </div>
 
     <section
       v-swiper="swiperOption"

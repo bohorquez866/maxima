@@ -4,7 +4,7 @@
     <transition name="fade">
       <section class="service_banner" v-if="banner">
         <article>
-          <div>
+          <div data-aos="fade-right">
             <h4>Services</h4>
             <h1 class="title">{{ banner.service_list_title }}</h1>
             <p>{{ banner.service_banner_text }}</p>
@@ -49,7 +49,7 @@
           />
 
           <img class="desktop-img" :src="post.acf.img_post" alt="" />
-          <article>
+          <article data-aos="fade-up">
             <h2 v-html="post.title.rendered"></h2>
             <div v-html="post.content.rendered"></div>
 
@@ -73,7 +73,13 @@
         >
           <div v-if="selectedItem">
             <span class="close-modal icon-cross" @click="closeModal"></span>
+
             <img class="desktop-img" :src="selectedItem.acf.img_post" alt="" />
+            <img
+            :src="selectedItem.acf.img_post_mobile_service"
+            class="post_img--mobile"
+            alt="picture"
+          />
             <article>
               <h3 v-html="selectedItem.title.rendered"></h3>
               <div v-html="selectedItem.content.rendered"></div>

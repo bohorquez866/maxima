@@ -7,7 +7,7 @@
           <img :src="perk.perk_item_img_color" alt="" class="perk_color" /> 
         </figure>
          
-        <div class="perk_info">
+        <div data-aos="fade-up" class="perk_info">
           <h3>{{ perk.perk_item_title }}</h3>
           <p>{{ perk.perk_item_text }}</p>
         </div>
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+
+
 export default {
   computed: {
     perks() {

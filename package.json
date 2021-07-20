@@ -12,13 +12,15 @@
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.13.6",
+        "aos": "^2.3.4",
         "core-js": "^3.15.1",
         "emailjs-com": "^3.1.0",
         "nuxt": "^2.15.7",
         "swiper": "5.4.5",
         "vee-validate": "^3",
         "vue-awesome-swiper": "4.1.1",
-        "vue-silentbox": "^2.4.5"
+        "vue-silentbox": "^2.4.5",
+        "vue2-animate": "^2.1.4"
     },
     "devDependencies": {
         "@babel/eslint-parser": "^7.14.7",

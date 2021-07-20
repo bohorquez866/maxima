@@ -72,7 +72,7 @@
           </Field>
           -->
           <select name="service" id="service" v-model="service">
-            <option value="none" selected disabled>Select The Service</option>
+            <option :value="null" disabled selected>Select The Service</option>
 
             <option
               v-for="option in serviceData"
@@ -133,7 +133,7 @@ export default {
       email: null,
       message: null,
       phone: null,
-      service: 'Select your Service',
+      service: null,
       successMessage: false,
       reset: 0,
     }

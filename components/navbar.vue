@@ -5,7 +5,7 @@
       <nuxt-link to="/" class="logo">
         <img :src="optionsData.logo" alt="Logo" />
       </nuxt-link>
-      
+      <nuxt-link to="/contact" class="btn_contact">CONTACT US</nuxt-link>
       <div class="burger-menu" @click="toggleNavbar">
         <span></span>
         <span></span>
@@ -20,7 +20,7 @@
               <NuxtLink to="/">Home</NuxtLink>
             </li>
             <li>
-              <p>Services</p>
+              <a href="#" :class="currentRoute=='services'?'nuxt-link-exact-active nuxt-link-active':''">Services</a>
               <ul class="submenu">
                 <li>
                   <nuxt-link to="/services/commercial" class="submenu-link"
@@ -104,7 +104,9 @@ export default {
       isLoading: true,
     }
   },
-
+  mounted(){
+    console.log(this.currentRoute);
+  },
   computed: {
     currentRouteName() {
       return this.$route.name
@@ -116,6 +118,9 @@ export default {
     optionsData() {
       return this.$store.getters.perks
     },
+    currentRoute(){
+      return this.$route.path.split('/')[1]
+    }
   },
 
   methods: {
@@ -125,3 +130,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.custom-class{
+  color: salmon !important;
+}
+</style>

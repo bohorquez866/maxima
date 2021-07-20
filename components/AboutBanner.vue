@@ -3,7 +3,7 @@
   <section class="about_banner banner">
     <template v-if="about[3]"
       ><article class="banner_item">
-        <div>
+        <div data-aos="fade-right">
           <h4>About Us</h4>
           <h1 class="title">{{ about[3].acf.about_banner_title }}</h1>
           <div v-html="about[3].acf.about_banner_text"></div>

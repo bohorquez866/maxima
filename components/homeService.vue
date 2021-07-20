@@ -12,7 +12,7 @@
         class="home_service_item swiper-slide"
       >
         <div :style="`background-image: url(${data.acf.service_list_img_bg})`">
-          <article>
+          <article data-aos="fade-right">
             <h4>SERVICES</h4>
             <h2 class="title">{{ data.service_banner_title }}</h2>
             <ul>

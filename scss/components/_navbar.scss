@@ -22,7 +22,21 @@
     & .fixed-social {
         display: flex;
         align-items: center;
+        justify-content: space-around;
         @include mq($bpMedium) {}
+    }
+    //
+    .btn_contact {
+        display: none;
+        @include mq($bpXMedium) {
+            display: block;
+            border: 1px solid $brown;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-right: 40px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
     }
     //
     .logo {
@@ -210,12 +224,7 @@
                 row-gap: 1rem;
                 opacity: 0;
                 z-index: -1;
-<<<<<<< HEAD
-                @include mq($bpXMedium) {
-                    position: relative;
-                    opacity: 1;
-                    z-index: auto;
-=======
+                margin-left: 20px;
                 @include mq($bpMedium) {
                     position: relative;
                     opacity: 1;
@@ -223,10 +232,12 @@
                     & * {
                         color: black;
                     }
->>>>>>> d07ff0e7817b5640b58340cf8b4a9e735b14ca60
                 }
                 & li {
                     margin-right: 0;
+                    @include mq($bpXMedium) {
+                        list-style: disc;
+                    }
                     & a {
                         font-weight: normal;
                         font-size: 14px;

@@ -17,7 +17,7 @@
           <span class="icon-arrow2 arrow arrow-next home-arrow-1"> </span>
           <span class="icon-arrow2 arrow arrow-prev home-arrow-2"> </span>
           <!-- inner content -->
-          <div>
+          <div >
             <h4>SERVICES</h4>
             <h2 class="title">{{ data.home_title }}</h2>
             <p>{{ data.home_text }}</p>
@@ -42,6 +42,10 @@
 <script>
 import { directive } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
+
+// import AOS from 'aos'
+// import 'aos/dist/aos.css'
+
 export default {
   name: 'Slider',
   directives: {
@@ -75,6 +79,8 @@ export default {
     },
   },
   mounted() {
+    // AOS.init({ })
+
     setTimeout(() => {
       this.resetBanner()
     }, 1000)
