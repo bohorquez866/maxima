@@ -13,13 +13,13 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_e7e1bac8 from 'nuxt_plugin_plugin_e7e1bac8' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_axios_4e5ebe82 from 'nuxt_plugin_axios_4e5ebe82' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_vueawesomeswiper_95d16dae from 'nuxt_plugin_vueawesomeswiper_95d16dae' // Source: ..\\node_modules\\vue-awesome-swiper (mode: 'all')
-import nuxt_plugin_globalclient_37b60b87 from 'nuxt_plugin_globalclient_37b60b87' // Source: ..\\plugins\\global.client.js (mode: 'client')
-import nuxt_plugin_veevalidate_438e7a4d from 'nuxt_plugin_veevalidate_438e7a4d' // Source: ..\\node_modules\\vee-validate (mode: 'all')
-import nuxt_plugin_vuesilentbox_255928ef from 'nuxt_plugin_vuesilentbox_255928ef' // Source: ..\\node_modules\\vue-silentbox (mode: 'all')
-import nuxt_plugin_aos_5e4622cf from 'nuxt_plugin_aos_5e4622cf' // Source: ..\\plugins\\aos (mode: 'client')
+import nuxt_plugin_plugin_1c6696b9 from 'nuxt_plugin_plugin_1c6696b9' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_axios_0b724f4f from 'nuxt_plugin_axios_0b724f4f' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_vueawesomeswiper_95d16dae from 'nuxt_plugin_vueawesomeswiper_95d16dae' // Source: ../node_modules/vue-awesome-swiper (mode: 'all')
+import nuxt_plugin_globalclient_37b60b87 from 'nuxt_plugin_globalclient_37b60b87' // Source: ../plugins/global.client.js (mode: 'client')
+import nuxt_plugin_veevalidate_438e7a4d from 'nuxt_plugin_veevalidate_438e7a4d' // Source: ../node_modules/vee-validate (mode: 'all')
+import nuxt_plugin_vuesilentbox_255928ef from 'nuxt_plugin_vuesilentbox_255928ef' // Source: ../node_modules/vue-silentbox (mode: 'all')
+import nuxt_plugin_aos_5e4622cf from 'nuxt_plugin_aos_5e4622cf' // Source: ../plugins/aos (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -87,7 +87,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"maxima","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"Maxima Limpieza | Maintenance Service","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
     store,
     router,
@@ -216,12 +216,12 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_e7e1bac8 === 'function') {
-    await nuxt_plugin_plugin_e7e1bac8(app.context, inject)
+  if (typeof nuxt_plugin_plugin_1c6696b9 === 'function') {
+    await nuxt_plugin_plugin_1c6696b9(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_4e5ebe82 === 'function') {
-    await nuxt_plugin_axios_4e5ebe82(app.context, inject)
+  if (typeof nuxt_plugin_axios_0b724f4f === 'function') {
+    await nuxt_plugin_axios_0b724f4f(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vueawesomeswiper_95d16dae === 'function') {

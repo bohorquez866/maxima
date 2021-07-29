@@ -2,45 +2,45 @@
   {
     "name": "about",
     "path": "/about",
-    "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\about.vue",
+    "component": "/mnt/c/laragon/www/maxima/pages/about.vue",
     "chunkName": "pages/about",
-    "_name": "_a7eec794"
+    "_name": "_3d3e4faa"
   },
   {
     "name": "contact",
     "path": "/contact",
-    "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\contact.vue",
+    "component": "/mnt/c/laragon/www/maxima/pages/contact.vue",
     "chunkName": "pages/contact",
-    "_name": "_626189ee"
+    "_name": "_2d343d06"
   },
   {
-    "name": "Gallery",
-    "path": "/Gallery",
-    "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\Gallery.vue",
-    "chunkName": "pages/Gallery",
-    "_name": "_a0a565ca"
+    "name": "gallery",
+    "path": "/gallery",
+    "component": "/mnt/c/laragon/www/maxima/pages/gallery.vue",
+    "chunkName": "pages/gallery",
+    "_name": "_66da4baf"
   },
   {
     "name": "services",
     "path": "/services",
-    "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\services.vue",
+    "component": "/mnt/c/laragon/www/maxima/pages/services.vue",
     "chunkName": "pages/services",
     "children": [
       {
         "name": "services-commercial",
         "path": ":commercial?",
-        "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\services\\\\_commercial.vue",
+        "component": "/mnt/c/laragon/www/maxima/pages/services/_commercial.vue",
         "chunkName": "pages/services/_commercial",
-        "_name": "_17be9518"
+        "_name": "_0b7676aa"
       }
     ],
-    "_name": "_4fe30c76"
+    "_name": "_104ca1d1"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\laragon\\\\www\\\\maxima-limpieza\\\\pages\\\\index.vue",
+    "component": "/mnt/c/laragon/www/maxima/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_687f120a"
+    "_name": "_5cf62a6f"
   }
 ]

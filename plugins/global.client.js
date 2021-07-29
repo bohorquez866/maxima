@@ -1,6 +1,6 @@
 export default function({ $axios, redirect, store }) {
     function retreiveData() {
-        let baseURL = 'http://www.maxima.amgbusiness.us/'
+        let baseURL = 'https://www.maximalimpieza.us/'
         $axios
             .get(`${baseURL}backend/wp-json/menus/v1/menus/Navbar`)
             .then((response) => {

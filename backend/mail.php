@@ -11,25 +11,31 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 // *********************************
-
+$type = $_POST["type"];
 $correo = $_POST["email"];
 $nombre = $_POST["name"];
 $mensaje = $_POST["message"];
+$phone = $_POST["phone"];
+$service = $_POST['service'];
+
 // **************** Datos destinatario ****************
-$asunto = "Test";
-$destino = 'bohorquez866@gmail.com';
-$nombreUser = "correo prueba"; // nombre, por ejemplo nuevo mensaje de 'portafolio web'
+
+$asunto = "New Contact / Maxima Limpieza";
+$destino = 'customer@maximalimpieza.us';
+$nombreUser = "New Contact Message"; // nombre, por ejemplo nuevo mensaje de 'portafolio web'
 //Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
+
+
 
 try {
     //Server settings
     $mail->SMTPDebug = 0;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->Host       = 'smtp.dreamhost.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'correosnotificacion2020@gmail.com';                     //SMTP username
-    $mail->Password   = 'yfetkvloojadbwbn';                               //SMTP password
+    $mail->Username   = 'customer@maximalimpieza.us';                     //SMTP username
+    $mail->Password   = 'CorMay$$2022';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
@@ -43,12 +49,24 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = $asunto;
-    $mail->Body    = "Nombre: ".$nombre."<br> Correo: ".$correo."<br> Mensaje: ".$mensaje."<br>  ";
+
+    if($type == "form2"){
+   	 $mail->Body    = "Name: ".$nombre."<br> Email: ".$correo."<br> Message: ".$mensaje."<br>  ";}
+	
+
+    elseif ($type == "form1"){
+ 	$mail->Body    = "Name: ".$nombre." <br> 
+                      Email: ".$correo."<br> 
+                      Phone: ".$phone." <br>
+                      Service: ".$service." <br>
+                      Message: ".$mensaje."<br>";
+
+}
 
     $mail->send();
-    echo 'enviado con éxito';
+    echo 'Successfully Sent';
 } catch (Exception $e) {
-  //  echo "Hubo un error al enviar el mensaje: {$mail->ErrorInfo}";
+  //  echo "Error while trying to send email: {$mail->ErrorInfo}";
   echo 'error';
 }
 ?>

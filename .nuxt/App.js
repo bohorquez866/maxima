@@ -5,9 +5,9 @@ import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch,
 import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from '@/components/Loader.vue'
 
-import '..\\scss\\styles.css'
+import '../scss/styles.css'
 
-import '..\\node_modules\\aos\\dist\\aos.css'
+import '../node_modules/aos/dist/aos.css'
 
 import _6f6c098b from './layouts/default.vue'
 

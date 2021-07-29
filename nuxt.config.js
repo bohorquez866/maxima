@@ -2,7 +2,7 @@ export default {
     loading: '@/components/Loader.vue',
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'maxima',
+        title: 'Maxima Limpieza | Maintenance Service',
         htmlAttrs: {
             lang: 'en',
         },
@@ -24,7 +24,7 @@ export default {
         { src: './plugins/global.client.js' },
         { src: '@/node_modules/vee-validate' },
         { src: '@/node_modules/vue-silentbox' },
-        { src: '~/plugins/aos', ssr: false }
+        { src: '~/plugins/aos', ssr: false },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -50,6 +50,6 @@ export default {
     build: {
         transpile: ['vee-validate/dist/rules'],
         extend(config, ctx) {},
-        vendor: ["aos"]
+        vendor: ['aos'],
     },
 }

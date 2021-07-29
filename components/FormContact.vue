@@ -71,6 +71,7 @@
             <option>Coke</option>
           </Field>
           -->
+          <input type="hidden" name="type" v-model="type" value="form1" />
           <select name="service" id="service" v-model="service">
             <option :value="null" disabled selected>Select The Service</option>
 
@@ -105,6 +106,10 @@
       <span v-if="successMessage" class="success-message">
         <p>SENT SUCCESSFULLY</p>
       </span>
+
+      <span v-if="errorMessage" class="error-message">
+        <p>Mail Couldn't be sent</p>
+      </span>
     </form>
   </ValidationObserver>
 </template>
@@ -134,7 +139,9 @@ export default {
       message: null,
       phone: null,
       service: null,
+      type: 'form1',
       successMessage: false,
+      errorMessage: false,
       reset: 0,
     }
   },
@@ -156,12 +163,28 @@ export default {
       formData.append('message', this.message)
       formData.append('phone', this.phone)
       formData.append('service', this.service)
+      formData.append('type', this.type)
 
       axios
-        .post(`http://localhost/maxima/backend/mail2.php`, formData)
-        .then((res) => {})
+        .post(`https://www.maximalimpieza.us/backend/mail.php`, formData)
+
+        .then((res) => {
+          console.log('successfully sent')
+          console.log(formData)
+
+          this.successMessage = true
+          setTimeout(() => {
+            this.successMessage = false
+          }, 3000)
+        })
         .catch((error) => {
+          console.log(formData)
           console.log(error)
+          console.log(this.reset)
+          this.errorMessage = true
+          setTimeout(() => {
+            this.errorMessage = false
+          }, 3000)
         })
 
       this.name = null
@@ -171,11 +194,6 @@ export default {
       this.service = null
       this.reset++
 
-      console.log(this.reset)
-      this.successMessage = true
-      setTimeout(() => {
-        this.successMessage = false
-      }, 3000)
       //*
     },
   },

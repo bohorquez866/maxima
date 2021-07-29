@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _a7eec794 = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about" */))
-const _626189ee = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact" */))
-const _a0a565ca = () => interopDefault(import('..\\pages\\Gallery.vue' /* webpackChunkName: "pages/Gallery" */))
-const _4fe30c76 = () => interopDefault(import('..\\pages\\services.vue' /* webpackChunkName: "pages/services" */))
-const _17be9518 = () => interopDefault(import('..\\pages\\services\\_commercial.vue' /* webpackChunkName: "pages/services/_commercial" */))
-const _687f120a = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _3d3e4faa = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
+const _2d343d06 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
+const _66da4baf = () => interopDefault(import('../pages/gallery.vue' /* webpackChunkName: "pages/gallery" */))
+const _104ca1d1 = () => interopDefault(import('../pages/services.vue' /* webpackChunkName: "pages/services" */))
+const _0b7676aa = () => interopDefault(import('../pages/services/_commercial.vue' /* webpackChunkName: "pages/services/_commercial" */))
+const _5cf62a6f = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -24,28 +24,28 @@ export const routerOptions = {
 
   routes: [{
     path: "/about",
-    component: _a7eec794,
+    component: _3d3e4faa,
     name: "about"
   }, {
     path: "/contact",
-    component: _626189ee,
+    component: _2d343d06,
     name: "contact"
   }, {
-    path: "/Gallery",
-    component: _a0a565ca,
-    name: "Gallery"
+    path: "/gallery",
+    component: _66da4baf,
+    name: "gallery"
   }, {
     path: "/services",
-    component: _4fe30c76,
+    component: _104ca1d1,
     name: "services",
     children: [{
       path: ":commercial?",
-      component: _17be9518,
+      component: _0b7676aa,
       name: "services-commercial"
     }]
   }, {
     path: "/",
-    component: _687f120a,
+    component: _5cf62a6f,
     name: "index"
   }],
 
