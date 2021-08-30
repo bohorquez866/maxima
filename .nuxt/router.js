@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _3d3e4faa = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
-const _2d343d06 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
-const _66da4baf = () => interopDefault(import('../pages/gallery.vue' /* webpackChunkName: "pages/gallery" */))
-const _104ca1d1 = () => interopDefault(import('../pages/services.vue' /* webpackChunkName: "pages/services" */))
-const _0b7676aa = () => interopDefault(import('../pages/services/_commercial.vue' /* webpackChunkName: "pages/services/_commercial" */))
-const _5cf62a6f = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _dbb6ad88 = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about" */))
+const _c3c7c2e2 = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact" */))
+const _1b9088c1 = () => interopDefault(import('..\\pages\\gallery.vue' /* webpackChunkName: "pages/gallery" */))
+const _1b43f202 = () => interopDefault(import('..\\pages\\services.vue' /* webpackChunkName: "pages/services" */))
+const _b304130c = () => interopDefault(import('..\\pages\\services\\_commercial.vue' /* webpackChunkName: "pages/services/_commercial" */))
+const _9c46f7fe = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -24,28 +24,28 @@ export const routerOptions = {
 
   routes: [{
     path: "/about",
-    component: _3d3e4faa,
+    component: _dbb6ad88,
     name: "about"
   }, {
     path: "/contact",
-    component: _2d343d06,
+    component: _c3c7c2e2,
     name: "contact"
   }, {
     path: "/gallery",
-    component: _66da4baf,
+    component: _1b9088c1,
     name: "gallery"
   }, {
     path: "/services",
-    component: _104ca1d1,
+    component: _1b43f202,
     name: "services",
     children: [{
       path: ":commercial?",
-      component: _0b7676aa,
+      component: _b304130c,
       name: "services-commercial"
     }]
   }, {
     path: "/",
-    component: _5cf62a6f,
+    component: _9c46f7fe,
     name: "index"
   }],
 

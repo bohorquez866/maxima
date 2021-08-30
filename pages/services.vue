@@ -2,23 +2,25 @@
   <main id="2">
     <navbar />
     <transition name="fade">
-    <CategoryPosts
-      :posts="commercialInfo"
-      :banner="category[0]"
-      v-if="visibleCommercial"
-      class="commercial_services"
-    />
+      <CategoryPosts
+        :posts="commercialInfo"
+        :banner="category[0]"
+        v-if="visibleCommercial"
+        class="commercial_services"
+      />
     </transition>
 
     <transition name="fade">
-    <CategoryPosts
-      :posts="residentialInfo"
-      :banner="category[1]"
-      v-if="visibleResidential"
-      class="residential_services"
-    />
+      <CategoryPosts
+        :posts="residentialInfo"
+        :banner="category[1]"
+        v-if="visibleResidential"
+        class="residential_services"
+      />
     </transition>
     <Footer />
+
+    > >
   </main>
 </template>
 
@@ -40,6 +42,9 @@ export default {
     visibleResidential() {
       return this.$store.getters.visibleResidential
     },
+  },
+  mounted() {
+    console.log(this.category)
   },
   methods: {
     showResidential() {

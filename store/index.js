@@ -7,6 +7,7 @@ export const state = () => ({
     residential: [],
     category: [],
     service: [],
+    yoastPages: [],
     urlPath: 'http://localhost/maxima/backend/',
     visibleResidential: false,
     visibleCommercial: true,
@@ -14,6 +15,9 @@ export const state = () => ({
 export const getters = {
     menu(state) {
         return state.menu
+    },
+    yoastPages(state) {
+        return state.yoastPages
     },
     perks(state) {
         return state.perks
@@ -103,7 +107,11 @@ export const mutations = {
     TOGGLE_VISIBLE_RESIDENTIAL(state, payload) {
         state.visibleResidential = payload
     },
+    SET_YOAST_PAGES(state, payload) {
+        state.yoastPages = payload
+    },
 }
+
 export const actions = {
     setMenuItems({ commit }, payload) {
         commit('SET_MENU_ITEMS', payload)
@@ -134,5 +142,8 @@ export const actions = {
     },
     toggleResidential({ commit }, payload) {
         commit('TOGGLE_VISIBLE_RESIDENTIAL', payload)
+    },
+    set({ commit }, payload) {
+        commit('SET_YOAST_PAGES', payload)
     },
 }

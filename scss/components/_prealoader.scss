@@ -3,8 +3,8 @@
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 99;
-    height: 100%;
+    z-index: 10000;
+    height: 100vh;
     background-color: $white;
     display: flex;
     align-items: center;

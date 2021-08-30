@@ -19,7 +19,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.handlePreloader()
-    }, 3000)
+    }, 3500)
   },
   methods: {
     handlePreloader() {

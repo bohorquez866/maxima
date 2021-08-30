@@ -20,7 +20,15 @@
               <NuxtLink to="/">Home</NuxtLink>
             </li>
             <li>
-              <a href="#" :class="currentRoute=='services'?'nuxt-link-exact-active nuxt-link-active':''">Services</a>
+              <a
+                href="#"
+                :class="
+                  currentRoute == 'services'
+                    ? 'nuxt-link-exact-active nuxt-link-active'
+                    : ''
+                "
+                >Services</a
+              >
               <ul class="submenu">
                 <li>
                   <nuxt-link to="/services/commercial" class="submenu-link"
@@ -104,9 +112,7 @@ export default {
       isLoading: true,
     }
   },
-  mounted(){
-    console.log(this.currentRoute);
-  },
+
   computed: {
     currentRouteName() {
       return this.$route.name
@@ -118,9 +124,9 @@ export default {
     optionsData() {
       return this.$store.getters.perks
     },
-    currentRoute(){
+    currentRoute() {
       return this.$route.path.split('/')[1]
-    }
+    },
   },
 
   methods: {
@@ -131,7 +137,7 @@ export default {
 }
 </script>
 <style scoped>
-.custom-class{
+.custom-class {
   color: salmon !important;
 }
 </style>

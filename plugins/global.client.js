@@ -73,6 +73,15 @@ export default function({ $axios, redirect, store }) {
             })
 
         .catch((error) => error)
+
+        //* yoast PagesMeta
+        $axios
+            .get(`${baseURL}backend/wp-json/wp/v2/pages`)
+            .then((response) => {
+                const finalData = response.data
+                store.commit('SET_YOAST_PAGES', finalData)
+            })
+            .catch((error) => error)
     }
     retreiveData()
 }

@@ -2,45 +2,45 @@
   {
     "name": "about",
     "path": "/about",
-    "component": "/mnt/c/laragon/www/maxima/pages/about.vue",
+    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\about.vue",
     "chunkName": "pages/about",
-    "_name": "_3d3e4faa"
+    "_name": "_dbb6ad88"
   },
   {
     "name": "contact",
     "path": "/contact",
-    "component": "/mnt/c/laragon/www/maxima/pages/contact.vue",
+    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\contact.vue",
     "chunkName": "pages/contact",
-    "_name": "_2d343d06"
+    "_name": "_c3c7c2e2"
   },
   {
     "name": "gallery",
     "path": "/gallery",
-    "component": "/mnt/c/laragon/www/maxima/pages/gallery.vue",
+    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\gallery.vue",
     "chunkName": "pages/gallery",
-    "_name": "_66da4baf"
+    "_name": "_1b9088c1"
   },
   {
     "name": "services",
     "path": "/services",
-    "component": "/mnt/c/laragon/www/maxima/pages/services.vue",
+    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\services.vue",
     "chunkName": "pages/services",
     "children": [
       {
         "name": "services-commercial",
         "path": ":commercial?",
-        "component": "/mnt/c/laragon/www/maxima/pages/services/_commercial.vue",
+        "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\services\\\\_commercial.vue",
         "chunkName": "pages/services/_commercial",
-        "_name": "_0b7676aa"
+        "_name": "_b304130c"
       }
     ],
-    "_name": "_104ca1d1"
+    "_name": "_1b43f202"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/mnt/c/laragon/www/maxima/pages/index.vue",
+    "component": "C:\\\\laragon\\\\www\\\\maxima\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_5cf62a6f"
+    "_name": "_9c46f7fe"
   }
 ]

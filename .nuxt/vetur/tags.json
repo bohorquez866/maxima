@@ -26,22 +26,25 @@
   "HomeAbout": {
     "description": "Auto imported from components/HomeAbout.vue"
   },
-  "Loader": {
-    "description": "Auto imported from components/Loader.vue"
-  },
-  "Perks": {
-    "description": "Auto imported from components/Perks.vue"
-  },
-  "ServiceBanner": {
-    "description": "Auto imported from components/ServiceBanner.vue"
-  },
   "HomeBanner": {
     "description": "Auto imported from components/homeBanner.vue"
   },
   "HomeService": {
     "description": "Auto imported from components/homeService.vue"
   },
+  "LoadedImg": {
+    "description": "Auto imported from components/LoadedImg.vue"
+  },
+  "Loader": {
+    "description": "Auto imported from components/Loader.vue"
+  },
   "Navbar": {
     "description": "Auto imported from components/navbar.vue"
+  },
+  "Perks": {
+    "description": "Auto imported from components/Perks.vue"
+  },
+  "ServiceBanner": {
+    "description": "Auto imported from components/ServiceBanner.vue"
   }
 }

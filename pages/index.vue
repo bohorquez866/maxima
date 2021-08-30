@@ -14,3 +14,25 @@
     <Footer />
   </main>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'Home',
+      meta: [
+        { name: 'PageName', content: 'Home' },
+        { name: '', content: 'Home' },
+      ],
+    }
+  },
+  mounted() {
+    console.log(this.category)
+  },
+  computed: {
+    category() {
+      return this.$store.getters.category
+    },
+  },
+}
+</script>
