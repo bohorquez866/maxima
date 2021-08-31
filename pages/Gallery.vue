@@ -1,12 +1,10 @@
 <template>
-  <main>
+  <main v-lazy-container="{ selector: 'img' }">
     <Navbar />
     <section class="gallery">
       <h1 class="title">Gallery</h1>
 
-      <silent-box :gallery="images"
-        ><!-- your additional content --></silent-box
-      >
+      <silent-box :gallery="images" :lazy-loading="true"> </silent-box>
     </section>
     <Footer />
   </main>

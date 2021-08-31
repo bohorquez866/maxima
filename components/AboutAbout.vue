@@ -1,12 +1,15 @@
 /* eslint-disable vue/no-v-html */
 <template>
-  <section class="home-about page-info about_info">
+  <section
+    class="home-about page-info about_info"
+    v-lazy-container="{ selector: 'img' }"
+  >
     <template v-if="about[3]">
       <figure>
-        <img :src="about[3].acf.about_info_img" alt="about picture" />
+        <img :data-src="about[3].acf.about_info_img" alt="about picture" />
         <img
           class="responsive-service-img"
-          :src="about[3].acf.about_info_img_responsive"
+          :data-src="about[3].acf.about_info_img_responsive"
           alt="about picture"
         />
       </figure>

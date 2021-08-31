@@ -19,8 +19,6 @@
       />
     </transition>
     <Footer />
-
-    > >
   </main>
 </template>
 

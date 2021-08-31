@@ -1,10 +1,10 @@
 <template>
   <section class="home-about page-info">
     <template v-if="home[4]">
-      <figure>
-        <img :src="home[4].acf.home_about_img" alt="" />
+      <figure v-lazy-container="{ selector: 'img' }">
+        <img :data-src="home[4].acf.home_about_img" alt="" />
         <img
-          :src="home[4].acf.home_about_img_responsive"
+          :data-src="home[4].acf.home_about_img_responsive"
           class="responsive-service-img"
           alt=""
         />

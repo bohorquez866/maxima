@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-lazy-container="{ selector: 'img' }">
     <!-- Banner -->
     <transition name="fade">
       <section class="service_banner" v-lazy v-if="banner">
@@ -29,7 +29,7 @@
             <span>Commercial Cleaning</span>
           </p>
 
-          <img :src="banner.acf.service_banner_img" alt="random image" />
+          <img :data-src="banner.acf.service_banner_img" alt="random image" />
         </figure>
       </section>
     </transition>
@@ -42,19 +42,18 @@
         v-for="(array, index) in posts"
         :key="index"
       >
-        <div
-          class="posts_item"
-          v-lazy-container="{ selector: 'img' }"
-          v-for="post in array"
-          :key="post.ID"
-        >
+        <div class="posts_item" v-for="post in array" :key="post.ID">
           <img
             class="post_img--mobile"
-            :src="post.acf.image_mobile_service"
+            :data-src="post.acf.image_mobile_service"
             alt="picture"
           />
 
-          <img class="desktop-img" :src="post.acf.img_post" alt="picture" />
+          <img
+            class="desktop-img"
+            :data-src="post.acf.img_post"
+            alt="picture"
+          />
 
           <article data-aos="fade-up">
             <h2 v-html="post.title.rendered"></h2>
@@ -81,9 +80,13 @@
           <div v-if="selectedItem">
             <span class="close-modal icon-cross" @click="closeModal"></span>
 
-            <img class="desktop-img" :src="selectedItem.acf.img_post" alt="" />
             <img
-              :src="selectedItem.acf.img_post_mobile_service"
+              class="desktop-img"
+              :data-src="selectedItem.acf.img_post"
+              alt=""
+            />
+            <img
+              :data-src="selectedItem.acf.img_post_mobile_service"
               class="post_img--mobile"
               alt="picture"
             />

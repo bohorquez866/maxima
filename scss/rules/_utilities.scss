@@ -74,3 +74,39 @@
 .page-leave-to {
     opacity: 0.05;
 }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+img[lazy=loaded] {
+    opacity: 1;
+    transform: scale(1);
+    transition: background 0.5s, opacity 0.5s, transform 0.5s;
+}
+
+img[lazy=error] {}
+
+figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img[lazy=loading] {
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        border: 5px solid $blue;
+        /* Light grey */
+        border-top: 5px solid $orange;
+        /* Blue */
+        border-radius: 50%;
+        width: 6rem!important;
+        height: 6rem!important;
+        animation: spin 1s linear infinite;
+    }
+}

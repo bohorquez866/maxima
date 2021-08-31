@@ -4,20 +4,20 @@
     class="home_banner swiper w-5/6 ml-auto relative"
     :key="reset"
   >
-  
     <section class="swiper-wrapper">
       <!-- SLIDE -->
-    
+
       <article
         v-for="(data, index) in category"
         :key="data.id"
+        v-lazy-container="{ selector: 'img' }"
         :class="`swiper-slide slide-${index + 1}`"
       >
         <div class="content-wrapper">
           <span class="icon-arrow2 arrow arrow-next home-arrow-1"> </span>
           <span class="icon-arrow2 arrow arrow-prev home-arrow-2"> </span>
           <!-- inner content -->
-          <div >
+          <div>
             <h4>SERVICES</h4>
             <h2 class="title">{{ data.home_title }}</h2>
             <p>{{ data.home_text }}</p>
@@ -26,8 +26,13 @@
         </div>
 
         <figure>
-          <img :src="data.acf.home_image" alt="banner image" />
           <img
+            :data-src="data.acf.home_image"
+            :src="data.acf.home_image"
+            alt="banner image"
+          />
+          <img
+            :data-src="data.acf.home_image_responsive"
             :src="data.acf.home_image_responsive"
             class="banner-responsive-image"
             alt="banner image"

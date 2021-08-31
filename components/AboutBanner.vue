@@ -1,6 +1,6 @@
 /* eslint-disable vue/no-v-html */
 <template>
-  <section class="about_banner banner">
+  <section class="about_banner banner" v-lazy-container="{ selector: 'img' }">
     <template v-if="about[3]"
       ><article class="banner_item">
         <div data-aos="fade-right">
@@ -9,7 +9,7 @@
           <div v-html="about[3].acf.about_banner_text"></div>
         </div>
       </article>
-      <img :src="about[3].acf.about_banner_img" alt="VBanner img" />
+      <img :data-src="about[3].acf.about_banner_img" alt="VBanner img" />
     </template>
   </section>
 </template>

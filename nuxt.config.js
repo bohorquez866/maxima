@@ -21,7 +21,8 @@ export default {
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         { src: '@/node_modules/vue-awesome-swiper' },
-        { src: './node_modules/vue-lazyload/', ssr: true },
+        { src: './node_modules/vue-lazyload/', ssr: false },
+        { src: './plugins/lazy.js', ssr: false },
         { src: './plugins/global.client.js' },
         { src: '@/node_modules/vee-validate' },
         { src: '@/node_modules/vue-silentbox' },
