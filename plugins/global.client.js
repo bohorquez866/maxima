@@ -1,5 +1,5 @@
 export default function({ $axios, redirect, store }) {
-    function retreiveData() {
+    async function retreiveData() {
         let baseURL = 'https://www.maximalimpieza.us/'
         $axios
             .get(`${baseURL}backend/wp-json/menus/v1/menus/Navbar`)

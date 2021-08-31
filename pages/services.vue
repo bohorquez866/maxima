@@ -19,11 +19,22 @@
       />
     </transition>
     <Footer />
+
+  <pre>{{seoInfo}}</pre>
   </main>
 </template>
 
 <script>
 export default {
+
+  head() {
+    return {
+    title:  `${this.seoInfo ? this.seoInfo.yoast_head_json.og_site_name : 'Maxima Limpieza'} | ${this.seoInfo ? this.seoInfo.yoast_head_json.description : 'Service'}`
+  }
+    },
+  
+
+
   computed: {
     commercialInfo() {
       return this.$store.getters.commercial
@@ -34,30 +45,41 @@ export default {
     category() {
       return this.$store.getters.category
     },
+    seoInfo(){
+      let info;
+      if(this.$route.params.commercial == 'residential'){
+        if(this.$store.getters.category[1]) {
+           info =  this.$store.getters.category[1];
+          
+        }
+        }else if(this.$route.params.commercial == 'commercial'){
+ if(this.$store.getters.category[0]) {
+        info =  this.$store.getters.category[0] 
+ }
+
+
+      }
+
+    if(info != null){
+      return info
+    }
+    },
+
+
     visibleCommercial() {
       return this.$store.getters.visibleCommercial
     },
     visibleResidential() {
       return this.$store.getters.visibleResidential
     },
-    seoTitle() {
-      this.category[0].yoast_json.description
-
-      this.$route.params.commercial == 'residential'
-        ? this.category[0].yoast_json.description
-        : this.category[1].yoast_json.description
-    },
-  },
-
-  head() {
-    return {
-      title: this.checkSeoInfo,
-    }
+  
   },
 
   mounted() {
     console.log(this.category)
   },
+
+
   methods: {
     showResidential() {
       if (this.$route.params.commercial == 'residential') {
@@ -73,13 +95,7 @@ export default {
     '$route.params.commercial'() {
       this.showResidential()
     },
-    checkSeoInfo() {
-      if (this.$route.params.commercial == 'residential') {
-        this.category[0].yoast_json.description
-      } else if (this.$route.params.commercial == 'residential') {
-        this.category[1].yoast_json.description
-      }
-    },
+
   },
 }
 </script>

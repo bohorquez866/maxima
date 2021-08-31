@@ -21,7 +21,7 @@ export default {
     return {
       title: 'Home',
       meta: [
-        { name: 'PageName', content: 'Home' },
+        { name: 'Title', content: 'Home' },
         { name: '', content: 'Home' },
       ],
     }
