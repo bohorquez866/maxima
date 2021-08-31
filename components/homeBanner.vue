@@ -14,8 +14,16 @@
         :class="`swiper-slide slide-${index + 1}`"
       >
         <div class="content-wrapper">
-          <span class="icon-arrow2 arrow arrow-next home-arrow-1"> </span>
-          <span class="icon-arrow2 arrow arrow-prev home-arrow-2"> </span>
+          <span
+            class="icon-arrow2 arrow arrow-next home-arrow-1"
+            @click="resetBanner"
+          >
+          </span>
+          <span
+            class="icon-arrow2 arrow arrow-prev home-arrow-2"
+            @click="resetBanner"
+          >
+          </span>
           <!-- inner content -->
           <div>
             <h4>SERVICES</h4>

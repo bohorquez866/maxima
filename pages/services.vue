@@ -40,7 +40,21 @@ export default {
     visibleResidential() {
       return this.$store.getters.visibleResidential
     },
+    seoTitle() {
+      this.category[0].yoast_json.description
+
+      this.$route.params.commercial == 'residential'
+        ? this.category[0].yoast_json.description
+        : this.category[1].yoast_json.description
+    },
   },
+
+  head() {
+    return {
+      title: this.checkSeoInfo,
+    }
+  },
+
   mounted() {
     console.log(this.category)
   },
@@ -49,19 +63,22 @@ export default {
       if (this.$route.params.commercial == 'residential') {
         this.$store.dispatch('toggleResidential', true)
         this.$store.dispatch('toggleCommercial', false)
-        // this.visibleResidential2 = true
-        // this.visibleCommercial2 = false
       } else if (this.$route.params.commercial == 'commercial') {
         this.$store.dispatch('toggleCommercial', true)
         this.$store.dispatch('toggleResidential', false)
-        // this.visibleCommercial2 = true
-        // this.visibleResidential2 = false
       }
     },
   },
   watch: {
     '$route.params.commercial'() {
       this.showResidential()
+    },
+    checkSeoInfo() {
+      if (this.$route.params.commercial == 'residential') {
+        this.category[0].yoast_json.description
+      } else if (this.$route.params.commercial == 'residential') {
+        this.category[1].yoast_json.description
+      }
     },
   },
 }

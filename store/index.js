@@ -123,6 +123,7 @@ export const actions = {
         commit('SET_HOME_ITEMS', payload)
     },
     setCategoryItems({ commit }, payload) {
+        console.log(payload)
         commit('SET_CATEGORY_ITEMS', payload)
     },
     setServiceItems({ commit }, payload) {
