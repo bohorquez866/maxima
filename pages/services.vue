@@ -19,7 +19,7 @@
       />
     </transition>
     <Footer />
-
+<pre>{{seoInfo}}</pre>
   </main>
 </template>
 

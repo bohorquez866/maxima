@@ -19,7 +19,7 @@
 export default {
   head() {
     return {
-      title: 'Home',
+      title: 'Maxima Limpieza | Home',
       meta: [
         { name: 'Title', content: 'Home' },
         { name: '', content: 'Home' },
