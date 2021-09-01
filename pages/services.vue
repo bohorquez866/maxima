@@ -20,7 +20,6 @@
     </transition>
     <Footer />
 
-  <pre>{{seoInfo}}</pre>
   </main>
 </template>
 
@@ -29,7 +28,7 @@ export default {
 
   head() {
     return {
-    title:  `${this.seoInfo ? this.seoInfo.yoast_head_json.og_site_name : 'Maxima Limpieza'} | ${this.seoInfo ? this.seoInfo.yoast_head_json.description : 'Service'}`
+    title:  `${this.seoInfo ? this.seoInfo.yoast_head_json.og_title : 'Maxima Limpieza'} | ${this.seoInfo ? this.seoInfo.yoast_head_json.description : 'Service'}`
   }
     },
   

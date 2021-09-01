@@ -1,8 +1,8 @@
 <template>
-  <div v-lazy-container="{ selector: 'img' }">
+  <div>
     <!-- Banner -->
     <transition name="fade">
-      <section class="service_banner" v-lazy v-if="banner">
+      <section class="service_banner" v-if="banner">
         <article>
           <div data-aos="fade-right">
             <h4>Services</h4>
@@ -10,7 +10,7 @@
             <p>{{ banner.service_banner_text }}</p>
           </div>
         </article>
-        <figure>
+        <figure v-lazy-container="{ selector: 'img' }">
           <p
             class="toggle-service"
             @click="showResidential"
@@ -42,7 +42,7 @@
         v-for="(array, index) in posts"
         :key="index"
       >
-        <div class="posts_item" v-for="post in array" :key="post.ID">
+        <div class="posts_item" v-for="post in array" :key="post.ID" v-lazy-container="{ selector: 'img' }">
           <img
             class="post_img--mobile"
             :data-src="post.acf.image_mobile_service"
@@ -77,7 +77,7 @@
           :class="{ active: modalShown }"
           v-if="modalShown"
         >
-          <div v-if="selectedItem">
+          <div v-if="selectedItem" v-lazy-container="{ selector: 'img' }">
             <span class="close-modal icon-cross" @click="closeModal"></span>
 
             <img
